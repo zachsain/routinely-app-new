@@ -1,0 +1,2 @@
+class RoutineCommentsController < ApplicationController
+end

@@ -1,0 +1,2 @@
+class RoutineComment < ApplicationRecord
+end
