@@ -15,7 +15,9 @@ class RoutinesController < ApplicationController
         routine.destroy
         head :no_content
     end 
+    
     private 
+
     def routine_params
         params.permit(:id, :date, :title, :category, :instructions, :duration, :video_url, :likes)
     end 
