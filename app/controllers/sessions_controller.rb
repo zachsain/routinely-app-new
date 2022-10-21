@@ -13,6 +13,8 @@ class SessionsController < ApplicationController
         end
     end
 
+    # if user && user.authenticate
+
     def destroy
         session.delete :user_id
         head :no_content
@@ -24,9 +26,9 @@ class SessionsController < ApplicationController
         return render json: { errors: ["Not authorized"] }, status: :unauthorized unless session.include? :user_id
     end
     
-    def login_params 
-        params.permit(:username, :password_digest)
-    end
+    # def login_params 
+    #     params.permit(:username, :password_digest)
+    # end
 
   
 end

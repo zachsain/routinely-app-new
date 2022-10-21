@@ -32,9 +32,9 @@ class UsersController < ApplicationController
   # end  #need to change this back to rendering with session id 
 
   private
-   
+
   def user_params 
-    params.permit(:username, :password_digest, :email, :bio)
+    params.permit(:username, :password, :email, :bio)
   end 
 
   def authorize
