@@ -1,5 +1,6 @@
 import React, {useState} from 'react'
 import Home from './Home'
+import UserActivities from "./UserActivities"
 
 function UserProfile({user}){
     const [username, setUsername] = useState("")
@@ -11,10 +12,12 @@ function UserProfile({user}){
             <img id="user-image" style={{ width: "12%", height: "10%" }} src={user.image_url} alt="user image"/>
             <p>bio:{user.bio}</p>
             <p>contact: {user.email}</p>
-        </div>, 
-        <div className="user-profile-activites">
 
+            <div className="user-activity-container">
+                <UserActivities user={user}/>
+            </div>
         </div>
+
     )
 }
 

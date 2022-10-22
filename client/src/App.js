@@ -4,7 +4,7 @@ import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import NavBar from "./NavBar";
 import Login from './Login';
 import Home from './Home';
-import Activities from './Activities';
+import AllActivities from './AllActivities';
 import Discover from './Discover';
 import Logout from './Logout';
 
@@ -38,7 +38,7 @@ function App() {
       <NavBar user={user} setUser={setUser} />
       <Switch>
         <Route exact path='/activities'>
-          <Activities user={user} setUser={setUser}/>
+          <AllActivities user={user} setUser={setUser}/>
         </Route>
         <Route exact path='/discover'>
           <Discover user={user} setUser={setUser} />
