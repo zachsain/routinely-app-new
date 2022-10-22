@@ -2,10 +2,18 @@ import React, {useState} from 'react'
 
 function UserActivities({user}) {
 
+    
+    let userActivities = user.activities.map(a => {
+        return <CategoryCard
+                  key={a.id} 
+                  category={c}
+                  />
+    })
+
     return(
         <div>
             activities here
-            <li>{user.activities}</li>
+            <p>{user.activities}</p>
         </div>
     )
 
