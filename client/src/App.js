@@ -3,10 +3,10 @@ import React, { useEffect, useState } from "react";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import NavBar from "./NavBar";
 import Login from './Login';
-import Home from './Home';
 import AllActivities from './AllActivities';
 import Discover from './Discover';
 import Logout from './Logout';
+import UserProfile from './UserProfile';
 
 
 function App() {
@@ -47,7 +47,7 @@ function App() {
           <Logout user={user} setUser={setUser} />
         </Route>
         <Route exact path="/">
-          <Home user={user} setUser={setUser} />
+          <UserProfile user={user} setUser={setUser} />
         </Route>
       </Switch>
     </div>
