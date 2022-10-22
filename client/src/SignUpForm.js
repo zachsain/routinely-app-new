@@ -13,6 +13,7 @@ function SignUpForm({setUser}){
   
     function handleSubmit(e) {
       e.preventDefault();
+      console.log(imageUrl);
       setErrors([]);
       setIsLoading(true);
       fetch("/signup", {
@@ -84,7 +85,7 @@ function SignUpForm({setUser}){
               type="text"
               id="profile-picture"
               autoComplete="off"
-              placeholder="avatar"
+              placeholder="image_url"
               value={imageUrl}
               onChange={(e) => setImageUrl(e.target.value)}
             ></input>
@@ -96,7 +97,7 @@ function SignUpForm({setUser}){
                 type="text"
                 id="user-bio"
                 autoComplete="off"
-                placeholder="upload image url"
+                placeholder="tell us about yourself..."
                 value={bio}
                 onChange={(e) => setBio(e.target.value)}
             ></input>
