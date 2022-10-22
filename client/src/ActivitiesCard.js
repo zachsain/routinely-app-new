@@ -6,10 +6,10 @@ function ActivitiesCard({
     duration, 
     description,
     likes,
-    routine
+    routine_id
 }){
 
     return(
-        <div></div>
+        <div>{title}</div>
     )
 }

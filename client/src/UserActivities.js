@@ -4,9 +4,14 @@ function UserActivities({user}) {
 
     
     let userActivities = user.activities.map(a => {
-        return <CategoryCard
+        return <ActivitiesCard
                   key={a.id} 
-                  category={c}
+                  category={a.category}
+                  duration={a.duration}
+                  description={a.description}
+                  likes={a.likes}
+                  routine_id={a.routine_id}
+
                   />
     })
 
