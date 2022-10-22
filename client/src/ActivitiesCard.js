@@ -9,16 +9,18 @@ function ActivitiesCard({
     routine_id,
     user
 }){
-    let routine = user.routines.filter(r=> r.id == routine_id)
+    let routine = user.routines.find(r => r.id == routine_id)
 
     return(
+        console.log(routine),
+  
         <div>
-        <h2>title: {title}</h2>
-        <p>category: {category}</p>
-        <p>duration: {duration}</p>
-        <p>notes: {description}</p>
-        <p>routine: {routine.title} </p>
-        {/* <button>likes: {likes}</button> */}
+        <h3>Activity: {title}</h3>
+        <p>Category: {category}</p>
+        <p>Duration: {duration}</p>
+        <p>Notes: {description}</p>
+        <p>Routine: {routine.title} </p>
+        <button>likes: {likes}</button>
 
 
         </div>
