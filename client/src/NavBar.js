@@ -1,5 +1,6 @@
 import React from 'react'
 import { Link } from "react-router-dom"
+import './App.css'
 
 function NavBar ({user, setUser}) {
 
@@ -11,6 +12,7 @@ function NavBar ({user, setUser}) {
         background: "blue",
         textDecoration: "none",
         color: "white",
+        // position: "fixed"
       };
 
  return (

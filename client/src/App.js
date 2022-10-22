@@ -34,7 +34,7 @@ function App() {
 
 
   return (
-    <div>
+    <div className="app-container">
       <NavBar user={user} setUser={setUser} />
       <Switch>
         <Route exact path='/activities'>

@@ -1,4 +1,5 @@
 import React, {useState} from 'react'
+import './App.css'
 
 function ActivitiesCard({
     title,
@@ -14,7 +15,7 @@ function ActivitiesCard({
     return(
         console.log(routine),
   
-        <div>
+        <div className="activity-container">
         <h3>Activity: {title}</h3>
         <p>Category: {category}</p>
         <p>Duration: {duration}</p>

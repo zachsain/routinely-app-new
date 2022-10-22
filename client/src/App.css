@@ -10,3 +10,34 @@ body {
 div::-webkit-scrollbar {
   display: none;
 }
+
+
+.activity-container{
+  border: 2px solid #1C6EA4;
+  padding-left: 10px;
+  padding-bottom: 10px;
+  font-family: 'Courier New', Courier, monospace;
+  background-color: white;
+  /* line-height: 1; */
+}
+
+.profile-container{
+  border: 2px solid black;
+  padding-left: 10px;
+  padding-right: 10px;
+  margin-right: 500px;
+  background-color: white;
+  
+}
+
+.user-profile-name{
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+.navbar-container{
+
+}
+
+.app-container{
+  background-color: efeeea;
+}
