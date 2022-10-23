@@ -50,9 +50,9 @@ function App() {
         <Route exact path="/">
           <UserProfile user={user} setUser={setUser} />
         </Route>
-        {/* <Route exact path="activities/id">
+        <Route exact path="/activities/:id">
           <SingleActivity/>
-        </Route> */}
+        </Route>
       </Switch>
     </div>
     

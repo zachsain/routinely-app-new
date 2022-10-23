@@ -37,22 +37,22 @@ function ActivitiesCard({
 
     let routine = user.routines.find(r => r.id == routine_id)
 
-    function handleOnClick(e){
-        console.log(id)
-        return (
-            // <Route exact path={`/activities/${id}`}>
-            //     <SingleActivity/>
-            // </Route>
-        )
+    // function handleOnClick(e){
+    //     console.log(id)
+    //     return (
+    //         <Link to ={`/activities/${id}`}>
+    //             <SingleActivity/>
+    //         </Link>
+    //     )
         
-    }
+    // }
 
     // function  handleOnClick(){
     //     setIsClicked(true);
     // }
 
     const history = useHistory();
-    // const handleOnClick = useCallback(() => history.push(`/activities/${id}`), [history], <SingleActivity/>);
+    const handleOnClick = useCallback(() => history.push(`/activities/${id}`), [history]);
 
     return(
         
