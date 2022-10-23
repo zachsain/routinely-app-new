@@ -37,11 +37,8 @@ function ActivitiesCard({
     let routine = user.routines.find(r => r.id == routine_id)
 
     function handleActivityPage(e){
-        console.log(e)
-        // <Link to=`/ac`
-
-            
-        
+        console.log(id)
+        // return( <Link to="/activities/${id}" style={linkStyles}>Logout</Link>)
     }
 
     return(
@@ -54,6 +51,7 @@ function ActivitiesCard({
         <p>Routine: {routine.title} </p>
         <button id={id} onClick={handleAddLike}>likes: {updateLikes}</button>
 
+       
 
         </div>
     )
