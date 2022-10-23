@@ -35,7 +35,8 @@ div::-webkit-scrollbar {
 }
 
 .navbar-container{
-
+ display: flex;
+ text-align: center;
 }
 
 .app-container{

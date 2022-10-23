@@ -1,9 +1,16 @@
 import React, {useState} from 'react'
 import './App.css'
 import UserActivities from "./UserActivities"
+import ActivityForm from './ActivityForm'
 
 function UserProfile({user, setUser}){
     const [username, setUsername] = useState("")
+
+    function handleNewActivity(e){
+        console.log(e) 
+        // need to add link that changes url 
+        // takes user to add new activity add activity form 
+    }
     
 
     return(
@@ -14,6 +21,9 @@ function UserProfile({user, setUser}){
             <p>bio:{user.bio}</p>
             <p>contact: {user.email}</p>
             </div>
+            
+            <button id="add-activity-button" onClick={handleNewActivity}>Add New Activity</button>
+            
 
             <div className="user-activity-container">
                 <UserActivities user={user} setUser={setUser} />

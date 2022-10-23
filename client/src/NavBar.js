@@ -5,13 +5,13 @@ import './App.css'
 function NavBar ({user, setUser}) {
 
     const linkStyles = {
-        display: "inline-block",
+        display: "block",
         width: "100px",
         padding: "5px",
         margin: "0 6px 6px",
-        background: "blue",
+        // background: "blue",
         textDecoration: "none",
-        color: "white",
+        // color: "white",
         // position: "fixed"
       };
 

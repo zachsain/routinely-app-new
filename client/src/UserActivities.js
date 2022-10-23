@@ -20,7 +20,7 @@ function UserActivities({user, setUser}) {
 
     return(
         <div>
-            activities here
+            <h3>Your activities:</h3>
             <p>{userActivities}</p>
         </div>
     )

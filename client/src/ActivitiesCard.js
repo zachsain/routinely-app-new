@@ -1,5 +1,8 @@
 import React, {useState} from 'react'
 import './App.css'
+import SingleActivity from './SingleActivity'
+import { Link } from 'react-router-dom'
+
 
 function ActivitiesCard({
     id,
@@ -12,7 +15,7 @@ function ActivitiesCard({
     user
 }){
     const [updateLikes, setUpdatedLikes] = useState(likes)
-    
+
     // const [formData, setFormData] = useState()
 
     function handleAddLike(e){
@@ -33,9 +36,17 @@ function ActivitiesCard({
 
     let routine = user.routines.find(r => r.id == routine_id)
 
+    function handleActivityPage(e){
+        console.log(e)
+        // <Link to=`/ac`
+
+            
+        
+    }
+
     return(
   
-        <div className="activity-container">
+        <div onClick={handleActivityPage} className="activity-container">
         <h3>Activity: {title}</h3>
         <p>Category: {category}</p>
         <p>Duration: {duration}</p>
