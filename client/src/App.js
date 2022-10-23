@@ -7,6 +7,7 @@ import AllActivities from './AllActivities';
 import Discover from './Discover';
 import Logout from './Logout';
 import UserProfile from './UserProfile';
+import SingleActivity from './SingleActivity';
 
 
 function App() {
@@ -49,6 +50,9 @@ function App() {
         <Route exact path="/">
           <UserProfile user={user} setUser={setUser} />
         </Route>
+        {/* <Route exact path="activities/id">
+          <SingleActivity/>
+        </Route> */}
       </Switch>
     </div>
     

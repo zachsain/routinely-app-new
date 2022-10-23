@@ -1,7 +1,7 @@
-import React, {useState} from 'react'
+import React, {useState, useCallback} from 'react'
 import './App.css'
 import SingleActivity from './SingleActivity'
-import { Link, Route} from 'react-router-dom'
+import { Link, useHistory} from 'react-router-dom'
 
 
 function ActivitiesCard({
@@ -15,6 +15,7 @@ function ActivitiesCard({
     user
 }){
     const [updateLikes, setUpdatedLikes] = useState(likes)
+    const [isClicked, setIsClicked] = useState(false)
 
     // const [formData, setFormData] = useState()
 
@@ -36,19 +37,26 @@ function ActivitiesCard({
 
     let routine = user.routines.find(r => r.id == routine_id)
 
-    function handleActivityPage(e){
+    function handleOnClick(e){
         console.log(id)
         return (
-            <Link to ={`/activities/${id}`}>
-                <SingleActivity/>
-            </Link>
+            // <Route exact path={`/activities/${id}`}>
+            //     <SingleActivity/>
+            // </Route>
         )
         
     }
 
+    // function  handleOnClick(){
+    //     setIsClicked(true);
+    // }
+
+    const history = useHistory();
+    // const handleOnClick = useCallback(() => history.push(`/activities/${id}`), [history], <SingleActivity/>);
+
     return(
         
-        <div onClick={handleActivityPage} className="activity-container">
+        <div onClick={handleOnClick} className="activity-container">
         <h3>Activity: {title}</h3>
         <p>Category: {category}</p>
         <p>Duration: {duration}</p>
