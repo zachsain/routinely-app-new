@@ -3,7 +3,10 @@ import React from "react";
 function SingleActivity(){
     
     return (
-        <h1>hello</h1>
+        <div>
+            <h1>hello</h1>
+        </div>
+        
     )
 }
 

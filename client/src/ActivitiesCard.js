@@ -1,7 +1,7 @@
 import React, {useState} from 'react'
 import './App.css'
 import SingleActivity from './SingleActivity'
-import { Link } from 'react-router-dom'
+import { Link, Route} from 'react-router-dom'
 
 
 function ActivitiesCard({
@@ -38,11 +38,16 @@ function ActivitiesCard({
 
     function handleActivityPage(e){
         console.log(id)
-        // return( <Link to="/activities/${id}" style={linkStyles}>Logout</Link>)
+        return (
+            <Link to ={`/activities/${id}`}>
+                <SingleActivity/>
+            </Link>
+        )
+        
     }
 
     return(
-  
+        
         <div onClick={handleActivityPage} className="activity-container">
         <h3>Activity: {title}</h3>
         <p>Category: {category}</p>
@@ -50,10 +55,8 @@ function ActivitiesCard({
         <p>Notes: {description}</p>
         <p>Routine: {routine.title} </p>
         <button id={id} onClick={handleAddLike}>likes: {updateLikes}</button>
-
-       
-
         </div>
+        
     )
 }
 
