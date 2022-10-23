@@ -20,6 +20,12 @@ class ActivitiesController < ApplicationController
         head :no_content
     end
 
+    def update
+        activity = Activity.find(params[:id])
+        activity.update(activity_params)
+        render json: activity
+    end 
+
     private 
 
     def activity_params 

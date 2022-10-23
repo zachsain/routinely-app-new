@@ -2,7 +2,7 @@ import React, {useState} from 'react'
 import './App.css'
 import UserActivities from "./UserActivities"
 
-function UserProfile({user}){
+function UserProfile({user, setUser}){
     const [username, setUsername] = useState("")
     
 
@@ -16,7 +16,7 @@ function UserProfile({user}){
             </div>
 
             <div className="user-activity-container">
-                <UserActivities user={user}/>
+                <UserActivities user={user} setUser={setUser} />
             </div>
         </div>
 

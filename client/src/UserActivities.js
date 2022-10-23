@@ -1,11 +1,12 @@
 import React, {useState} from 'react'
 import ActivitiesCard from './ActivitiesCard'
 
-function UserActivities({user}) {
+function UserActivities({user, setUser}) {
 
     
     let userActivities = user.activities.map(a => {
         return <ActivitiesCard
+                  id={a.id}  
                   user={user}
                   key={a.id} 
                   title={a.title}
@@ -14,7 +15,6 @@ function UserActivities({user}) {
                   description={a.description}
                   likes={a.likes}
                   routine_id={a.routine_id}
-
                   />
     })
 

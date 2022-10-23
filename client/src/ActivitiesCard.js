@@ -2,6 +2,7 @@ import React, {useState} from 'react'
 import './App.css'
 
 function ActivitiesCard({
+    id,
     title,
     category, 
     duration, 
@@ -10,10 +11,32 @@ function ActivitiesCard({
     routine_id,
     user
 }){
+    const [updateLikes, setUpdatedLikes] = useState(likes)
+    // const [formData, setFormData] = useState()
+
+    function handleAddLike(e){
+
+        e.preventDefault()
+
+        let addLike = updateLikes + 1
+        console.log(addLike)
+        let id = e.target.id
+
+        fetch(`/activities/${id}`, {
+            method: "PATCH",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({ likes: addLike})
+        })
+            .then(r => r.json())
+            .then(activity => setUpdatedLikes(activity.likes))
+
+    }
+
     let routine = user.routines.find(r => r.id == routine_id)
 
     return(
-        console.log(routine),
   
         <div className="activity-container">
         <h3>Activity: {title}</h3>
@@ -21,7 +44,7 @@ function ActivitiesCard({
         <p>Duration: {duration}</p>
         <p>Notes: {description}</p>
         <p>Routine: {routine.title} </p>
-        <button>likes: {likes}</button>
+        <button id={id} onClick={handleAddLike}>likes: {updateLikes}</button>
 
 
         </div>
