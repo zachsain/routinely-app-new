@@ -12,16 +12,13 @@ function ActivitiesCard({
     user
 }){
     const [updateLikes, setUpdatedLikes] = useState(likes)
+    
     // const [formData, setFormData] = useState()
 
     function handleAddLike(e){
-
         e.preventDefault()
-
         let addLike = updateLikes + 1
-        console.log(addLike)
         let id = e.target.id
-
         fetch(`/activities/${id}`, {
             method: "PATCH",
             headers: {
