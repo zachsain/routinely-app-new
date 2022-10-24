@@ -1,5 +1,6 @@
 import React, {useState} from "react";
-import {Route, Link, Routes, useParams} from 'react-router-dom';
+import {useParams} from 'react-router-dom';
+import {ActivitiesCard} from './ActivitiesCard'
 
 
 function SingleActivity({user}){
@@ -30,6 +31,9 @@ function SingleActivity({user}){
 
     return (
         <div className='single-activity-container'>
+
+
+            
             <h4>{user.username}</h4>
             <div className='activity-container'>
             <h2>Activity: {activity.title}</h2>

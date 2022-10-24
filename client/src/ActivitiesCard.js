@@ -1,7 +1,6 @@
 import React, {useState, useCallback} from 'react'
 import './App.css'
-import SingleActivity from './SingleActivity'
-import { Link, useHistory} from 'react-router-dom'
+import { useHistory} from 'react-router-dom'
 
 
 function ActivitiesCard({
