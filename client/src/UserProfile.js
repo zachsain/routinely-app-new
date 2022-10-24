@@ -5,6 +5,7 @@ import ActivityForm from './ActivityForm'
 
 function UserProfile({user, setUser}){
     const [username, setUsername] = useState("")
+    console.log(user.routines)
 
     function handleNewActivity(e){
         console.log(e) 

@@ -15,7 +15,13 @@ class RoutinesController < ApplicationController
         routine.destroy
         head :no_content
     end 
-    
+
+    # def new_routine 
+    #     user = User.find(session[:id])
+    #     user.routine.create!(routine_params)
+    #     render json: status: :created
+    # end 
+
     private 
 
     def routine_params
