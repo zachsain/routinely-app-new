@@ -21,7 +21,8 @@ function RoutineForm({user, setUser}){
               title,
               category,
               instructions,
-              duration,     
+              duration,
+              user_id: user.id     
             }),
           }).then((r) => {
             setIsLoading(false);
