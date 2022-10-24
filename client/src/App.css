@@ -39,6 +39,12 @@ div::-webkit-scrollbar {
  text-align: center;
 }
 
+#instructions{
+  width: 300px;
+  height: 150px;
+  
+}
+
 .app-container{
   background-color: efeeea;
 }

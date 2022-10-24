@@ -2,9 +2,11 @@ import React, {useState} from 'react'
 import './App.css'
 import UserActivities from "./UserActivities"
 import ActivityForm from './ActivityForm'
+import RoutineForm from './RoutineForm'
 
 function UserProfile({user, setUser}){
     const [username, setUsername] = useState("")
+    const [addRoutineClick, setAddRoutineClick] = useState(false)
     console.log(user.routines)
 
     function handleNewActivity(e){
@@ -14,7 +16,8 @@ function UserProfile({user, setUser}){
     }
 
     function handleNewRoutine(e){
-        console.log(e)
+        console.log(addRoutineClick)
+        setAddRoutineClick(!addRoutineClick)
     }
     
 
@@ -28,12 +31,15 @@ function UserProfile({user, setUser}){
             </div>
             
             <button id="add-activity-button" onClick={handleNewActivity}>Add New Activity</button>
-            <button id="add-new-routine" onCLick={handleNewRoutine}>Add New Routine</button>
+            <button id="add-new-routine" onClick={handleNewRoutine}>{addRoutineClick ? ("See Activities") : ("Add New Routine")}</button>
+            {addRoutineClick ? (<div className="routine-form"><RoutineForm/> </div> ) : (<div className="user-activity-container">
+                <UserActivities user={user} setUser={setUser} />
+            </div>)}
             
 
-            <div className="user-activity-container">
+            {/* <div className="user-activity-container">
                 <UserActivities user={user} setUser={setUser} />
-            </div>
+            </div> */}
         </div>
 
     )
