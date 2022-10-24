@@ -51,7 +51,7 @@ function App() {
           <UserProfile user={user} setUser={setUser} />
         </Route>
         <Route exact path="/activities/:id">
-          <SingleActivity/>
+          <SingleActivity user={user} />
         </Route>
       </Switch>
     </div>
