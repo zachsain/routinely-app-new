@@ -14,6 +14,7 @@ class UsersController < ApplicationController
     
     def show
       current_user = User.find(session[:user_id])
+      # current_user = User.find(params[:user_id])
       render json: current_user
     end 
 
@@ -21,10 +22,6 @@ class UsersController < ApplicationController
       users = User.all
       render json: users
     end 
-
-    # def new_routine 
-    #   current_user = User.find(session[:user_id])
-    # end 
 
   private
 

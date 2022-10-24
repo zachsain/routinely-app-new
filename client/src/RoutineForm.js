@@ -1,15 +1,37 @@
 import React, {useState} from 'react'
 import './App.css'
 
-function RoutineForm({user}){
+function RoutineForm({user, setUser}){
 
     const [title, setTitle] = useState("")
     const [category, setCategory] = useState("")
     const [instructions, setInstructions] = useState("")
     const [duration, setDuration] = useState("")
+    const [errors, setErrors] = useState([]);
+    const [isLoading, setIsLoading] = useState(false);
         
     function handleSubmit(e){
         console.log(e)
+        fetch("/routines", {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json",
+            },
+            body: JSON.stringify({
+              title,
+              category,
+              instructions,
+              duration
+            }),
+          }).then((r) => {
+            setIsLoading(false);
+            if (r.ok) {
+              r.json().then((user) => setUser(user));
+            } else {
+              r.json().then((err) => setErrors(err.errors));
+            }
+          });
+
     }
     
     return(
@@ -29,7 +51,7 @@ function RoutineForm({user}){
                   ></input>
             <br />
   
-            <label className="routine-form">Category: </label>
+            <label className="routine-form">Category:</label>
             <input
               className="routine-input"
               type="text"

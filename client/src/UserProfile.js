@@ -16,7 +16,7 @@ function UserProfile({user, setUser}){
     }
 
     function handleNewRoutine(e){
-        console.log(addRoutineClick)
+        console.log(user)
         setAddRoutineClick(!addRoutineClick)
     }
     
@@ -32,7 +32,7 @@ function UserProfile({user, setUser}){
             
             <button id="add-activity-button" onClick={handleNewActivity}>Add New Activity</button>
             <button id="add-new-routine" onClick={handleNewRoutine}>{addRoutineClick ? ("See Activities") : ("Add New Routine")}</button>
-            {addRoutineClick ? (<div className="routine-form"><RoutineForm/> </div> ) : (<div className="user-activity-container">
+            {addRoutineClick ? (<div className="routine-form"><RoutineForm user={user} setUser={setUser}/> </div> ) : (<div className="user-activity-container">
                 <UserActivities user={user} setUser={setUser} />
             </div>)}
             

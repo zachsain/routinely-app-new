@@ -1,8 +1,13 @@
 class RoutinesController < ApplicationController
     
-    def create 
-        routine = Routine.create(routine_params)
-        render json: routine, status: :created
+    # def create 
+    #     routine = Routine.create(routine_params)
+    #     render json: routine, status: :created
+    # end 
+
+    def index
+        routines = Routine.all
+        render json: routines
     end 
 
     def show 
@@ -16,11 +21,11 @@ class RoutinesController < ApplicationController
         head :no_content
     end 
 
-    # def create 
-    #     user = User.find(session[:id])
-    #     user.routine.create!(routine_params)
-    #     render json: status: :created
-    # end 
+    def create 
+        user = User.find(session[:id])
+        new_routine = user.routines.create!(routine_params)
+        render json: new_routine, status: :created
+    end 
 
     private 
 
