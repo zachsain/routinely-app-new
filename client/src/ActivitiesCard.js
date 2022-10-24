@@ -34,6 +34,10 @@ function ActivitiesCard({
 
     }
 
+    function handleDeleteActivity(e){
+        console.log(e.target.id)
+    }
+
     let routine = user.routines.find(r => r.id == routine_id)
 
 
@@ -42,13 +46,14 @@ function ActivitiesCard({
 
     return(
         
-        <div onClick={handleOnClick} className="activity-container">
-        <h3>Activity: {title}</h3>
+        <div className="activity-container">
+        <h3 onClick={handleOnClick} >Activity: {title}</h3>
         <p>Category: {category}</p>
         <p>Duration: {duration}</p>
         <p>Notes: {description}</p>
         <p>Routine: {routine.title} </p>
         <button id={id} onClick={handleAddLike}>likes: {updateLikes}</button>
+        <button handleClick={handleDeleteActivity} className='delete-activity-button'>x</button>
         </div>
         
     )

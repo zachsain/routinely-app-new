@@ -11,6 +11,10 @@ function UserProfile({user, setUser}){
         // need to add link that changes url 
         // takes user to add new activity add activity form 
     }
+
+    function handleNewRoutine(e){
+        console.log(e)
+    }
     
 
     return(
@@ -23,6 +27,7 @@ function UserProfile({user, setUser}){
             </div>
             
             <button id="add-activity-button" onClick={handleNewActivity}>Add New Activity</button>
+            <button id="add-new-routine" onCLick={handleNewRoutine}>Add New Routine</button>
             
 
             <div className="user-activity-container">
