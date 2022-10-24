@@ -3,8 +3,10 @@ class User < ApplicationRecord
 
      has_many :activities
      has_many :routines, through: :activities 
+     has_many :user_routines
      has_many :routine_comments
      has_many :activity_comments 
+     
  
      has_secure_password
  
