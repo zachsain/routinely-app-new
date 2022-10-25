@@ -7,12 +7,12 @@ import RoutineForm from './RoutineForm'
 function UserProfile({user, setUser}){
     const [username, setUsername] = useState("")
     const [addRoutineClick, setAddRoutineClick] = useState(false)
+    const [addActivityClick, setAddActivityClick] = useState(false)
     console.log(user.routines)
 
     function handleNewActivity(e){
         console.log(e) 
-        // need to add link that changes url 
-        // takes user to add new activity add activity form 
+        setAddActivityClick(!addActivityClick)
     }
 
     function handleNewRoutine(e){
@@ -32,10 +32,15 @@ function UserProfile({user, setUser}){
             
             <button id="add-activity-button" onClick={handleNewActivity}>Add New Activity</button>
             <button id="add-new-routine" onClick={handleNewRoutine}>{addRoutineClick ? ("See Activities") : ("Add New Routine")}</button>
-            {addRoutineClick ? (<div className="routine-form"><RoutineForm user={user} setUser={setUser}/> </div> ) : (<div className="user-activity-container">
+
+            {addActivityClick ?  (<div className="routine-form"><ActivityForm user={user} setUser={setUser}/> </div> )
+             : (null)}
+            
+            {addRoutineClick ? 
+            (<div className="routine-form"><RoutineForm user={user} setUser={setUser}/> </div> )
+             : (<div className="user-activity-container">
                 <UserActivities user={user} setUser={setUser} />
             </div>)}
-            
 
             {/* <div className="user-activity-container">
                 <UserActivities user={user} setUser={setUser} />
