@@ -2,8 +2,10 @@ import React, {useState} from "react";
 
 function DisplayUserRoutines({user, setUser}){
     return(
-        <div>Hi</div>
+        <div>
+            <h1>test</h1>
+        </div>
     )
 }
 
-export default
+export default DisplayUserRoutines

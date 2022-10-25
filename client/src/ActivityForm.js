@@ -1,5 +1,5 @@
 import React, {useState} from "react";
-import displayUserRoutines from './displayUserRoutines'
+import DisplayUserRoutines from './DisplayUserRoutines'
 
 
 function ActivityForm({user, setUser}){
@@ -10,7 +10,7 @@ function ActivityForm({user, setUser}){
     const [duration, setDuration] = useState("")
     const [errors, setErrors] = useState([]);
     const [isLoading, setIsLoading] = useState(false);
-    const [selectRoutineClick, setSelectRoutine] = useState(false)
+    const [selectRoutineClick, setSelectRoutineClick] = useState(false)
     const [selectUserRoutine, setSelectUserRoutine] = useState({})
     const [userRoutineValue, setUserRoutineValue] = useState("")
 
@@ -42,7 +42,7 @@ function ActivityForm({user, setUser}){
 
     function handleRoutineSelectClick(e){
         e.preventDefault()
-        setSelectRoutine(!selectRoutineClick)
+        setSelectRoutineClick(!selectRoutineClick)
     }
 
     function handleChange(e){
@@ -110,20 +110,17 @@ function ActivityForm({user, setUser}){
             ))}
           </select>
         </label>
-        
+        <button onClick={handleRoutineSelectClick}>Select Routine</button>
+         {selectRoutineClick ? (<DisplayUserRoutines/>):(null)}
         <br/>
         <button type="submit">Add Activity</button>
       </form>
-
-      <div>
-        <button onClick={handleRoutineSelectClick}>
-        {user.user_routines.map((routine) => (
-              <displayUserRoutines />
-            ))}
-        </button>
-      </div>
+        
+        {/* <DisplayUserRoutines/> */}
         
     </div>
+    <button onClick={handleRoutineSelectClick}>Select Routine</button>
+         {selectRoutineClick ? (<DisplayUserRoutines/>):(null)}
         </div>
     )
 }
