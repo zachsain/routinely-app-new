@@ -102,26 +102,25 @@ function ActivityForm({user, setUser}){
           onChange={(e) => setDescription(e.target.value)}
         ></input>
         <br />
-        <label className="activity-form">
+        {/* <label className="activity-form">
           Select Routine:
           <select onChange={handleChange} value={selectUserRoutine}>
             {user.user_routines.map((routine) => (
               <option value={routine}>{routine.title}</option>
             ))}
           </select>
-        </label>
+        </label> */}
         <button onClick={handleRoutineSelectClick}>Select Routine</button>
-         {selectRoutineClick ? (<DisplayUserRoutines/>):(null)}
+         {selectRoutineClick ? (<DisplayUserRoutines 
+         user={user} 
+         setUser={setUser}/>)
+         :(null)}
         <br/>
         <button type="submit">Add Activity</button>
       </form>
         
-        {/* <DisplayUserRoutines/> */}
-        
-    </div>
-    <button onClick={handleRoutineSelectClick}>Select Routine</button>
-         {selectRoutineClick ? (<DisplayUserRoutines/>):(null)}
         </div>
+    </div>
     )
 }
 

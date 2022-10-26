@@ -45,6 +45,14 @@ div::-webkit-scrollbar {
   
 }
 
+.user-routines-card-container{
+  border: 2px solid #1C6EA4;
+  padding-left: 10px;
+  padding-bottom: 10px;
+  font-family: 'Courier New', Courier, monospace;
+  background-color: white;
+}
+
 .app-container{
   background-color: efeeea;
 }
