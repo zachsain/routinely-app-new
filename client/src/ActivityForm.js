@@ -13,7 +13,7 @@ function ActivityForm({user, setUser}){
     const [selectRoutineClick, setSelectRoutineClick] = useState(false)
     const [selectUserRoutine, setSelectUserRoutine] = useState({})
     const [userRoutineValue, setUserRoutineValue] = useState("")
-
+    const [showUserRoutineSelection, setShowUserRoutineSelection] = useState(false)
 
     function handleSubmit(e){
         console.log(e)
@@ -44,6 +44,12 @@ function ActivityForm({user, setUser}){
         e.preventDefault()
         setSelectRoutineClick(!selectRoutineClick)
     }
+
+    // function handleRoutineSelection(e){
+    //     e.preventDefault()
+    //     console.log(e.target.value)
+    //     // setSelectRoutineClick(!selectRoutineClick)
+    // }
 
     function handleChange(e){
         e.preventDefault()
@@ -102,18 +108,13 @@ function ActivityForm({user, setUser}){
           onChange={(e) => setDescription(e.target.value)}
         ></input>
         <br />
-        {/* <label className="activity-form">
-          Select Routine:
-          <select onChange={handleChange} value={selectUserRoutine}>
-            {user.user_routines.map((routine) => (
-              <option value={routine}>{routine.title}</option>
-            ))}
-          </select>
-        </label> */}
         <button onClick={handleRoutineSelectClick}>Select Routine</button>
          {selectRoutineClick ? (<DisplayUserRoutines 
          user={user} 
-         setUser={setUser}/>)
+         setUser={setUser}
+         selectRoutineClick={selectRoutineClick}
+         setSelectRoutineClick={setSelectRoutineClick}
+         />)
          :(null)}
         <br/>
         <button type="submit">Add Activity</button>
