@@ -14,9 +14,18 @@ function ActivityForm({user, setUser}){
     const [selectUserRoutine, setSelectUserRoutine] = useState({})
     const [userRoutineValue, setUserRoutineValue] = useState("")
     const [showUserRoutineSelection, setShowUserRoutineSelection] = useState(false)
-
+    const [routineTitle, setRoutineTitle] = useState("")
+    const [routineCategory, setRoutineCategory] = useState("")
+    const [routineDuration, setRoutineDuration] = useState("")
+    const [routineInstructions, setRoutineInstructions] = useState("")
+    const [showInputForRoutine, setShowInputForRoutine] = useState(false)
+ 
     function handleSubmit(e){
-        console.log(e)
+        e.preventDefault()
+        console.log(routineTitle)
+        console.log(routineCategory)
+        console.log(routineDuration)
+        console.log(routineInstructions)
         // fetch("/user_routines", {
         //     method: "POST",
         //     headers: {
@@ -107,13 +116,31 @@ function ActivityForm({user, setUser}){
           value={description}
           onChange={(e) => setDescription(e.target.value)}
         ></input>
+        <br/>
+        {showInputForRoutine ? (  
+        <label className="activity-form">Routine: </label>
+        <input className="activity-input"
+          type="text"
+          id="routine-title"
+          autoComplete="off"
+          placeholder="Routine"
+          value={routineTitle}
+        //   onChange={(e) => setDescription(e.target.value)}
+        ></input>) : (null)}
+      
         <br />
+
         <button onClick={handleRoutineSelectClick}>Select Routine</button>
          {selectRoutineClick ? (<DisplayUserRoutines 
          user={user} 
          setUser={setUser}
          selectRoutineClick={selectRoutineClick}
          setSelectRoutineClick={setSelectRoutineClick}
+         setRoutineTitle={setRoutineTitle}
+         setRoutineCategory={setRoutineCategory}
+         setRoutineDuration={setRoutineDuration}
+         setRoutineInstructions={setRoutineInstructions}
+
          />)
          :(null)}
         <br/>

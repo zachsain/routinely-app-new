@@ -1,7 +1,17 @@
 import React, {useState} from "react";
 import UserRoutineCard from "./UserRoutineCard";  
 
-function DisplayUserRoutines({user, setUser, selectRoutineClick, setSelectRoutineClick}){
+function DisplayUserRoutines({
+    user, 
+    setUser, 
+    selectRoutineClick, 
+    setSelectRoutineClick,
+    setRoutineTitle,
+    setRoutineCategory,
+    setRoutineDuration,
+    setRoutineInstructions
+
+    }){
 
     let user_routines = user.user_routines.map((r) => {
         return <UserRoutineCard 
@@ -14,6 +24,11 @@ function DisplayUserRoutines({user, setUser, selectRoutineClick, setSelectRoutin
                     setUser={setUser}
                     selectRoutineClick={selectRoutineClick}
                     setSelectRoutineClick={setSelectRoutineClick}
+                    setRoutineTitle={setRoutineTitle}
+                    setRoutineCategory={setRoutineCategory}
+                    setRoutineDuration={setRoutineDuration}
+                    setRoutineInstructions={setRoutineInstructions}
+
                     
                     // handleRoutineSelection={handleRoutineSelection}
     
