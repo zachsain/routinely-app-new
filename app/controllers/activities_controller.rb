@@ -5,8 +5,8 @@ class ActivitiesController < ApplicationController
     end 
 
     def create 
-        activity = Activity.create(activity_params)
-        render json: activity
+        activity = Activity.create!(activity_params)
+        render json: activity, status: :created
     end 
 
     def show 

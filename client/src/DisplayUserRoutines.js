@@ -9,7 +9,9 @@ function DisplayUserRoutines({
     setRoutineTitle,
     setRoutineCategory,
     setRoutineDuration,
-    setRoutineInstructions
+    setRoutineInstructions,
+    showInputForRoutine,
+    setShowInputForRoutine
 
     }){
 
@@ -28,6 +30,8 @@ function DisplayUserRoutines({
                     setRoutineCategory={setRoutineCategory}
                     setRoutineDuration={setRoutineDuration}
                     setRoutineInstructions={setRoutineInstructions}
+                    showInputForRoutine={showInputForRoutine}
+                    setShowInputForRoutine={setShowInputForRoutine}
 
                     
                     // handleRoutineSelection={handleRoutineSelection}

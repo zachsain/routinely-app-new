@@ -118,6 +118,7 @@ function ActivityForm({user, setUser}){
         ></input>
         <br/>
         {showInputForRoutine ? (  
+        <>
         <label className="activity-form">Routine: </label>
         <input className="activity-input"
           type="text"
@@ -125,8 +126,7 @@ function ActivityForm({user, setUser}){
           autoComplete="off"
           placeholder="Routine"
           value={routineTitle}
-        //   onChange={(e) => setDescription(e.target.value)}
-        ></input>) : (null)}
+        ></input> </>) : (null)}
       
         <br />
 
@@ -140,6 +140,9 @@ function ActivityForm({user, setUser}){
          setRoutineCategory={setRoutineCategory}
          setRoutineDuration={setRoutineDuration}
          setRoutineInstructions={setRoutineInstructions}
+         showInputForRoutine={showInputForRoutine}
+         setShowInputForRoutine={setShowInputForRoutine}
+         
 
          />)
          :(null)}

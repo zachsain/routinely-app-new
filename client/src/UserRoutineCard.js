@@ -14,17 +14,20 @@ function UserRoutineCard({
     setRoutineTitle,
     setRoutineCategory,
     setRoutineDuration,
-    setRoutineInstructions
+    setRoutineInstructions,
+    showInputForRoutine,
+    setShowInputForRoutine
     }){
 
     function handleRoutineSelection(e){
          e.preventDefault()
          console.log(category)
-        //  setSelectRoutineClick(!selectRoutineClick)
+         setSelectRoutineClick(!selectRoutineClick)
          setRoutineTitle(title)
          setRoutineCategory(category)
          setRoutineDuration(duration)
          setRoutineInstructions(instructions)
+         setShowInputForRoutine(!showInputForRoutine)
     }   
         
         
