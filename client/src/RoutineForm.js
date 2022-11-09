@@ -12,7 +12,7 @@ function RoutineForm({user, setUser}){
         
     function handleSubmit(e){
         console.log(e)
-        fetch("/user_routines", {
+        fetch("/routines", {
             method: "POST",
             headers: {
               "Content-Type": "application/json",
@@ -22,7 +22,7 @@ function RoutineForm({user, setUser}){
               category,
               instructions,
               duration,
-              user_id: user.id     
+              // user_id: user.id     
             }),
           }).then((r) => {
             setIsLoading(false);

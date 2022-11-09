@@ -29,7 +29,17 @@ class ActivitiesController < ApplicationController
     private 
 
     def activity_params 
-        params.permit(:id, :date, :title, :category, :duration, :user_id, :routine_id, :likes, :description)
+        params.permit(:id, 
+        :date, 
+        :title,
+        :category,
+        :duration, 
+        :user_id, 
+        :routine_id, 
+        :likes, 
+        :description,
+        # routine_attributes: [:title, :category, :duration, :instructions]
+        )
     end 
     
 end

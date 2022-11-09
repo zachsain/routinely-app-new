@@ -24,6 +24,7 @@ class RoutinesController < ApplicationController
     def create 
         user = User.find(session[:id])
         new_routine = user.routines.create!(routine_params)
+        # new_routine = Routine.create!(routine_params)
         render json: new_routine, status: :created
     end 
 

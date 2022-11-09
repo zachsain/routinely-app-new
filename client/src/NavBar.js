@@ -24,7 +24,7 @@ function NavBar ({user, setUser}) {
       <Link  to="/activities" style={linkStyles}>Activities</Link>
     </div>
     <div className="nav-btn">
-      <Link to="/discover" style={linkStyles}>Discover</Link>
+      <Link to="/routines" style={linkStyles}>Routines</Link>
     </div>
     <div className="nav-btn">
       <Link to="/logout" style={linkStyles}>Logout</Link>
