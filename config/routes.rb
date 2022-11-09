@@ -2,7 +2,7 @@ Rails.application.routes.draw do
   resources :user_routines
   resources :activity_comments
   resources :routine_comments
-  resources :routines, only: [:index, :create]
+  resources :routines
   resources :activities
   resources :users
   
@@ -10,7 +10,7 @@ Rails.application.routes.draw do
   get "/me", to: "users#show"
   post "/login", to: "sessions#create"
   delete "/logout", to: "sessions#destroy"
-  get '/routines/:id', to: 'patients#show'
+  # get '/routines/:id', to: 'patients#show'
 
   get '*path',
       to: 'fallback#index',

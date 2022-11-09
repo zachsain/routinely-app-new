@@ -9,7 +9,7 @@ function SingleRoutine(){
     console.log(id)
 
     useEffect(() => {
-        fetch(`routines/${id}`)
+        fetch(`${id}`)
         .then(r => r.json())
         .then(routine => (setRoutine(routine), console.log(routine)))
      
