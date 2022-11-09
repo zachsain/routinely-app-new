@@ -7,7 +7,6 @@ import { useHistory} from 'react-router-dom'
 function Routines({user, setUser}){
     const [routines, setRoutines] = useState([])
     const [addRoutineClick, setAddRoutineClick] = useState(false)
-    const [showUserRoutinesClick, setShowUserRoutinesClick] = useState(false) 
 
     useEffect(() => {
         fetch('/routines')
@@ -20,9 +19,9 @@ function Routines({user, setUser}){
         setAddRoutineClick(!addRoutineClick)
     }
 
-    function handleUserRoutineClick(e){
-        setShowUserRoutinesClick(!showUserRoutinesClick)
-    }
+  
+    const history = useHistory();
+    const handleUserRoutineClick = useCallback(() => history.push('/'));
 
 
     let displayRoutines = routines.map(r => {

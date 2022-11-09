@@ -8,7 +8,7 @@ import Routines from './Routines';
 import Logout from './Logout';
 import UserProfile from './UserProfile';
 import SingleActivity from './SingleActivity';
-
+import SingleRoutine from './SingleRoutine'
 
 function App() {
 
@@ -42,7 +42,7 @@ function App() {
           <AllActivities user={user} setUser={setUser}/>
         </Route>
         <Route exact path='/routines'>
-          <Routines user={user} setUser={setUser} />
+          <Routines />
         </Route>
         <Route exact path='/logout'>    
           <Logout user={user} setUser={setUser} />
@@ -52,6 +52,9 @@ function App() {
         </Route>
         <Route exact path="/activities/:id">
           <SingleActivity user={user} />
+        </Route>
+        <Route exact path="/routines/:id">
+          <SingleRoutine user={user} />
         </Route>
       </Switch>
     </div>
