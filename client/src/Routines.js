@@ -41,7 +41,9 @@ function Routines({user, setUser}){
         <div>
            <button id="add-new-routine" onClick={handleNewRoutine}>{addRoutineClick ? ("Show Routines") : ("Add New Routine")}</button>
            <button id="my-routines-button" onClick={handleUserRoutineClick}>My Routines</button>
-            <h1>Routines:</h1>
+            {addRoutineClick ?
+            (<h3>Add Routine:</h3>) : (<h3>Routines:</h3>)
+            }
             {addRoutineClick ? 
             (<div className="routine-form"><RoutineForm setRoutines={setRoutines}/> </div> )
              : (<div className="user-activity-container">
