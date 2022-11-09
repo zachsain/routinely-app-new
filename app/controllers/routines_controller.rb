@@ -1,9 +1,5 @@
 class RoutinesController < ApplicationController
     
-    # def create 
-    #     routine = Routine.create(routine_params)
-    #     render json: routine, status: :created
-    # end 
 
     def index
         routines = Routine.all
@@ -29,7 +25,7 @@ class RoutinesController < ApplicationController
     private 
 
     def routine_params
-        params.permit(:title, :category, :instructions, :duration)
+        params.permit(:title, :category, :instructions, :duration, :id)
     end 
 
 end

@@ -6,18 +6,16 @@ function DisplayRoutines({
     title, 
     category, 
     instructions,
-    duration
+    duration,
+    id
 }){
 
-    function handleRoutineClick(e){
-        console.log(e)
-    }
 
     const history = useHistory();
-    const handleUserRoutineClick = useCallback(() => history.push('/routines/:id'));
+    const handleUserRoutineClick = () => history.push(`routines/${id}`);
 
     return (
-        <div className="routine-container" onClick={handleRoutineClick}>
+        <div className="routine-container" onClick={handleUserRoutineClick}>
         <h3>Routine: {title}</h3>
         <p>Category: {category}</p>
         <p>Duration: {duration}</p>

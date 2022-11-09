@@ -54,7 +54,7 @@ function App() {
           <SingleActivity user={user} />
         </Route>
         <Route exact path="/routines/:id">
-          <SingleRoutine user={user} />
+          <SingleRoutine />
         </Route>
       </Switch>
     </div>
