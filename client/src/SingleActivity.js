@@ -7,7 +7,6 @@ function SingleActivity({user}){
     
 
     const params = useParams();
-    console.log(params.id)
     const activity = user.activities.find(a => a.id == params.id)
     // let routine = user.routines.find(r => r.id == activity.routine_id)
  

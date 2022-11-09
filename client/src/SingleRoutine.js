@@ -17,7 +17,7 @@ function SingleRoutine(){
      return <ActivitiesCard 
               key={a.id} 
               title={a.title}
-              categoru={a.categpru}
+              category={a.categpry}
               duration={a.duration}
               description={a.description}
               id={a.id}/>
