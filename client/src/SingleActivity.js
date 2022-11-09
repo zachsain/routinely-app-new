@@ -9,8 +9,8 @@ function SingleActivity({user}){
     const params = useParams();
     console.log(params.id)
     const activity = user.activities.find(a => a.id == params.id)
-    let routine = user.routines.find(r => r.id == activity.routine_id)
-    console.log(routine.id)
+    // let routine = user.routines.find(r => r.id == activity.routine_id)
+ 
 
     return (
         <div className='single-activity-container'>
@@ -23,9 +23,7 @@ function SingleActivity({user}){
                   category={activity.category}
                   duration={activity.duration}
                   description={activity.description}
-                  likes={activity.likes}
-                  routine_id={routine.id}
-                  user={user}
+                //   user={user}
                   />            
         </div>
         
