@@ -1,7 +1,7 @@
 import React, {useState} from 'react'
 import './App.css'
 
-function RoutineForm({user, setUser}){
+function RoutineForm({setRoutines}){
 
     const [title, setTitle] = useState("")
     const [category, setCategory] = useState("")
@@ -22,12 +22,12 @@ function RoutineForm({user, setUser}){
               category,
               instructions,
               duration,
-              // user_id: user.id     
+    
             }),
           }).then((r) => {
             setIsLoading(false);
             if (r.ok) {
-              r.json().then((user) => setUser(user));
+              r.json().then((user) => setRoutines(user));
             } else {
               r.json().then((err) => setErrors(err.errors));
             }

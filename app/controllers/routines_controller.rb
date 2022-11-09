@@ -7,7 +7,7 @@ class RoutinesController < ApplicationController
 
     def index
         routines = Routine.all
-        render json: routines
+        render json: routines.all.order(created_at: :desc)
     end 
 
     def show 
@@ -22,16 +22,14 @@ class RoutinesController < ApplicationController
     end 
 
     def create 
-        user = User.find(session[:id])
-        new_routine = user.routines.create!(routine_params)
-        # new_routine = Routine.create!(routine_params)
+        new_routine = Routine.create!(routine_params)
         render json: new_routine, status: :created
     end 
 
     private 
 
     def routine_params
-        params.permit(:id, :date, :title, :category, :instructions, :duration, :video_url, :likes)
+        params.permit(:title, :category, :instructions, :duration)
     end 
 
 end

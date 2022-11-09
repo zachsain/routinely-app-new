@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import './App.css'
 
 function DisplayRoutines({
     title, 
@@ -9,10 +10,12 @@ function DisplayRoutines({
 
 
     return (
-        <div>
-            <h1> hello </h1>
+        <div className="routine-container">
+        <h3>Routine: {title}</h3>
+        <p>Category: {category}</p>
+        <p>Duration: {duration}</p>
+        <p>Instructions: {instructions}</p>
         </div>
- 
     )
 }
 
