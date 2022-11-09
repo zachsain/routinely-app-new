@@ -1,7 +1,8 @@
-import React, {useState, useEffect} from 'react'
+import React, {useState, useEffect, useCallback} from 'react'
 import RoutineForm from './RoutineForm'
 import './App.css'
 import DisplayRoutines from './DisplayRoutines'
+import { useHistory} from 'react-router-dom'
 
 function Routines({user, setUser}){
     const [routines, setRoutines] = useState([])
@@ -11,13 +12,16 @@ function Routines({user, setUser}){
     useEffect(() => {
         fetch('/routines')
         .then(r => r.json())
-        .then(allRoutines => (setRoutines(allRoutines), console.log(allRoutines)))
+        .then(allRoutines => setRoutines(allRoutines))
      
     }, [])
 
-    function handleNewRoutine(e){
-        console.log(user)
+    function handleNewRoutine(){
         setAddRoutineClick(!addRoutineClick)
+    }
+
+    function handleUserRoutineClick(e){
+        setShowUserRoutinesClick(!showUserRoutinesClick)
     }
 
 
@@ -33,17 +37,17 @@ function Routines({user, setUser}){
              />
     })
 
+
     return(
         <div>
            <button id="add-new-routine" onClick={handleNewRoutine}>{addRoutineClick ? ("Show Routines") : ("Add New Routine")}</button>
+           <button id="my-routines-button" onClick={handleUserRoutineClick}>My Routines</button>
             <h1>Routines:</h1>
             {addRoutineClick ? 
             (<div className="routine-form"><RoutineForm setRoutines={setRoutines}/> </div> )
              : (<div className="user-activity-container">
                {displayRoutines} 
             </div>)}
-
-            {/* {displayRoutines} */}
         </div>
     
 

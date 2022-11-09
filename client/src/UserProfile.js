@@ -3,6 +3,7 @@ import './App.css'
 import UserActivities from "./UserActivities"
 import ActivityForm from './ActivityForm'
 import RoutineForm from './RoutineForm'
+import DisplayRoutines from './DisplayRoutines'
 
 function UserProfile({user, setUser}){
     const [username, setUsername] = useState("")
@@ -19,6 +20,20 @@ function UserProfile({user, setUser}){
         console.log(user)
         setAddRoutineClick(!addRoutineClick)
     }
+
+    console.log(user.routines)
+
+    let userRoutines = user.routines.map(r => {
+        return <DisplayRoutines
+        key={r.id}
+        title={r.title}
+        category={r.category}
+        instructions={r.instructions}
+        duration={r.duration}
+        activities={r.activities}
+        id={r.id}
+         />
+    })
     
 
     return(
@@ -29,18 +44,19 @@ function UserProfile({user, setUser}){
             <p>bio:{user.bio}</p>
             <p>contact: {user.email}</p>
             </div>
-            
-            <button id="add-activity-button" onClick={handleNewActivity}>Add New Activity</button>
-            <button id="add-new-routine" onClick={handleNewRoutine}>{addRoutineClick ? ("See Activities") : ("Add New Routine")}</button>
 
-            {addActivityClick ?  (<div className="routine-form"><ActivityForm user={user} setUser={setUser}/> </div> )
-             : (null)}
+            <div className="routine-container">
+                <h3>My Routines:</h3>
+                {userRoutines}
+            </div>
             
-            {addRoutineClick ? 
-            (<div className="routine-form"><RoutineForm user={user} setUser={setUser}/> </div> )
-             : (<div className="user-activity-container">
-                <UserActivities user={user} setUser={setUser} />
-            </div>)}
+            {/* <button id="add-activity-button" onClick={handleNewActivity}>Add New Activity</button>
+            <button id="add-new-routine" onClick={handleNewRoutine}>{addRoutineClick ? ("See Activities") : ("Add New Routine")}</button> */}
+
+            {/* {addActivityClick ?  (<div className="routine-form"><ActivityForm user={user} setUser={setUser}/> </div> )
+             : (null)} */}
+            
+            
 
             {/* <div className="user-activity-container">
                 <UserActivities user={user} setUser={setUser} />

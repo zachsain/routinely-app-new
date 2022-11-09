@@ -5,8 +5,8 @@ function DisplayRoutines({
     title, 
     category, 
     instructions,
-    duration,
-    id}){
+    duration
+}){
 
 
     return (
