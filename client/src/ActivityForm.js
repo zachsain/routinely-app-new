@@ -1,4 +1,4 @@
-import React, {useState} from "react";
+import React, {useState, useCallback} from "react";
 import DisplayUserRoutines from './DisplayUserRoutines'
 import { useHistory } from "react-router-dom";
 
@@ -22,7 +22,7 @@ function ActivityForm({user, setUser}){
     const [showInputForRoutine, setShowInputForRoutine] = useState(false)
     const [routineId, setRoutineId] = useState()
     const [userWithNewActivity, setUserWithNewActivity] = useState({})
-    const [history, setHistory] = useHistory()
+    const history = useHistory()
    
     const [newState, setNewState] = useState(user)
 
@@ -37,8 +37,9 @@ function ActivityForm({user, setUser}){
 
 
     function handleSubmit(e){
-        setNewState(user)
-        console.log(newState)
+      setShowUserRoutineSelection(!showUserRoutineSelection)
+        // setNewState(user)
+        // console.log(newState)
         // console.log(newActivity)
         // let testForState = [...newState, newActivity]
         // console.log([...newState, testForState])
@@ -64,7 +65,7 @@ function ActivityForm({user, setUser}){
           }).then((r) => {
             setIsLoading(false);
             if (r.ok) {
-              history.push("/activities");
+              history.push('/activities');
             } else {
               r.json().then((err) => setErrors(err.errors));
             }
