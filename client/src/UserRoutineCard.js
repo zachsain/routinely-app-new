@@ -12,29 +12,24 @@ function UserRoutineCard({
     selectRoutineClick,
     setSelectRoutineClick,
     setRoutineTitle,
-    setRoutineCategory,
-    setRoutineDuration,
-    setRoutineInstructions,
     showInputForRoutine,
-    setShowInputForRoutine
+    setShowInputForRoutine,
+    id,
+    setRoutineId,
+
     }){
 
     function handleRoutineSelection(e){
          e.preventDefault()
-         console.log(category)
          setSelectRoutineClick(!selectRoutineClick)
          setRoutineTitle(title)
-         setRoutineCategory(category)
-         setRoutineDuration(duration)
-         setRoutineInstructions(instructions)
          setShowInputForRoutine(!showInputForRoutine)
+         setRoutineId(id)
     }   
         
-        
-        
-    const [routineValues, setRoutineValues] = useState({
-        title, category, instructions, duration
-    })
+    // const [routineValues, setRoutineValues] = useState({
+    //     title, category, instructions, duration
+    // })
     return(
         <div className="user-routines-card-container">
             <h4>Title: {title}</h4>

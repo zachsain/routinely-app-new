@@ -1,4 +1,4 @@
-import React, {useState} from "react";
+import React, {useState, useEffect} from "react";
 import UserRoutineCard from "./UserRoutineCard";  
 
 function DisplayUserRoutines({
@@ -7,17 +7,27 @@ function DisplayUserRoutines({
     selectRoutineClick, 
     setSelectRoutineClick,
     setRoutineTitle,
-    setRoutineCategory,
-    setRoutineDuration,
-    setRoutineInstructions,
     showInputForRoutine,
-    setShowInputForRoutine
+    setShowInputForRoutine,
+    routineId,
+    setRoutineId,
 
     }){
 
-    let user_routines = user.user_routines.map((r) => {
+    const [routines, setRoutines] = useState([])
+    
+    useEffect(() => {
+        fetch('/routines')
+        .then(r => r.json())
+        .then(allRoutines => setRoutines(allRoutines))
+         
+     }, [])
+
+    
+    let user_routines = routines.map((r) => {
         return <UserRoutineCard 
                     key={r.id}
+                    id={r.id}
                     title={r.title}
                     category={r.category}
                     duration={r.duration}
@@ -27,11 +37,12 @@ function DisplayUserRoutines({
                     selectRoutineClick={selectRoutineClick}
                     setSelectRoutineClick={setSelectRoutineClick}
                     setRoutineTitle={setRoutineTitle}
-                    setRoutineCategory={setRoutineCategory}
-                    setRoutineDuration={setRoutineDuration}
-                    setRoutineInstructions={setRoutineInstructions}
+                    // setRoutineCategory={setRoutineCategory}
+                    // setRoutineDuration={setRoutineDuration}
+                    // setRoutineInstructions={setRoutineInstructions}
                     showInputForRoutine={showInputForRoutine}
                     setShowInputForRoutine={setShowInputForRoutine}
+                    setRoutineId={setRoutineId}
 
                     
                     // handleRoutineSelection={handleRoutineSelection}
@@ -39,7 +50,6 @@ function DisplayUserRoutines({
                  />
     })
 
-    console.log(user.user_routines)
 
     return(
         <div className="user-routine-container">

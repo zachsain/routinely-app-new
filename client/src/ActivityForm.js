@@ -1,5 +1,6 @@
 import React, {useState} from "react";
 import DisplayUserRoutines from './DisplayUserRoutines'
+import { useHistory } from "react-router-dom";
 
 
 function ActivityForm({user, setUser}){
@@ -12,42 +13,70 @@ function ActivityForm({user, setUser}){
     const [isLoading, setIsLoading] = useState(false);
     const [selectRoutineClick, setSelectRoutineClick] = useState(false)
     const [selectUserRoutine, setSelectUserRoutine] = useState({})
-    const [userRoutineValue, setUserRoutineValue] = useState("")
+    // const [userRoutineValue, setUserRoutineValue] = useState("")
     const [showUserRoutineSelection, setShowUserRoutineSelection] = useState(false)
     const [routineTitle, setRoutineTitle] = useState("")
-    const [routineCategory, setRoutineCategory] = useState("")
-    const [routineDuration, setRoutineDuration] = useState("")
-    const [routineInstructions, setRoutineInstructions] = useState("")
+    // const [routineCategory, setRoutineCategory] = useState("")
+    // const [routineDuration, setRoutineDuration] = useState("")
+    // const [routineInstructions, setRoutineInstructions] = useState("")
     const [showInputForRoutine, setShowInputForRoutine] = useState(false)
- 
-    function handleSubmit(e){
-        e.preventDefault()
-        console.log(routineTitle)
-        console.log(routineCategory)
-        console.log(routineDuration)
-        console.log(routineInstructions)
-        // fetch("/user_routines", {
-        //     method: "POST",
-        //     headers: {
-        //       "Content-Type": "application/json",
-        //     },
-        //     body: JSON.stringify({
-        //       title,
-        //       category,
-        //       instructions,
-        //       duration,
-        //       user_id: user.id     
-        //     }),
-        //   }).then((r) => {
-        //     setIsLoading(false);
-        //     if (r.ok) {
-        //       r.json().then((user) => setUser(user));
-        //     } else {
-        //       r.json().then((err) => setErrors(err.errors));
-        //     }
-        //   });
+    const [routineId, setRoutineId] = useState()
+    const [userWithNewActivity, setUserWithNewActivity] = useState({})
+    const [history, setHistory] = useHistory()
+   
+    const [newState, setNewState] = useState(user)
 
+    let newActivity = {
+      "title" : title,
+      "category" : category,
+      "duration" : duration,
+      "description" : description,
+      "routine_id" : routineId,
+      "user_id" : user.id
     }
+
+
+    function handleSubmit(e){
+        setNewState(user)
+        console.log(newState)
+        // console.log(newActivity)
+        // let testForState = [...newState, newActivity]
+        // console.log([...newState, testForState])
+        // let newActivityAdd;
+        // console.log(testForState)
+        
+        e.preventDefault()
+        console.log(routineId)
+        console.log(user.id)
+        fetch("/activities", {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json",
+            },
+            body: JSON.stringify({
+              title,
+              category,
+              description,
+              duration,
+              routine_id : routineId,
+              user_id : user.id
+            }),
+          }).then((r) => {
+            setIsLoading(false);
+            if (r.ok) {
+              history.push("/activities");
+            } else {
+              r.json().then((err) => setErrors(err.errors));
+            }
+          });
+          // setUser([...user.activities, activity])
+    }
+
+    // if (r.ok) {
+    //   r.json().then((activity) => console.log([...user.activities, activity]));
+    // } else {
+    //   r.json().then((err) => setErrors(err.errors));
+    // }
 
     function handleRoutineSelectClick(e){
         e.preventDefault()
@@ -60,11 +89,11 @@ function ActivityForm({user, setUser}){
     //     // setSelectRoutineClick(!selectRoutineClick)
     // }
 
-    function handleChange(e){
-        e.preventDefault()
-        setSelectUserRoutine(e.target.value)
-        console.log(selectUserRoutine)
-    }   
+    // function handleChange(e){
+    //     e.preventDefault()
+    //     setSelectUserRoutine(e.target.value)
+    //     console.log(selectUserRoutine)
+    // }   
     return(
         <div>
             <div id="new-activity-form">
@@ -126,6 +155,7 @@ function ActivityForm({user, setUser}){
           autoComplete="off"
           placeholder="Routine"
           value={routineTitle}
+          onChange={(e) => setRoutineTitle(e.target.value)}
         ></input> </>) : (null)}
       
         <br />
@@ -137,11 +167,12 @@ function ActivityForm({user, setUser}){
          selectRoutineClick={selectRoutineClick}
          setSelectRoutineClick={setSelectRoutineClick}
          setRoutineTitle={setRoutineTitle}
-         setRoutineCategory={setRoutineCategory}
-         setRoutineDuration={setRoutineDuration}
-         setRoutineInstructions={setRoutineInstructions}
+        //  setRoutineCategory={setRoutineCategory}
+        //  setRoutineDuration={setRoutineDuration}
+        //  setRoutineInstructions={setRoutineInstructions}
          showInputForRoutine={showInputForRoutine}
          setShowInputForRoutine={setShowInputForRoutine}
+         setRoutineId={setRoutineId}
          
 
          />)
@@ -156,3 +187,16 @@ function ActivityForm({user, setUser}){
 }
 
 export default ActivityForm
+
+
+// <DisplayUserRoutines 
+//          user={user} 
+//          setUser={setUser}
+//          selectRoutineClick={selectRoutineClick}
+//          setSelectRoutineClick={setSelectRoutineClick}
+//          setRoutineTitle={setRoutineTitle}
+//          setRoutineCategory={setRoutineCategory}
+//          setRoutineDuration={setRoutineDuration}
+//          setRoutineInstructions={setRoutineInstructions}
+//          showInputForRoutine={showInputForRoutine}
+//          setShowInputForRoutine={setShowInputForRoutine}

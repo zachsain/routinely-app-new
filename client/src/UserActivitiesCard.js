@@ -24,9 +24,9 @@ function UserActivitiesCard({
     const history = useHistory();
     const handleOnClick = useCallback(() => history.push(`/activities/${id}`));
 
-    let routine = user.routines.filter(r => r.id === routine_id)
+    const routine = user.routines.filter(r => r.id === routine_id)
 
-    console.log(routine)
+    // console.log(routine)
 
     return(
         

@@ -1,7 +1,8 @@
 class ActivitiesController < ApplicationController
 
     def index
-        render json: Activity.all
+        activities = Activity.all
+        render json: activities.all.order(created_at: :desc)
     end 
 
     def create 
