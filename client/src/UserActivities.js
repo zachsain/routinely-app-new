@@ -8,6 +8,7 @@ function UserActivities({user, setUser}) {
         return <ActivitiesCard
                   id={a.id}  
                   user={user}
+                  setUser={setUser}
                   key={a.id} 
                   title={a.title}
                   category={a.category}

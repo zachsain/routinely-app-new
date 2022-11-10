@@ -4,6 +4,8 @@ import { useHistory} from 'react-router-dom'
 
 
 function ActivitiesCard({
+    user,
+    setUser,
     id,
     title,
     category, 
@@ -17,7 +19,7 @@ function ActivitiesCard({
 
 
     function handleDeleteActivity(e){
-        console.log(e.target.id)
+            
     }
 
 
@@ -33,7 +35,7 @@ function ActivitiesCard({
         <p>Duration: {duration}</p>
         <p>Notes: {description}</p>
         {/* <p>Routine: {routine.title} </p> */}
-        {/* <button handleClick={handleDeleteActivity} className='delete-activity-button'>x</button> */}
+        <button handleClick={handleDeleteActivity} className='delete-activity-button'>x</button>
         </div>
         
     )

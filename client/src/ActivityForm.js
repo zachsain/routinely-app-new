@@ -22,9 +22,8 @@ function ActivityForm({user, setUser, addRoutineClick, setAddRoutineClick}){
     const [showInputForRoutine, setShowInputForRoutine] = useState(false)
     const [routineId, setRoutineId] = useState()
     const [userWithNewActivity, setUserWithNewActivity] = useState({})
-    const history = useHistory()
-   
-    const [newState, setNewState] = useState(user)
+    // const history = useHistory()
+    const [userStateCopy, setUserStateCopy] = useState(user)
 
     let newActivity = {
       "title" : title,
@@ -35,25 +34,14 @@ function ActivityForm({user, setUser, addRoutineClick, setAddRoutineClick}){
       "user_id" : user.id
     }
 
-    let copyOfUser = user
-
-
     function handleSubmit(e){
-        setAddRoutineClick(!addRoutineClick)
-        setNewState(user)
-        console.log(newState)
-        let updatedActivity = [...newState.activities, newActivity]
-        copyOfUser.activities = updatedActivity
-        console.log(copyOfUser)
-        // console.log([...newState.activities, newActivity])
-        // let testForState = [...newState, newActivity]
-        // console.log([...newState, testForState])
-        // let newActivityAdd;
-        // console.log(testForState)
-        
         e.preventDefault()
-        console.log(routineId)
-        console.log(user.id)
+        setAddRoutineClick(!addRoutineClick)
+        setUserStateCopy(user)
+        let updatedActivity = [...userStateCopy.activities, newActivity]
+        userStateCopy.activities = updatedActivity
+        console.log(userStateCopy)
+        
         fetch("/activities", {
             method: "POST",
             headers: {
@@ -70,20 +58,16 @@ function ActivityForm({user, setUser, addRoutineClick, setAddRoutineClick}){
           }).then((r) => {
             setIsLoading(false);
             if (r.ok) {
-              r.json().then((activity) => setUser(copyOfUser))
-              // history.push('/activities');
+              r.json().then(activityNew => {
+                setUser(userStateCopy)})
+              // history.pushState('/activities')
             } else {
               r.json().then((err) => setErrors(err.errors));
             }
           });
-          // setUser([...user.activities, activity])
     }
 
-    // if (r.ok) {
-    //   r.json().then((activity) => console.log([...user.activities, activity]));
-    // } else {
-    //   r.json().then((err) => setErrors(err.errors));
-    // }
+  
 
     function handleRoutineSelectClick(e){
         e.preventDefault()
