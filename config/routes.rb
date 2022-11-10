@@ -1,5 +1,4 @@
 Rails.application.routes.draw do
-  resources :user_routines
   resources :activity_comments
   resources :routine_comments
   resources :routines
