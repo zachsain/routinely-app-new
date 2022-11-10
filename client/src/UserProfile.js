@@ -10,19 +10,6 @@ function UserProfile({user, setUser}){
     const [addRoutineClick, setAddRoutineClick] = useState(false)
     const [addActivityClick, setAddActivityClick] = useState(false)
 
-
-    function handleNewActivity(e){
-
-        setAddActivityClick(!addActivityClick)
-    }
-
-    function handleNewRoutine(e){
-
-        setAddRoutineClick(!addRoutineClick)
-    }
-
-
-
     let userRoutines = user.routines.map(r => {
         return <DisplayRoutines
         key={r.id}
@@ -35,7 +22,6 @@ function UserProfile({user, setUser}){
          />
     })
     
-
     return(
         <div>
             <div className="profile-container" >

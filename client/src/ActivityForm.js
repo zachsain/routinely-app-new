@@ -13,12 +13,8 @@ function ActivityForm({user, setUser, addRoutineClick, setAddRoutineClick}){
     const [isLoading, setIsLoading] = useState(false);
     const [selectRoutineClick, setSelectRoutineClick] = useState(false)
     const [selectUserRoutine, setSelectUserRoutine] = useState({})
-    // const [userRoutineValue, setUserRoutineValue] = useState("")
     const [showUserRoutineSelection, setShowUserRoutineSelection] = useState(false)
     const [routineTitle, setRoutineTitle] = useState("")
-    // const [routineCategory, setRoutineCategory] = useState("")
-    // const [routineDuration, setRoutineDuration] = useState("")
-    // const [routineInstructions, setRoutineInstructions] = useState("")
     const [showInputForRoutine, setShowInputForRoutine] = useState(false)
     const [routineId, setRoutineId] = useState()
     const [userWithNewActivity, setUserWithNewActivity] = useState({})
@@ -74,18 +70,7 @@ function ActivityForm({user, setUser, addRoutineClick, setAddRoutineClick}){
         e.preventDefault()
         setSelectRoutineClick(!selectRoutineClick)
     }
-
-    // function handleRoutineSelection(e){
-    //     e.preventDefault()
-    //     console.log(e.target.value)
-    //     // setSelectRoutineClick(!selectRoutineClick)
-    // }
-
-    // function handleChange(e){
-    //     e.preventDefault()
-    //     setSelectUserRoutine(e.target.value)
-    //     console.log(selectUserRoutine)
-    // }   
+ 
     return(
         <div>
             <div id="new-activity-form">
@@ -159,9 +144,6 @@ function ActivityForm({user, setUser, addRoutineClick, setAddRoutineClick}){
          selectRoutineClick={selectRoutineClick}
          setSelectRoutineClick={setSelectRoutineClick}
          setRoutineTitle={setRoutineTitle}
-        //  setRoutineCategory={setRoutineCategory}
-        //  setRoutineDuration={setRoutineDuration}
-        //  setRoutineInstructions={setRoutineInstructions}
          showInputForRoutine={showInputForRoutine}
          setShowInputForRoutine={setShowInputForRoutine}
          setRoutineId={setRoutineId}

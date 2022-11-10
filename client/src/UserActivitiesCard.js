@@ -9,19 +9,17 @@ function UserActivitiesCard({
     description,
     user,
     setUser,
-    routine_id
+    routineId
 }){
     const [isClicked, setIsClicked] = useState(false)
     const [copyOfState, setCopyOfState] = useState(user)
 
     // const [formData, setFormData] = useState()
 
-
     function handleDeleteActivity(e){
+        console.log(e)
         setCopyOfState(user)
-        let filteredActivities = user.activities.filter((activity) => {
-          return  activity.id !== id
-        })
+        let filteredActivities = user.activities.filter((activity) => activity.id !== id)
         copyOfState.activities = filteredActivities       
         console.log(copyOfState)
         fetch(`/activities/${id}`, {
@@ -37,21 +35,22 @@ function UserActivitiesCard({
 
 
 
-    const history = useHistory();
-    const handleOnClick = useCallback(() => history.push(`/activities/${id}`));
+    // const history = useHistory();
+    // const handleOnClick = useCallback(() => history.push(`/activities/${id}`));
 
-    const routine = user.routines.filter(r => r.id === routine_id)
+    // const routine = user.routines.filter(r => r.id === routineId)
 
-    // console.log(routine)
+    // console.log(user.routines)
+    // console.log(routine.title)
 
     return(
         
         <div className="activity-container">
-        <h3 onClick={handleOnClick}>Activity: {title}</h3>
+        <h3>Activity: {title}</h3>
         <p>Category: {category}</p>
         <p>Duration: {duration}</p>
         <p>Notes: {description}</p>
-        <p>Routine Used: {routine.title} </p> 
+        {/* <p>Routine Used: {routine.title} </p>  */}
         <button onClick={handleDeleteActivity} className='delete-activity-button'>x</button>
         </div>
         

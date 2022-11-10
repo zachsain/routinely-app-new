@@ -9,14 +9,15 @@ function AllActivities({user, setUser}){
 
     let activities = user.activities.map(a => {
       return <UserActivitiesCard 
+        key={a.id} 
         id={a.id}
         user={user}
         setUser={setUser}
-        key={a.id} 
         title={a.title}
         category={a.category}
         duration={a.duration}
         description={a.description}
+        routineId={a.routine_id}
         />
     })
 

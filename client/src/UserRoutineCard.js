@@ -7,8 +7,6 @@ function UserRoutineCard({
     instructions,
     duration,
     handleRoutineSelection,
-    user, 
-    setUser,
     selectRoutineClick,
     setSelectRoutineClick,
     setRoutineTitle,
