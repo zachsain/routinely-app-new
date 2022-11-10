@@ -33,7 +33,7 @@ function SignUpForm({setUser}){
         if (r.ok) {
           r.json().then((user) => setUser(user));
         } else {
-          r.json().then((err) => setErrors(err.errors));
+          r.json().then((err) => (setErrors(err.errors), console.log(err.errors)));
         }
       });
     }

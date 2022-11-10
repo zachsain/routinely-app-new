@@ -10,14 +10,13 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_10_24_212038) do
+ActiveRecord::Schema[7.0].define(version: 2022_10_19_190011) do
   create_table "activities", force: :cascade do |t|
     t.date "date"
     t.string "title"
     t.string "category"
     t.string "duration"
     t.text "description"
-    t.integer "likes"
     t.integer "user_id"
     t.integer "routine_id"
     t.datetime "created_at", null: false
@@ -47,20 +46,6 @@ ActiveRecord::Schema[7.0].define(version: 2022_10_24_212038) do
     t.text "instructions"
     t.string "duration"
     t.string "video_url"
-    t.integer "likes"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  create_table "user_routines", force: :cascade do |t|
-    t.date "date"
-    t.string "title"
-    t.string "category"
-    t.text "instructions"
-    t.string "duration"
-    t.string "video_url"
-    t.integer "likes"
-    t.integer "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

@@ -7,7 +7,6 @@ class CreateRoutines < ActiveRecord::Migration[7.0]
       t.text :instructions 
       t.string :duration
       t.string :video_url
-      t.integer :likes
       t.timestamps
 
     end

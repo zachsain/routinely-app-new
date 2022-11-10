@@ -6,7 +6,6 @@ class CreateActivities < ActiveRecord::Migration[7.0]
       t.string :category 
       t.string :duration
       t.text :description
-      t.integer :likes
       t.integer :user_id
       t.integer :routine_id
 
