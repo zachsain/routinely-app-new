@@ -3,7 +3,7 @@ import DisplayUserRoutines from './DisplayUserRoutines'
 import { useHistory } from "react-router-dom";
 
 
-function ActivityForm({user, setUser}){
+function ActivityForm({user, setUser, addRoutineClick, setAddRoutineClick}){
     
     const [title, setTitle] = useState("")
     const [category, setCategory] = useState("")
@@ -35,12 +35,17 @@ function ActivityForm({user, setUser}){
       "user_id" : user.id
     }
 
+    let copyOfUser = user
+
 
     function handleSubmit(e){
-      setShowUserRoutineSelection(!showUserRoutineSelection)
-        // setNewState(user)
-        // console.log(newState)
-        // console.log(newActivity)
+        setAddRoutineClick(!addRoutineClick)
+        setNewState(user)
+        console.log(newState)
+        let updatedActivity = [...newState.activities, newActivity]
+        copyOfUser.activities = updatedActivity
+        console.log(copyOfUser)
+        // console.log([...newState.activities, newActivity])
         // let testForState = [...newState, newActivity]
         // console.log([...newState, testForState])
         // let newActivityAdd;
@@ -65,7 +70,8 @@ function ActivityForm({user, setUser}){
           }).then((r) => {
             setIsLoading(false);
             if (r.ok) {
-              history.push('/activities');
+              r.json().then((activity) => setUser(copyOfUser))
+              // history.push('/activities');
             } else {
               r.json().then((err) => setErrors(err.errors));
             }

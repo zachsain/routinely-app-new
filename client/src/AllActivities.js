@@ -29,7 +29,11 @@ function AllActivities({user, setUser}){
             {addRoutineClick ? (<h3>Activity Form</h3>) : (<h3>My Activites:</h3>)}
             <button onClick={handleClick}>Add Activity</button>
             {addRoutineClick ? (
-            <div><ActivityForm user={user} setUser={setUser}/> </div>) : (<div> {activities}</div>)}
+            <div><ActivityForm 
+            addRoutineClick={addRoutineClick} 
+            setAddRoutineClick={setAddRoutineClick}
+            user={user} setUser={setUser}/> </div>) 
+            : (<div> {activities}</div>)}
         </div>
     )
 }
