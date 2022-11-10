@@ -10,6 +10,7 @@ function UserProfile({user, setUser}){
     const [addRoutineClick, setAddRoutineClick] = useState(false)
     const [addActivityClick, setAddActivityClick] = useState(false)
 
+    console.log(user.routines)
     let userRoutines = user.routines.map(r => {
         return <DisplayRoutines
         key={r.id}
