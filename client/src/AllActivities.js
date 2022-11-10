@@ -9,7 +9,9 @@ function AllActivities({user, setUser}){
 
     let activities = user.activities.map(a => {
       return <UserActivitiesCard 
+        id={a.id}
         user={user}
+        setUser={setUser}
         key={a.id} 
         title={a.title}
         category={a.categpry}

@@ -15,7 +15,7 @@ class ActivitiesController < ApplicationController
         render json: activity 
     end
 
-    def destory 
+    def destroy 
         activity = Activity.find(params[:id])
         activity.destroy  
         head :no_content
@@ -30,7 +30,8 @@ class ActivitiesController < ApplicationController
     private 
 
     def activity_params 
-        params.permit(:id, 
+        params.permit(
+        :id, 
         :date, 
         :title,
         :category,
@@ -39,7 +40,6 @@ class ActivitiesController < ApplicationController
         :routine_id, 
         :likes, 
         :description,
-        # routine_attributes: [:title, :category, :duration, :instructions]
         )
     end 
     

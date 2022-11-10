@@ -15,11 +15,9 @@ function ActivitiesCard({
 
     const [isClicked, setIsClicked] = useState(false)
 
-    // const [formData, setFormData] = useState()
-
 
     function handleDeleteActivity(e){
-            
+            console.log(id)
     }
 
 

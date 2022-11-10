@@ -8,15 +8,31 @@ function UserActivitiesCard({
     duration, 
     description,
     user,
+    setUser,
     routine_id
 }){
     const [isClicked, setIsClicked] = useState(false)
+    const [copyOfState, setCopyOfState] = useState(user)
 
     // const [formData, setFormData] = useState()
 
 
     function handleDeleteActivity(e){
-        console.log(e.target.id)
+        setCopyOfState(user)
+        let filteredActivities = user.activities.filter((activity) => {
+          return  activity.id !== id
+        })
+        copyOfState.activities = filteredActivities       
+        console.log(copyOfState)
+        fetch(`/activities/${id}`, {
+            method: "DELETE",
+          })
+            .then((r) => {
+              if (r.ok) {
+                setUser(copyOfState);
+              }
+            })
+            .catch((err) => console.log(err))
     }
 
 
