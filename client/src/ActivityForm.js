@@ -58,8 +58,9 @@ function ActivityForm({user, setUser, addRoutineClick, setAddRoutineClick}){
           }).then((r) => {
             setIsLoading(false);
             if (r.ok) {
-              r.json().then(activityNew => {
-                setUser(userStateCopy)})
+              r.json().then(
+                setUser(userStateCopy)
+                )
               // history.pushState('/activities')
             } else {
               r.json().then((err) => setErrors(err.errors));

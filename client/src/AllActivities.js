@@ -14,7 +14,7 @@ function AllActivities({user, setUser}){
         setUser={setUser}
         key={a.id} 
         title={a.title}
-        category={a.categpry}
+        category={a.category}
         duration={a.duration}
         description={a.description}
         />
