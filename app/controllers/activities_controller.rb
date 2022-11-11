@@ -38,7 +38,6 @@ class ActivitiesController < ApplicationController
         :duration, 
         :user_id, 
         :routine_id, 
-        :likes, 
         :description,
         )
     end 
