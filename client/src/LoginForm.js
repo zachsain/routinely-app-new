@@ -8,9 +8,8 @@ function LoginForm({setUser}){
     const [isLoading, setIsLoading] = useState(false);
 
     function handleLogin(e) {
-       
-         e.preventDefault();
-         console.log(username);
+      
+        e.preventDefault();
         setIsLoading(true);
         fetch("/login", {
           method: "POST",

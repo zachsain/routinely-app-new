@@ -15,13 +15,6 @@ function ActivitiesCard({
 
     const [isClicked, setIsClicked] = useState(false)
 
-
-    function handleDeleteActivity(e){
-            console.log(id)
-    }
-
-
-
     // const history = useHistory();
     // const handleOnClick = useCallback(() => history.push(`/activities/${id}`));
 
@@ -33,7 +26,7 @@ function ActivitiesCard({
         <p>Duration: {duration}</p>
         <p>Notes: {description}</p>
         {/* <p>Routine: {routine.title} </p> */}
-        <button handleClick={handleDeleteActivity} className='delete-activity-button'>x</button>
+        {/* <button handleClick={handleDeleteActivity} className='delete-activity-button'>x</button> */}
         </div>
         
     )

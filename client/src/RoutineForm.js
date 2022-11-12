@@ -11,7 +11,8 @@ function RoutineForm({setRoutines}){
     const [isLoading, setIsLoading] = useState(false);
         
     function handleSubmit(e){
-        console.log(e)
+        e.preventDefault()
+        
         fetch("/routines", {
             method: "POST",
             headers: {
