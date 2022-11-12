@@ -38,7 +38,7 @@ function UserActivitiesCard({
     // const history = useHistory();
     // const handleOnClick = useCallback(() => history.push(`/activities/${id}`));
 
-    // const routine = user.routines.filter(r => r.id === routineId)
+    const routine = user.routines.filter(r => r.id === routineId)
 
     // console.log(user.routines)
     // console.log(routine.title)
@@ -50,7 +50,7 @@ function UserActivitiesCard({
         <p>Category: {category}</p>
         <p>Duration: {duration}</p>
         <p>Notes: {description}</p>
-        {/* <p>Routine Used: {routine.title} </p>  */}
+        <p>Routine Used: {routine.title} </p> 
         <button onClick={handleDeleteActivity} className='delete-activity-button'>x</button>
         </div>
         
