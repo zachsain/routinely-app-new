@@ -1,8 +1,8 @@
 import React, {useState} from 'react'
 import './App.css'
-import Routines from './Routines'
+import {useHistory} from "react-router-dom";
 
-function RoutineForm({setRoutines, routines}){
+function RoutineForm({setRoutines, routines, addRoutineClick, setAddRoutineClick}){
 
     const [title, setTitle] = useState("")
     const [category, setCategory] = useState("")
@@ -10,12 +10,12 @@ function RoutineForm({setRoutines, routines}){
     const [duration, setDuration] = useState("")
     const [errors, setErrors] = useState([]);
     const [isLoading, setIsLoading] = useState(false);
-
-    // need to update state to include routines 
+    const history = useHistory();
         
     function handleSubmit(e){
-        e.preventDefault()
-
+        e.preventDefault()  
+        // setAddRoutineClick(!addRoutineClick)
+        
         fetch("/routines", {
             method: "POST",
             headers: {
@@ -31,13 +31,18 @@ function RoutineForm({setRoutines, routines}){
           }).then((r) => {
             setIsLoading(false);
             if (r.ok) {
-              r.json().then((newRoutine) => setRoutines([...routines , newRoutine]));
+              r.json().then((newRoutine) => {
+                setRoutines([...routines, newRoutine])
+                history.push(`routines/${newRoutine.id}`);
+              } );
             } else {
               r.json().then((err) => setErrors(err.errors));
             }
           });
 
     }
+
+    
     
     return(
         <>

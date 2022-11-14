@@ -9,6 +9,7 @@ import Logout from './Logout';
 import UserProfile from './UserProfile';
 import SingleActivity from './SingleActivity';
 import SingleRoutine from './SingleRoutine'
+import Loading from './Loading'
 
 function App() {
 
@@ -21,7 +22,7 @@ function App() {
         r.json().then((user) => setUser(user));
       }
     });
-  }, []);
+  } , []);
 
   console.log(user)
   

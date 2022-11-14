@@ -46,7 +46,7 @@ function Routines({user, setUser}){
             (<h3>Add Routine:</h3>) : (<h3>Routines:</h3>)
             }
             {addRoutineClick ? 
-            (<div className="routine-form"><RoutineForm routines={routines} setRoutines={setRoutines}/> </div> )
+            (<div className="routine-form"><RoutineForm setAddRoutineClick={setAddRoutineClick} addRoutineClick={addRoutineClick} routines={routines} setRoutines={setRoutines}/> </div> )
              : (<div className="user-activity-container">
                {displayRoutines} 
             </div>)}

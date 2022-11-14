@@ -8,7 +8,6 @@ function LoginForm({setUser}){
     const [isLoading, setIsLoading] = useState(false);
 
     function handleLogin(e) {
-      
         e.preventDefault();
         setIsLoading(true);
         fetch("/login", {
@@ -53,6 +52,7 @@ return (
           <button type='submit'>Login
             {/* {isLoading ? "Loading..." : "Let's go!"} */}
           </button>
+          {isLoading ? (<h1>Loading...</h1>) : (null)}
         </form>
  
 )

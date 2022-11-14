@@ -1,4 +1,4 @@
-import React, {useState, useCallback} from "react";
+import React, {useState, useEffect} from "react";
 import { useHistory} from 'react-router-dom';
 
 function UserActivitiesCard({
@@ -11,15 +11,19 @@ function UserActivitiesCard({
     setUser,
     routineId
 }){
+    const history = useHistory();
     const [isClicked, setIsClicked] = useState(false)
-    const [copyOfState, setCopyOfState] = useState(user)
-    console.log(user)
-    // const [formData, setFormData] = useState()
+    const [copyOfState, setCopyOfState] = useState(null)
+
+    useEffect(() => {
+        setCopyOfState(user)
+    }, [user])
 
     function handleDeleteActivity(e){
         console.log(e)
-        setCopyOfState(user)
+        // setCopyOfState(user)
         let filteredActivities = user.activities.filter((activity) => activity.id !== id)
+        console.log(filteredActivities)
         copyOfState.activities = filteredActivities       
         console.log(copyOfState)
         fetch(`/activities/${id}`, {
@@ -27,6 +31,8 @@ function UserActivitiesCard({
           })
             .then((r) => {
               if (r.ok) {
+                // history.push("/activities")
+                // console.log(copyOfState)
                 setUser(copyOfState);
               }
             })
@@ -38,7 +44,7 @@ function UserActivitiesCard({
     // const history = useHistory();
     // const handleOnClick = useCallback(() => history.push(`/activities/${id}`));
 
-    const routine = user.routines.filter(r => r.id === routineId)
+    // const routine = user.routines.filter(r => r.id === routineId)
 
     // console.log(routine)
     // routine.forEach(element => {
@@ -52,7 +58,7 @@ function UserActivitiesCard({
         <p>Category: {category}</p>
         <p>Duration: {duration}</p>
         <p>Notes: {description}</p>
-        <p>Routine Used: {routine[0].title} </p> 
+        {/* <p>Routine Used: {routine[0].title} </p>  */}
         <button onClick={handleDeleteActivity} className='delete-activity-button'>x</button>
         </div>
         

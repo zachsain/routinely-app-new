@@ -18,10 +18,12 @@ function ActivityForm({user, setUser, addRoutineClick, setAddRoutineClick}){
     const [showInputForRoutine, setShowInputForRoutine] = useState(false)
     const [routineId, setRoutineId] = useState()
     const [userWithNewActivity, setUserWithNewActivity] = useState({})
+    const [activityId, setActiviyId] = useState()
     const history = useHistory()
     const [userStateCopy, setUserStateCopy] = useState(user)
 
     let newActivity = {
+      "id" : activityId,
       "title" : title,
       "category" : category,
       "duration" : duration,
@@ -54,9 +56,12 @@ function ActivityForm({user, setUser, addRoutineClick, setAddRoutineClick}){
           }).then((r) => {
             setIsLoading(false);
             if (r.ok) {
-              r.json().then(
-              setUser(userStateCopy)
-                )
+              r.json().then((a) =>{
+                // setActiviyId(a.id)
+                // let updatedActivities = [...user.activities, a]
+                // userStateCopy.activities = updatedActivities
+               return setUser(userStateCopy)
+              })
              
             } else {
               r.json().then((err) => setErrors(err.errors));
