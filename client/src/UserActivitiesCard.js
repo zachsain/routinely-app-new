@@ -11,9 +11,9 @@ function UserActivitiesCard({
     setUser,
     routineId
 }){
-    const history = useHistory();
     const [isClicked, setIsClicked] = useState(false)
     const [copyOfState, setCopyOfState] = useState(null)
+    const [updateActivity, setaUpdateActivity] = useState()
 
     useEffect(() => {
         setCopyOfState(user)
@@ -31,8 +31,6 @@ function UserActivitiesCard({
           })
             .then((r) => {
               if (r.ok) {
-                // history.push("/activities")
-                // console.log(copyOfState)
                 setUser(copyOfState);
               }
             })
@@ -41,10 +39,13 @@ function UserActivitiesCard({
 
 
 
-    // const history = useHistory();
-    // const handleOnClick = useCallback(() => history.push(`/activities/${id}`));
+    const history = useHistory();
+    // useCallback(() => history.push(`/activities/${id}`));
 
-    // const routine = user.routines.filter(r => r.id === routineId)
+    function handleEditClick(){
+        history.push(`/activities/${id}`)
+    }
+    const routine = user.routines.filter(r => r.id === routineId)
 
     // console.log(routine)
     // routine.forEach(element => {
@@ -58,8 +59,9 @@ function UserActivitiesCard({
         <p>Category: {category}</p>
         <p>Duration: {duration}</p>
         <p>Notes: {description}</p>
-        {/* <p>Routine Used: {routine[0].title} </p>  */}
+        <p>Routine Used: {routine[0].title} </p> 
         <button onClick={handleDeleteActivity} className='delete-activity-button'>x</button>
+        <button onClick={handleEditClick}>Edit</button>
         </div>
         
     )

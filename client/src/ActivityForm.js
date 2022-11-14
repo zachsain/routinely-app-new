@@ -18,12 +18,12 @@ function ActivityForm({user, setUser, addRoutineClick, setAddRoutineClick}){
     const [showInputForRoutine, setShowInputForRoutine] = useState(false)
     const [routineId, setRoutineId] = useState()
     const [userWithNewActivity, setUserWithNewActivity] = useState({})
-    const [activityId, setActiviyId] = useState()
+    // const [activityId, setActiviyId] = useState()
     const history = useHistory()
     const [userStateCopy, setUserStateCopy] = useState(user)
 
     let newActivity = {
-      "id" : activityId,
+      // "id" : activityId,
       "title" : title,
       "category" : category,
       "duration" : duration,
