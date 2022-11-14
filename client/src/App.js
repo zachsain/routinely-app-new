@@ -23,6 +23,7 @@ function App() {
     });
   }, []);
 
+  console.log(user)
   
   if (!user) return (
     <div style={{

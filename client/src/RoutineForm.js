@@ -1,7 +1,8 @@
 import React, {useState} from 'react'
 import './App.css'
+import Routines from './Routines'
 
-function RoutineForm({setRoutines}){
+function RoutineForm({setRoutines, routines}){
 
     const [title, setTitle] = useState("")
     const [category, setCategory] = useState("")
@@ -9,10 +10,12 @@ function RoutineForm({setRoutines}){
     const [duration, setDuration] = useState("")
     const [errors, setErrors] = useState([]);
     const [isLoading, setIsLoading] = useState(false);
+
+    // need to update state to include routines 
         
     function handleSubmit(e){
         e.preventDefault()
-        
+
         fetch("/routines", {
             method: "POST",
             headers: {
@@ -28,7 +31,7 @@ function RoutineForm({setRoutines}){
           }).then((r) => {
             setIsLoading(false);
             if (r.ok) {
-              r.json().then((user) => setRoutines(user));
+              r.json().then((newRoutine) => setRoutines([...routines , newRoutine]));
             } else {
               r.json().then((err) => setErrors(err.errors));
             }

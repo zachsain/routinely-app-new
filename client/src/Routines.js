@@ -13,7 +13,7 @@ function Routines({user, setUser}){
         .then(r => r.json())
         .then(allRoutines => setRoutines(allRoutines))
      
-    }, [])
+    },[])
 
     function handleNewRoutine(){
         setAddRoutineClick(!addRoutineClick)
@@ -23,6 +23,7 @@ function Routines({user, setUser}){
     const history = useHistory();
     const handleUserRoutineClick = useCallback(() => history.push('/'));
 
+    
 
     let displayRoutines = routines.map(r => {
        return <DisplayRoutines
@@ -34,7 +35,7 @@ function Routines({user, setUser}){
             activities={r.activities}
             id={r.id}
              />
-    })
+    }) 
 
 
     return(
@@ -45,7 +46,7 @@ function Routines({user, setUser}){
             (<h3>Add Routine:</h3>) : (<h3>Routines:</h3>)
             }
             {addRoutineClick ? 
-            (<div className="routine-form"><RoutineForm setRoutines={setRoutines}/> </div> )
+            (<div className="routine-form"><RoutineForm routines={routines} setRoutines={setRoutines}/> </div> )
              : (<div className="user-activity-container">
                {displayRoutines} 
             </div>)}

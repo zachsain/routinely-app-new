@@ -13,7 +13,7 @@ function UserActivitiesCard({
 }){
     const [isClicked, setIsClicked] = useState(false)
     const [copyOfState, setCopyOfState] = useState(user)
-
+    console.log(user)
     // const [formData, setFormData] = useState()
 
     function handleDeleteActivity(e){
@@ -40,8 +40,10 @@ function UserActivitiesCard({
 
     const routine = user.routines.filter(r => r.id === routineId)
 
-    // console.log(user.routines)
-    // console.log(routine.title)
+    // console.log(routine)
+    // routine.forEach(element => {
+    //     console.log(element.title)
+    // });
 
     return(
         
@@ -50,7 +52,7 @@ function UserActivitiesCard({
         <p>Category: {category}</p>
         <p>Duration: {duration}</p>
         <p>Notes: {description}</p>
-        <p>Routine Used: {routine.title} </p> 
+        <p>Routine Used: {routine[0].title} </p> 
         <button onClick={handleDeleteActivity} className='delete-activity-button'>x</button>
         </div>
         
