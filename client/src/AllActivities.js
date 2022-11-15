@@ -6,6 +6,7 @@ import ActivityForm from './ActivityForm'
 function AllActivities({user, setUser}){
 
     const [addRoutineClick, setAddRoutineClick] = useState(false)
+    const [addActivityClick, setAddActivityClick] = useState(false)
 
     let activities = user.activities.map(a => {
       return <UserActivitiesCard 
@@ -23,6 +24,7 @@ function AllActivities({user, setUser}){
 
     function handleClick(e){
         setAddRoutineClick(!addRoutineClick)
+        setAddActivityClick(!addActivityClick)
     }
     
     // console.log(user.activities)
@@ -30,7 +32,7 @@ function AllActivities({user, setUser}){
     return(
         <div className='activity-container'>
             {addRoutineClick ? (<h3>Activity Form</h3>) : (<h3>My Activites:</h3>)}
-            <button onClick={handleClick}>Add Activity</button>
+            <button onClick={handleClick}>{addActivityClick ? "See Activities" : "Create New Activity"}</button>
             {addRoutineClick ? (
             <div><ActivityForm 
             addRoutineClick={addRoutineClick} 

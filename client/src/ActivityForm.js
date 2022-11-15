@@ -9,8 +9,8 @@ function ActivityForm({user, setUser, addRoutineClick, setAddRoutineClick}){
     const [category, setCategory] = useState("")
     const [description, setDescription] = useState("")
     const [duration, setDuration] = useState("")
-    const [errors, setErrors] = useState([]);
-    const [isLoading, setIsLoading] = useState(false);
+    const [errors, setErrors] = useState([])
+    const [isLoading, setIsLoading] = useState(false)
     const [selectRoutineClick, setSelectRoutineClick] = useState(false)
     const [selectUserRoutine, setSelectUserRoutine] = useState({})
     const [showUserRoutineSelection, setShowUserRoutineSelection] = useState(false)

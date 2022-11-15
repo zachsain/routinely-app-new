@@ -1,5 +1,6 @@
 import React, {useState, useEffect} from "react";
 import { useHistory} from 'react-router-dom';
+import SingleActivityEdit from "./SingleActivityEdit";
 
 function UserActivitiesCard({
     id,
@@ -14,6 +15,7 @@ function UserActivitiesCard({
     const [isClicked, setIsClicked] = useState(false)
     const [copyOfState, setCopyOfState] = useState(null)
     const [updateActivity, setaUpdateActivity] = useState()
+    const [editButtonClick, setEditButtonClick] = useState(false)
 
     useEffect(() => {
         setCopyOfState(user)
@@ -43,7 +45,8 @@ function UserActivitiesCard({
     // useCallback(() => history.push(`/activities/${id}`));
 
     function handleEditClick(){
-        history.push(`/activities/${id}`)
+        // history.push(`/activities/${id}`)
+        setEditButtonClick(!editButtonClick)
     }
     const routine = user.routines.filter(r => r.id === routineId)
 
@@ -62,6 +65,17 @@ function UserActivitiesCard({
         <p>Routine Used: {routine[0].title} </p> 
         <button onClick={handleDeleteActivity} className='delete-activity-button'>x</button>
         <button onClick={handleEditClick}>Edit</button>
+        {editButtonClick ? (
+        <SingleActivityEdit 
+        id={id}
+        title={title}
+        category={category} 
+        duration={duration}
+        description={description}
+        user={user}
+        setUser={setUser}
+        routineId={routineId}
+        />) : (null)}
         </div>
         
     )
