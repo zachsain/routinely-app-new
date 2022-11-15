@@ -19,7 +19,6 @@ function SingleActivityEdit({
     const [updatedCategory, setUpdatedCategory] = useState("")
     const [updatedDescription, setUpdatedDescription] = useState("")
     const [updatedDuration, setUpdatedDuration] = useState("")
-    const [updatedRoutineTitle, setUpdatedRoutineTitle] = useState("")
     const [routineTitle, setRoutineTitle] = useState("")
     const [selectRoutineClick, setSelectRoutineClick] = useState(false)
     const [showInputForRoutine, setShowInputForRoutine] = useState(false)
@@ -43,7 +42,7 @@ function SingleActivityEdit({
 
     function handleSubmit(e){
         e.preventDefault()
-        // setAddRoutineClick(!addRoutineClick)
+        console.log(newActivity)
         setUserStateCopy(user)
         let updatedActivity = [...userStateCopy.activities, newActivity]
         userStateCopy.activities = updatedActivity
@@ -84,10 +83,6 @@ function SingleActivityEdit({
     // setDuration(singleActivity.duration)
 
     // console.log(singleActivity.title)
-
-    function handleSubmit(){
-
-    }
 
     function handleRoutineSelectClick(e){
         e.preventDefault()
