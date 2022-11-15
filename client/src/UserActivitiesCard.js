@@ -48,7 +48,7 @@ function UserActivitiesCard({
         // history.push(`/activities/${id}`)
         setEditButtonClick(!editButtonClick)
     }
-    const routine = user.routines.filter(r => r.id === routineId)
+    // const routine = user.routines.filter(r => r.id === routineId)
 
     // console.log(routine)
     // routine.forEach(element => {
@@ -62,7 +62,7 @@ function UserActivitiesCard({
         <p>Category: {category}</p>
         <p>Duration: {duration}</p>
         <p>Notes: {description}</p>
-        <p>Routine Used: {routine[0].title} </p> 
+        {/* <p>Routine Used: {routine[0].title} </p>  */}
         <button onClick={handleDeleteActivity} className='delete-activity-button'>x</button>
         <button onClick={handleEditClick}>Edit</button>
         {editButtonClick ? (
@@ -75,6 +75,8 @@ function UserActivitiesCard({
         user={user}
         setUser={setUser}
         routineId={routineId}
+        editButtonClick={editButtonClick}
+        setEditButtonClick={setEditButtonClick}
         />) : (null)}
         </div>
         

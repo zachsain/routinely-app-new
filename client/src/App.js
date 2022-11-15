@@ -10,7 +10,7 @@ import UserProfile from './UserProfile';
 import SingleActivity from './SingleActivity';
 import SingleRoutine from './SingleRoutine'
 import Loading from './Loading'
-import SingleActivityEdit from './SingleActivityEdit';
+// import SingleActivityEdit from './SingleActivityEdit';
 
 function App() {
 
@@ -54,7 +54,7 @@ function App() {
           <UserProfile user={user} setUser={setUser} />
         </Route>
         <Route exact path="/activities/:id">
-          <SingleActivityEdit user={user} setUser={setUser}/>
+          <SingleActivity user={user} />
         </Route>
         <Route exact path="/routines/:id">
           <SingleRoutine />

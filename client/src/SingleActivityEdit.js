@@ -12,9 +12,10 @@ function SingleActivityEdit({
   description,
   user,
   setUser,
+  editButtonClick,
+  setEditButtonClick
   // routineId
 }){
-    console.log(id)
     const [updatedTitle, setUpdatedTitle] = useState("")
     const [updatedCategory, setUpdatedCategory] = useState("")
     const [updatedDescription, setUpdatedDescription] = useState("")
@@ -42,39 +43,63 @@ function SingleActivityEdit({
 
     function handleSubmit(e){
         e.preventDefault()
+        setEditButtonClick(!editButtonClick)
         console.log(newActivity)
-        setUserStateCopy(user)
-        let updatedActivity = [...userStateCopy.activities, newActivity]
-        userStateCopy.activities = updatedActivity
-        // console.log(userStateCopy)
+
+        // let updatedActivity = user.activities.find((a) => a.id === id)
+        // updatedActivity.title = updatedTitle
+        // updatedActivity.category = updatedCategory
+        // updatedActivity.duration = updatedDuration
+        // updatedActivity.description = updatedDescription
+
+
+       let updatedActivities = user.activities.map((a) => {
+         if (a.id === id){
+         return {...a, 
+          "title": updatedTitle,
+          "category" : updatedCategory,
+          "duration" : updatedDuration,
+          "description" :updatedDescription
+         }}
+         return a
+        })
+
+        let updatedState = userStateCopy.activities = updatedActivities
         
-        fetch(`/activities/${id}`, {
-            method: "POST",
-            headers: {
-              "Content-Type": "application/json",
-            },
-            body: JSON.stringify({
-              title,
-              category,
-              description,
-              duration,
-              routine_id : routineId,
-              user_id : user.id
-            }),
-          }).then((r) => {
-            setIsLoading(false);
-            if (r.ok) {
-              r.json().then((a) =>{
-                // setActiviyId(a.id)
-                // let updatedActivities = [...user.activities, a]
-                // userStateCopy.activities = updatedActivities
-               return setUser(userStateCopy)
-              })
+        console.log(updatedState)
+        console.log(updatedActivities)
+        // console.log(userStateCopy.activities)
+        // console.log(activityValue)
+        
+        // fetch(`/activities/${id}`, {
+        //     method: "PATCH",
+        //     headers: {
+        //       "Content-Type": "application/json",
+        //     },
+        //     body: JSON.stringify({
+        //       "title" : updatedTitle,
+        //       "category" : updatedCategory,
+        //       "duration" : updatedDuration,
+        //       "description" : updatedDescription,
+        //       "routine_id" : routineId,
+        //       "user_id" : user.id
+        //     }),
+        //   }).then((r) => {
+        //     setIsLoading(false);
+        //     if (r.ok) {
+        //       r.json().then((a) =>{
+        //         // setActiviyId(a.id)
+        //         let updatedActivities = [...user.activities, a]
+        //         user.activities = updatedActivities
+        //         console.log(user)
+        //         // setUserStateCopy(userStateCopy)
+        //        return setUser(user)
+        //       })
              
-            } else {
-              r.json().then((err) => setErrors(err.errors));
-            }
-          });
+        //     } else {
+        //       r.json().then((err) => setErrors(err.errors));
+        //     }
+        //   });
     }
     
     
