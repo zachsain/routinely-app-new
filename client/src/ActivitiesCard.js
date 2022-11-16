@@ -1,4 +1,5 @@
 import React, {useState, useCallback} from 'react'
+import DisplayRoutines from './DisplayRoutines'
 import './App.css'
 import { useHistory} from 'react-router-dom'
 
@@ -11,6 +12,7 @@ function ActivitiesCard({
     category, 
     duration, 
     description,
+    routine
 }){
 
     const [isClicked, setIsClicked] = useState(false)
@@ -25,6 +27,14 @@ function ActivitiesCard({
         <p>Category: {category}</p>
         <p>Duration: {duration}</p>
         <p>Notes: {description}</p>
+        <h3>Routine Used:</h3>
+        {/* <DisplayRoutines
+        title={routine.title}
+        category={routine.category} 
+        instructions={routine.instructions}
+        duration={routine.duration}
+        id={routine.id}
+        /> */}
         {/* <p>Routine: {routine.title} </p> */}
         {/* <button handleClick={handleDeleteActivity} className='delete-activity-button'>x</button> */}
         </div>

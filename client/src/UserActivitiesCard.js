@@ -10,8 +10,7 @@ function UserActivitiesCard({
     description,
     user,
     setUser,
-    routineId,
-    allRoutines
+    routineId
 }){
 
 
@@ -20,6 +19,8 @@ function UserActivitiesCard({
     const [copyOfState, setCopyOfState] = useState(user)
     const [updateActivity, setaUpdateActivity] = useState()
     const [editButtonClick, setEditButtonClick] = useState(false)
+    const history = useHistory();
+    // useCallback(() => history.push(`/activities/${id}`));
 
     // useEffect(() => {
     //     setCopyOfState(user)
@@ -42,30 +43,20 @@ function UserActivitiesCard({
             .catch((err) => console.log(err))
     }
 
-
-
-    const history = useHistory();
-    // useCallback(() => history.push(`/activities/${id}`));
+    function handleActivityClick(e){
+      e.preventDefault()
+      history.push(`/activities/${id}`)
+    }
 
     function handleEditClick(){
         setEditButtonClick(!editButtonClick)
     }
     const routine = user.routines.filter(r => r.id === routineId)
 
-    // console.log(routine)
-  //  let displayTitle = routine.map(r => {
-  //     console.log(r)
-  //   });
-
-    console.log(routine)
-    // console.log(displayTitle)
-
-  //   console.log(routineTitle)
-
     return(
         
         <div className="activity-container">
-        <h3>Activity: {title}</h3>
+        <h3 onClick={handleActivityClick}>Activity: {title}</h3>
         <p>Category: {category}</p>
         <p>Duration: {duration}</p>
         <p>Notes: {description}</p>

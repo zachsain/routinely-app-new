@@ -5,15 +5,12 @@ import ActivitiesCard from "./ActivitiesCard";
 function SingleRoutine(){
     const [routine, setRoutine] = useState([])
     const [isLoaded, setIsLoaded] = useState(false)
-    
-
     let { id } = useParams();
     console.log(routine.activities)
     let displayActivites;
 
     if (isLoaded == true) {
         displayActivites = routine.activities.map(a => {
-        console.log(a)
      return <ActivitiesCard 
               key={a.id} 
               title={a.title}
