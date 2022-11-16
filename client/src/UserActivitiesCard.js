@@ -10,8 +10,12 @@ function UserActivitiesCard({
     description,
     user,
     setUser,
-    routineId
+    routineId,
+    allRoutines
 }){
+
+
+    
     const [isClicked, setIsClicked] = useState(false)
     const [copyOfState, setCopyOfState] = useState(user)
     const [updateActivity, setaUpdateActivity] = useState()
@@ -24,18 +28,15 @@ function UserActivitiesCard({
     // console.log(copyOfState)
 
     function handleDeleteActivity(e){
-      e.preventDefault()
-        // setCopyOfState(user)
+        e.preventDefault()
         let filteredActivities = copyOfState.activities.filter((activity) => activity.id !== id)
-        // console.log(filteredActivities)
         copyOfState.activities = filteredActivities       
-        console.log(copyOfState)
         fetch(`/activities/${id}`, {
             method: "DELETE",
           })
             .then((r) => {
               if (r.ok) {
-                setUser(copyOfState);
+                setUser({...copyOfState});
               }
             })
             .catch((err) => console.log(err))
@@ -49,12 +50,17 @@ function UserActivitiesCard({
     function handleEditClick(){
         setEditButtonClick(!editButtonClick)
     }
-    // const routine = user.routines.filter(r => r.id === routineId)
+    const routine = user.routines.filter(r => r.id === routineId)
 
     // console.log(routine)
-    // routine.forEach(element => {
-    //     console.log(element.title)
-    // });
+  //  let displayTitle = routine.map(r => {
+  //     console.log(r)
+  //   });
+
+    console.log(routine)
+    // console.log(displayTitle)
+
+  //   console.log(routineTitle)
 
     return(
         
@@ -63,7 +69,7 @@ function UserActivitiesCard({
         <p>Category: {category}</p>
         <p>Duration: {duration}</p>
         <p>Notes: {description}</p>
-        {/* <p>Routine Used: {routine[0].title} </p>  */}
+        <p>Routine Used: {routine[0].title} </p> 
         <button onClick={handleDeleteActivity} className='delete-activity-button'>x</button>
         <button onClick={handleEditClick}>Edit</button>
         {editButtonClick ? (
