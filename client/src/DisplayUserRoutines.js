@@ -2,8 +2,6 @@ import React, {useState, useEffect} from "react";
 import UserRoutineCard from "./UserRoutineCard";  
 
 function DisplayUserRoutines({
-    user, 
-    setUser, 
     selectRoutineClick, 
     setSelectRoutineClick,
     setRoutineTitle,
@@ -32,21 +30,12 @@ function DisplayUserRoutines({
                     category={r.category}
                     duration={r.duration}
                     instructions={r.instructions}
-                    user={user}
-                    setUser={setUser}
                     selectRoutineClick={selectRoutineClick}
                     setSelectRoutineClick={setSelectRoutineClick}
                     setRoutineTitle={setRoutineTitle}
-                    // setRoutineCategory={setRoutineCategory}
-                    // setRoutineDuration={setRoutineDuration}
-                    // setRoutineInstructions={setRoutineInstructions}
                     showInputForRoutine={showInputForRoutine}
                     setShowInputForRoutine={setShowInputForRoutine}
                     setRoutineId={setRoutineId}
-
-                    
-                    // handleRoutineSelection={handleRoutineSelection}
-    
                  />
     })
 

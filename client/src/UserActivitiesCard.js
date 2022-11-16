@@ -13,19 +13,21 @@ function UserActivitiesCard({
     routineId
 }){
     const [isClicked, setIsClicked] = useState(false)
-    const [copyOfState, setCopyOfState] = useState(null)
+    const [copyOfState, setCopyOfState] = useState(user)
     const [updateActivity, setaUpdateActivity] = useState()
     const [editButtonClick, setEditButtonClick] = useState(false)
 
-    useEffect(() => {
-        setCopyOfState(user)
-    }, [user])
+    // useEffect(() => {
+    //     setCopyOfState(user)
+    // }, [user])
+
+    // console.log(copyOfState)
 
     function handleDeleteActivity(e){
-        console.log(e)
+      e.preventDefault()
         // setCopyOfState(user)
-        let filteredActivities = user.activities.filter((activity) => activity.id !== id)
-        console.log(filteredActivities)
+        let filteredActivities = copyOfState.activities.filter((activity) => activity.id !== id)
+        // console.log(filteredActivities)
         copyOfState.activities = filteredActivities       
         console.log(copyOfState)
         fetch(`/activities/${id}`, {
@@ -45,7 +47,6 @@ function UserActivitiesCard({
     // useCallback(() => history.push(`/activities/${id}`));
 
     function handleEditClick(){
-        // history.push(`/activities/${id}`)
         setEditButtonClick(!editButtonClick)
     }
     // const routine = user.routines.filter(r => r.id === routineId)

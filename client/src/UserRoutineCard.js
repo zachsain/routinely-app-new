@@ -24,10 +24,7 @@ function UserRoutineCard({
          setShowInputForRoutine(!showInputForRoutine)
          setRoutineId(id)
     }   
-        
-    // const [routineValues, setRoutineValues] = useState({
-    //     title, category, instructions, duration
-    // })
+  
     return(
         <div className="user-routines-card-container">
             <h4>Title: {title}</h4>

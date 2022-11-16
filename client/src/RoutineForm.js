@@ -14,7 +14,7 @@ function RoutineForm({setRoutines, routines, addRoutineClick, setAddRoutineClick
         
     function handleSubmit(e){
         e.preventDefault()  
-        // setAddRoutineClick(!addRoutineClick)
+        setAddRoutineClick(!addRoutineClick)
         
         fetch("/routines", {
             method: "POST",
@@ -32,8 +32,8 @@ function RoutineForm({setRoutines, routines, addRoutineClick, setAddRoutineClick
             setIsLoading(false);
             if (r.ok) {
               r.json().then((newRoutine) => {
-                setRoutines([...routines, newRoutine])
-                history.push(`routines/${newRoutine.id}`);
+                setRoutines([newRoutine, ...routines])
+                // history.push(`routines/${newRoutine.id}`);
               } );
             } else {
               r.json().then((err) => setErrors(err.errors));
