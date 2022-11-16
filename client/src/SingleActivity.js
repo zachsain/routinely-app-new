@@ -1,6 +1,6 @@
 import React, {useState} from "react";
 import {useParams} from 'react-router-dom';
-import ActivitiesCard from './ActivitiesCard'
+import DisplaySingleActivity from './DisplaySingleActivity'
 
 
 function SingleActivity({user}){
@@ -17,7 +17,7 @@ function SingleActivity({user}){
         <div className='single-activity-container'>
             <h4>{user.username}</h4>
 
-                <ActivitiesCard
+                <DisplaySingleActivity
                   id={activity.id}  
                   key={activity.id} 
                   title={activity.title}
@@ -25,7 +25,6 @@ function SingleActivity({user}){
                   duration={activity.duration}
                   description={activity.description}
                   routine={routine}
-                //   user={user}
                   />            
         </div>
         

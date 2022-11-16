@@ -18,27 +18,32 @@ function ActivityForm({user, setUser, addRoutineClick, setAddRoutineClick}){
     const [showInputForRoutine, setShowInputForRoutine] = useState(false)
     const [routineId, setRoutineId] = useState()
     const [userWithNewActivity, setUserWithNewActivity] = useState({})
-    // const [activityId, setActiviyId] = useState()
-    const history = useHistory()
     const [userStateCopy, setUserStateCopy] = useState(user)
+    // const [date, setDate] = useState(new Date())
+    const history = useHistory()
 
-    let newActivity = {
-      // "id" : activityId,
-      "title" : title,
-      "category" : category,
-      "duration" : duration,
-      "description" : description,
-      "routine_id" : routineId,
-      "user_id" : user.id
-    }
+    const date = new Date()
+    const styledDate = `${date.getMonth()+1}/${date.getDate()}/${date.getFullYear()}`
+
+    console.log(date)
+
+    // let newActivity = {
+    //   "title" : title,
+    //   "category" : category,
+    //   "duration" : duration,
+    //   "description" : description,
+    //   "routine_id" : routineId,
+    //   "user_id" : user.id,
+    //   // "date" : styledDate
+    // }
 
     function handleSubmit(e){
         e.preventDefault()
         setAddRoutineClick(!addRoutineClick)
-        setUserStateCopy(user)
-        let updatedActivity = [...userStateCopy.activities, newActivity]
-        userStateCopy.activities = updatedActivity
-        console.log(userStateCopy)
+        // setUserStateCopy(user)
+        // let updatedActivity = [...userStateCopy.activities, newActivity]
+        // userStateCopy.activities = updatedActivity
+        // console.log(userStateCopy)
         
         fetch("/activities", {
             method: "POST",
@@ -51,16 +56,19 @@ function ActivityForm({user, setUser, addRoutineClick, setAddRoutineClick}){
               description,
               duration,
               routine_id : routineId,
-              user_id : user.id
+              user_id : user.id,
+              date : styledDate
             }),
           }).then((r) => {
             setIsLoading(false);
             if (r.ok) {
               r.json().then((a) =>{
-                // setActiviyId(a.id)
-                // let updatedActivities = [...user.activities, a]
-                // userStateCopy.activities = updatedActivities
-               return setUser(userStateCopy)
+                setUserStateCopy(user)
+                let updatedActivity = [...userStateCopy.activities, a]
+                console.log(a)
+                userStateCopy.activities = updatedActivity
+                console.log(userStateCopy)
+                setUser({...userStateCopy})
               })
              
             } else {

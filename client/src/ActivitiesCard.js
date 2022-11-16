@@ -27,7 +27,7 @@ function ActivitiesCard({
         <p>Category: {category}</p>
         <p>Duration: {duration}</p>
         <p>Notes: {description}</p>
-        <h3>Routine Used:</h3>
+        {/* <h3>Routine Used:</h3> */}
         {/* <DisplayRoutines
         title={routine.title}
         category={routine.category} 

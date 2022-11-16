@@ -1,4 +1,4 @@
-import React, { useState, useCallback} from "react";
+import React from "react";
 import './App.css'
 import {useHistory} from "react-router-dom";
 
@@ -9,11 +9,10 @@ function DisplayRoutines({
     duration,
     id
 }){
-
-
     const history = useHistory();
-    const handleUserRoutineClick = () => history.push(`routines/${id}`);
-
+    function handleUserRoutineClick(){
+        history.push(`routines/${id}`)
+    }
     return (
         <div className="routine-container" onClick={handleUserRoutineClick}>
         <h3>Routine: {title}</h3>

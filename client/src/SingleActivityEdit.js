@@ -126,16 +126,6 @@ function SingleActivityEdit({
       onChange={(e) => setUpdatedDescription(e.target.value)}
     ></input>
     <br/>
-
-    {/* <label className="activity-form">Routine: </label>
-    <input className="activity-input"
-      type="text"
-      id="routine-title"
-      autoComplete="off"
-      placeholder="Routine"
-      value={routineTitle}
-      onChange={(e) => setRoutineTitle(e.target.value)}
-    ></input> */}
     
     {showInputForRoutine ? (  
     <>

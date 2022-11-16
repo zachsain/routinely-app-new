@@ -23,7 +23,6 @@ function Routines({user, setUser}){
     const history = useHistory();
     const handleUserRoutineClick = useCallback(() => history.push('/'));
 
-    
 
     let displayRoutines = routines.map(r => {
        return <DisplayRoutines

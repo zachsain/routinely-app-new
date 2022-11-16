@@ -20,13 +20,6 @@ function UserActivitiesCard({
     const [updateActivity, setaUpdateActivity] = useState()
     const [editButtonClick, setEditButtonClick] = useState(false)
     const history = useHistory();
-    // useCallback(() => history.push(`/activities/${id}`));
-
-    // useEffect(() => {
-    //     setCopyOfState(user)
-    // }, [user])
-
-    // console.log(copyOfState)
 
     function handleDeleteActivity(e){
         e.preventDefault()

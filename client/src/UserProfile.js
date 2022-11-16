@@ -1,6 +1,5 @@
 import React, {useState} from 'react'
 import './App.css'
-import UserActivities from "./UserActivities"
 import ActivityForm from './ActivityForm'
 import RoutineForm from './RoutineForm'
 import DisplayRoutines from './DisplayRoutines'

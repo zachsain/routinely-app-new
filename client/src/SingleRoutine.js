@@ -6,7 +6,6 @@ function SingleRoutine(){
     const [routine, setRoutine] = useState([])
     const [isLoaded, setIsLoaded] = useState(false)
     let { id } = useParams();
-    console.log(routine.activities)
     let displayActivites;
 
     if (isLoaded == true) {
@@ -26,7 +25,7 @@ function SingleRoutine(){
     useEffect(() => {
         fetch(`${id}`)
         .then(r => r.json())
-        .then(routine => (setRoutine(routine), console.log(routine), setIsLoaded(true)))
+        .then(routine => (setRoutine(routine), setIsLoaded(true)))
      
     }, [])
 
