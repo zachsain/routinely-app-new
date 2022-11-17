@@ -8,11 +8,13 @@ function RoutineForm({setRoutines, routines, addRoutineClick, setAddRoutineClick
     const [category, setCategory] = useState("")
     const [instructions, setInstructions] = useState("")
     const [duration, setDuration] = useState("")
+    const [videoUrl, setVideoUrl] = useState("")
     const [errors, setErrors] = useState([]);
     const [isLoading, setIsLoading] = useState(false);
     const history = useHistory();
         
     function handleSubmit(e){
+      // console.log(videoUrl)
         e.preventDefault()  
         setAddRoutineClick(!addRoutineClick)
         
@@ -22,16 +24,18 @@ function RoutineForm({setRoutines, routines, addRoutineClick, setAddRoutineClick
               "Content-Type": "application/json",
             },
             body: JSON.stringify({
-              title,
-              category,
-              instructions,
-              duration,
+              "title" : title,
+              "category" : category,
+              "instructions" : instructions,
+              "duration" : duration,
+              "video_url" : videoUrl
     
             }),
           }).then((r) => {
             setIsLoading(false);
             if (r.ok) {
               r.json().then((newRoutine) => {
+                console.log(newRoutine)
                 setRoutines([newRoutine, ...routines])
                 // history.push(`routines/${newRoutine.id}`);
               } );
@@ -95,6 +99,26 @@ function RoutineForm({setRoutines, routines, addRoutineClick, setAddRoutineClick
               value={instructions}
               onChange={(e) => setInstructions(e.target.value)}
             ></input>
+            <br />
+
+            <label className="routine-form">Link YouTube Video: </label>
+            <input
+              className="routine-input"
+              type="text"
+              id="video"
+              autoComplete="off"
+              placeholder="Upload Routine Video..."
+              value={videoUrl}
+              onChange={(e) => setVideoUrl(e.target.value)}
+            ></input>
+
+            {/* <label>Youtube URL</label>
+            <input type="text"
+            placeholder='YOUTUBE LINK'
+            >
+
+            </input> */}
+             {/* <button>?</button> */}
             <br />
   
             <button type="submit">Add Routine</button>

@@ -25,7 +25,7 @@ class RoutinesController < ApplicationController
     private 
 
     def routine_params
-        params.permit(:title, :category, :instructions, :duration, :id)
+        params.permit(:title, :category, :instructions, :duration, :video_url, :id)
     end 
 
 end

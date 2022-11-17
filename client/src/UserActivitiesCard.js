@@ -10,11 +10,9 @@ function UserActivitiesCard({
     description,
     user,
     setUser,
-    routineId
+    routineId,
+    routines
 }){
-
-
-    
     const [isClicked, setIsClicked] = useState(false)
     const [copyOfState, setCopyOfState] = useState(user)
     const [updateActivity, setaUpdateActivity] = useState()
@@ -44,7 +42,8 @@ function UserActivitiesCard({
     function handleEditClick(){
         setEditButtonClick(!editButtonClick)
     }
-    const routine = user.routines.filter(r => r.id === routineId)
+    const activityRoutine = routines.filter(r => r.id === routineId)
+    // console.log(activityRoutine[0].title)
 
     return(
         
@@ -53,7 +52,7 @@ function UserActivitiesCard({
         <p>Category: {category}</p>
         <p>Duration: {duration}</p>
         <p>Notes: {description}</p>
-        <p>Routine Used: {routine[0].title} </p> 
+        {/* <p>Routine Used: {activityRoutine[0].title} </p>  */}
         <button onClick={handleDeleteActivity} className='delete-activity-button'>x</button>
         <button onClick={handleEditClick}>Edit</button>
         {editButtonClick ? (

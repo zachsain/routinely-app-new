@@ -7,6 +7,14 @@ function AllActivities({user, setUser}){
 
     const [addRoutineClick, setAddRoutineClick] = useState(false)
     const [addActivityClick, setAddActivityClick] = useState(false)
+    const [routines, setRoutines] = useState([])
+
+    useEffect(() => {
+        fetch('/routines')
+        .then(r => r.json())
+        .then(allRoutines => setRoutines(allRoutines))
+     
+    },[])
 
     let activities = user.activities.map(a => {
       return <UserActivitiesCard 
@@ -19,6 +27,7 @@ function AllActivities({user, setUser}){
         duration={a.duration}
         description={a.description}
         routineId={a.routine_id}
+        routines={routines}
         />
     })
 
