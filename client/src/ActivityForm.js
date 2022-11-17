@@ -68,6 +68,7 @@ function ActivityForm({user, setUser, addRoutineClick, setAddRoutineClick}){
                 console.log(a)
                 userStateCopy.activities = updatedActivity
                 console.log(userStateCopy)
+                // history.push(`activities/${a.id}`)
                 setUser({...userStateCopy})
               })
              
