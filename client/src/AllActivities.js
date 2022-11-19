@@ -12,9 +12,15 @@ function AllActivities({user, setUser}){
     useEffect(() => {
         fetch('/routines')
         .then(r => r.json())
-        .then(allRoutines => setRoutines(allRoutines))
+        .then(r => setRoutines(r))
      
     },[])
+
+    // useEffect(() => {
+    //     fetch('./routines')
+    //     .then(r => r.json())
+    //     .then((r) => setAllRoutines(r))
+    //   }, [])
 
     let activities = user.activities.map(a => {
       return <UserActivitiesCard 
@@ -46,7 +52,10 @@ function AllActivities({user, setUser}){
             <div><ActivityForm 
             addRoutineClick={addRoutineClick} 
             setAddRoutineClick={setAddRoutineClick}
-            user={user} setUser={setUser}/> </div>) 
+            user={user} 
+            setUser={setUser}
+            routines={routines}
+            /> </div>) 
             : (<div> {activities}</div>)}
         </div>
     )

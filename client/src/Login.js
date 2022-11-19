@@ -6,9 +6,6 @@ import SignUpForm from "./SignUpForm";
 function Login({setUser}){
     const [showLogin, setShowLogin] = useState(true)
 
-    
-   
-
     return (
 
         <div id="login-component">

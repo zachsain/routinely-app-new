@@ -101,13 +101,13 @@ function RoutineForm({setRoutines, routines, addRoutineClick, setAddRoutineClick
             ></input>
             <br />
 
-            <label className="routine-form">Link YouTube Video: </label>
+            <label className="routine-form">Helpful YouTube Video: </label>
             <input
               className="routine-input"
               type="text"
               id="video"
               autoComplete="off"
-              placeholder="Upload Routine Video..."
+              placeholder="Upload helpful video.."
               value={videoUrl}
               onChange={(e) => setVideoUrl(e.target.value)}
             ></input>

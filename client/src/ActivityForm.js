@@ -1,9 +1,15 @@
 import React, {useState, useCallback} from "react";
 import DisplayUserRoutines from './DisplayUserRoutines'
 import { useHistory } from "react-router-dom";
+import { useEffect } from "react";
 
 
-function ActivityForm({user, setUser, addRoutineClick, setAddRoutineClick}){
+function ActivityForm({
+    user,
+    setUser, 
+    addRoutineClick, 
+    setAddRoutineClick,
+    routines}){
     
     const [title, setTitle] = useState("")
     const [category, setCategory] = useState("")
@@ -18,14 +24,23 @@ function ActivityForm({user, setUser, addRoutineClick, setAddRoutineClick}){
     const [showInputForRoutine, setShowInputForRoutine] = useState(false)
     const [routineId, setRoutineId] = useState()
     const [userWithNewActivity, setUserWithNewActivity] = useState({})
-    const [userStateCopy, setUserStateCopy] = useState(user)
+    // const [userStateCopy, setUserStateCopy] = useState(user)
     // const [date, setDate] = useState(new Date())
-    const history = useHistory()
+    const history = useHistory() 
+    const [allRouintes, setAllRoutines] = useState([])
 
     const date = new Date()
     const styledDate = `${date.getMonth()+1}/${date.getDate()}/${date.getFullYear()}`
 
     console.log(date)
+
+    // useEffect(() => {
+    //   fetch('./routines')
+    //   .then(r => r.json())
+    //   .then((r) => setAllRoutines(r))
+    // }, [])
+
+    console.log(allRouintes)
 
     // let newActivity = {
     //   "title" : title,
@@ -63,13 +78,18 @@ function ActivityForm({user, setUser, addRoutineClick, setAddRoutineClick}){
             setIsLoading(false);
             if (r.ok) {
               r.json().then((a) =>{
-                setUserStateCopy(user)
-                let updatedActivity = [...userStateCopy.activities, a]
-                console.log(a)
-                userStateCopy.activities = updatedActivity
-                console.log(userStateCopy)
+                
+                let userCopy = {...user}
+                let updatedActivities = [...user.activities]
+                updatedActivities.push(a)
+                userCopy.activities = updatedActivities
+                let newRoutine = routines.find(r => r.id === a.routine_id) 
+                let upDatedRoutines = [...user.routines]
+                upDatedRoutines.push(newRoutine)
+                userCopy.routines = upDatedRoutines
                 // history.push(`activities/${a.id}`)
-                setUser({...userStateCopy})
+                setUser(userCopy)
+                // setUser(userStateCopy)
               })
              
             } else {

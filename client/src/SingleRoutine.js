@@ -8,6 +8,7 @@ function SingleRoutine(){
     const [routine, setRoutine] = useState([])
     const [isLoaded, setIsLoaded] = useState(false)
     let { id } = useParams();
+    const [displayVideo, setDisplayVideo] = useState(false)
     let displayActivites;
 
     useEffect(() => {
@@ -30,9 +31,13 @@ function SingleRoutine(){
         displayActivites = null
     }
 
+    // if  (routine.video_url === ""){
+    //    return setDisplayVideo(true)
+    // }
 
+    console.log(routine)
 
-
+    console.log(routine)
     
 
     return (
@@ -41,8 +46,14 @@ function SingleRoutine(){
         <p>Category: {routine.category}</p>
         <p>Duration: {routine.duration}</p>
         <p>Instructions: {routine.instructions}</p>
-        {/* <Video /> */}
-        <ReactPlayer controls={true} url={routine.video_url} />
+        {routine.video_url == "" ? (
+            null
+        ) : (
+            <div>
+            <h4>Helpful Video:</h4>
+            <ReactPlayer controls={true} url={routine.video_url} />
+            </div>
+        )}
         {displayActivites}
 
         </div>
