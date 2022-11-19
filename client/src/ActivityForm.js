@@ -1,7 +1,6 @@
 import React, {useState, useCallback} from "react";
 import DisplayUserRoutines from './DisplayUserRoutines'
 import { useHistory } from "react-router-dom";
-import { useEffect } from "react";
 
 
 function ActivityForm({
@@ -24,42 +23,23 @@ function ActivityForm({
     const [showInputForRoutine, setShowInputForRoutine] = useState(false)
     const [routineId, setRoutineId] = useState()
     const [userWithNewActivity, setUserWithNewActivity] = useState({})
-    // const [userStateCopy, setUserStateCopy] = useState(user)
-    // const [date, setDate] = useState(new Date())
     const history = useHistory() 
     const [allRouintes, setAllRoutines] = useState([])
+    const [date, setDate] = useState("")
 
-    const date = new Date()
-    const styledDate = `${date.getMonth()+1}/${date.getDate()}/${date.getFullYear()}`
+    // const todayDate = new Date()
+    // const styledDate = `${date.getMonth()+1}/${date.getDate()}/${date.getFullYear()}`
 
-    console.log(date)
-
-    // useEffect(() => {
-    //   fetch('./routines')
-    //   .then(r => r.json())
-    //   .then((r) => setAllRoutines(r))
-    // }, [])
-
-    console.log(allRouintes)
-
-    // let newActivity = {
-    //   "title" : title,
-    //   "category" : category,
-    //   "duration" : duration,
-    //   "description" : description,
-    //   "routine_id" : routineId,
-    //   "user_id" : user.id,
-    //   // "date" : styledDate
-    // }
+    // console.log(styledDate)
 
     function handleSubmit(e){
         e.preventDefault()
         setAddRoutineClick(!addRoutineClick)
-        // setUserStateCopy(user)
-        // let updatedActivity = [...userStateCopy.activities, newActivity]
-        // userStateCopy.activities = updatedActivity
-        // console.log(userStateCopy)
-        
+        const todayDate = new Date()
+        const styledDate = `${todayDate.getMonth()+1}/${todayDate.getDate()}/${todayDate.getFullYear()}`
+        setDate(styledDate)
+        console.log(styledDate)
+     
         fetch("/activities", {
             method: "POST",
             headers: {
@@ -72,13 +52,13 @@ function ActivityForm({
               duration,
               routine_id : routineId,
               user_id : user.id,
-              date : styledDate
+              // date : date
             }),
           }).then((r) => {
             setIsLoading(false);
             if (r.ok) {
               r.json().then((a) =>{
-                
+                console.log(a)
                 let userCopy = {...user}
                 let updatedActivities = [...user.activities]
                 updatedActivities.push(a)
@@ -87,9 +67,8 @@ function ActivityForm({
                 let upDatedRoutines = [...user.routines]
                 upDatedRoutines.push(newRoutine)
                 userCopy.routines = upDatedRoutines
-                // history.push(`activities/${a.id}`)
                 setUser(userCopy)
-                // setUser(userStateCopy)
+                history.push(`/activities/${a.id}`)
               })
              
             } else {
@@ -195,16 +174,3 @@ function ActivityForm({
 }
 
 export default ActivityForm
-
-
-// <DisplayUserRoutines 
-//          user={user} 
-//          setUser={setUser}
-//          selectRoutineClick={selectRoutineClick}
-//          setSelectRoutineClick={setSelectRoutineClick}
-//          setRoutineTitle={setRoutineTitle}
-//          setRoutineCategory={setRoutineCategory}
-//          setRoutineDuration={setRoutineDuration}
-//          setRoutineInstructions={setRoutineInstructions}
-//          showInputForRoutine={showInputForRoutine}
-//          setShowInputForRoutine={setShowInputForRoutine}

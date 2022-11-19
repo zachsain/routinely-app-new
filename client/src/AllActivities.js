@@ -35,14 +35,22 @@ function AllActivities({user, setUser}){
         setAddRoutineClick(!addRoutineClick)
         setAddActivityClick(!addActivityClick)
     }
+
+    // if (user.activities.length === 0) {
+    //     setAddRoutineClick(false)
+    // }
+
+    // user.activities.length > 0 ? (setAddRoutineClick(true)) : (setAddRoutineClick(false))
     
     // console.log(user.activities)
 
+    console.log(user.activities.length)
     return(
-        <div className='activity-container'>
+        <div>{user.activities.length > 0 ? (
+            <div className='activity-container'>
             {addRoutineClick ? (<h3>Activity Form</h3>) : (<h3>My Activites:</h3>)}
             <button onClick={handleClick}>{addActivityClick ? "See Activities" : "Create New Activity"}</button>
-            {addRoutineClick ? (
+             {addRoutineClick ? (
             <div><ActivityForm 
             addRoutineClick={addRoutineClick} 
             setAddRoutineClick={setAddRoutineClick}
@@ -51,8 +59,52 @@ function AllActivities({user, setUser}){
             routines={routines}
             /> </div>) 
             : (<div> {activities}</div>)}
+        </div> 
+        ) : (
+            <div className='activity-container'> 
+            <h3>Activity Form</h3>
+            <ActivityForm 
+            addRoutineClick={addRoutineClick} 
+            setAddRoutineClick={setAddRoutineClick}
+            user={user} 
+            setUser={setUser}
+            routines={routines}
+            /> 
+        </div>   
+        )}
         </div>
+
+
+
+        // <div className='activity-container'>
+        //     {addRoutineClick ? (<h3>Activity Form</h3>) : (<h3>My Activites:</h3>)}
+        //     <button onClick={handleClick}>{addActivityClick ? "See Activities" : "Create New Activity"}</button>
+        //      {addRoutineClick ? (
+        //     <div><ActivityForm 
+        //     addRoutineClick={addRoutineClick} 
+        //     setAddRoutineClick={setAddRoutineClick}
+        //     user={user} 
+        //     setUser={setUser}
+        //     routines={routines}
+        //     /> </div>) 
+        //     : (<div> {activities}</div>)}
+        // </div> 
     )
 }
 
 export default AllActivities
+
+
+{/* <div className='activity-container'>
+            {addRoutineClick ? (<h3>Activity Form</h3>) : (<h3>My Activites:</h3>)}
+            <button onClick={handleClick}>{addActivityClick ? "See Activities" : "Create New Activity"}</button>
+             {addRoutineClick ? (
+            <div><ActivityForm 
+            addRoutineClick={addRoutineClick} 
+            setAddRoutineClick={setAddRoutineClick}
+            user={user} 
+            setUser={setUser}
+            routines={routines}
+            /> </div>) 
+            : (<div> {activities}</div>)}
+        </div> */}

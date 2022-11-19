@@ -36,24 +36,68 @@ function Routines({user, setUser}){
              />
     }) 
 
-
     return(
         <div>
-           <button id="add-new-routine" onClick={handleNewRoutine}>{addRoutineClick ? ("Show Routines") : ("Add New Routine")}</button>
-           <button id="my-routines-button" onClick={handleUserRoutineClick}>My Routines</button>
-            {addRoutineClick ?
-            (<h3>Add Routine:</h3>) : (<h3>Routines:</h3>)
-            }
-            {addRoutineClick ? 
-            (<div className="routine-form"><RoutineForm setAddRoutineClick={setAddRoutineClick} addRoutineClick={addRoutineClick} routines={routines} setRoutines={setRoutines}/> </div> )
-             : (<div className="user-activity-container">
-               {displayRoutines} 
-            </div>)}
-        </div>
-    
+        {routines.length > 0 ? (
+            <div>
+            <button id="add-new-routine" onClick={handleNewRoutine}>
+                {addRoutineClick ? ("Show Routines") : ("Add New Routine")}
+            </button>
+            <button id="my-routines-button" onClick={handleUserRoutineClick}>
+                My Routines:
+            </button>
+             {addRoutineClick ?
+             (<h3>Add Routine:</h3>) : (<h3>Routines:</h3>)
+             }
+             {addRoutineClick ? 
+             (<div className="routine-form"><RoutineForm setAddRoutineClick={setAddRoutineClick} addRoutineClick={addRoutineClick} routines={routines} setRoutines={setRoutines}/> </div> )
+              : (<div className="user-activity-container">
+                {displayRoutines} 
+             </div>)}
+            </div>) : 
+            (<div className="routine-form">
+                <h3>Create A New Routine:</h3>
+                <RoutineForm 
+                 setAddRoutineClick={setAddRoutineClick} 
+                 addRoutineClick={addRoutineClick} 
+                 routines={routines} 
+                 setRoutines={setRoutines}/> 
+            </div>)
+        }
+          </div>
 
+
+
+
+// old code:
+        // <div>
+        //    <button id="add-new-routine" onClick={handleNewRoutine}>{addRoutineClick ? ("Show Routines") : ("Add New Routine")}</button>
+        //    <button id="my-routines-button" onClick={handleUserRoutineClick}>My Routines</button>
+        //     {addRoutineClick ?
+        //     (<h3>Add Routine:</h3>) : (<h3>Routines:</h3>)
+        //     }
+        //     {addRoutineClick ? 
+        //     (<div className="routine-form"><RoutineForm setAddRoutineClick={setAddRoutineClick} addRoutineClick={addRoutineClick} routines={routines} setRoutines={setRoutines}/> </div> )
+        //      : (<div className="user-activity-container">
+        //        {displayRoutines} 
+        //     </div>)}
+        // </div>
     )
    
 }
 
 export default Routines
+
+
+{/* <div>
+<button id="add-new-routine" onClick={handleNewRoutine}>{addRoutineClick ? ("Show Routines") : ("Add New Routine")}</button>
+<button id="my-routines-button" onClick={handleUserRoutineClick}>My Routines</button>
+ {addRoutineClick ?
+ (<h3>Add Routine:</h3>) : (<h3>Routines:</h3>)
+ }
+ {addRoutineClick ? 
+ (<div className="routine-form"><RoutineForm setAddRoutineClick={setAddRoutineClick} addRoutineClick={addRoutineClick} routines={routines} setRoutines={setRoutines}/> </div> )
+  : (<div className="user-activity-container">
+    {displayRoutines} 
+ </div>)}
+</div> */}
