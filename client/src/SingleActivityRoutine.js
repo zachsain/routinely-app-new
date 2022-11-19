@@ -1,4 +1,5 @@
 import React from "react";
+import { useHistory} from 'react-router-dom'
 
 function SingleActivityRoutine({
     title, 
@@ -7,8 +8,14 @@ function SingleActivityRoutine({
     duration,
     id
 }){
+    const history = useHistory()
+
+    function handleRoutineClick(e){
+        history.push(`/routines/${id}`)
+    }
+
     return (
-        <div className="routine-container">
+        <div onClick={handleRoutineClick} className="routine-container">
         <h3>Routine: {title}</h3>
         <p>Category: {category}</p>
         <p>Duration: {duration}</p>

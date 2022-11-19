@@ -16,13 +16,7 @@ function AllActivities({user, setUser}){
      
     },[])
 
-    // useEffect(() => {
-    //     fetch('./routines')
-    //     .then(r => r.json())
-    //     .then((r) => setAllRoutines(r))
-    //   }, [])
-
-    let activities = user.activities.map(a => {
+    let activities = user.activities.reverse().map(a => {
       return <UserActivitiesCard 
         key={a.id} 
         id={a.id}

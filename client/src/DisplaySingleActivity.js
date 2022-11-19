@@ -1,5 +1,4 @@
 import React, {useState} from 'react'
-import ActivitiesCard from './ActivitiesCard'
 import SingleActivityRoutine from './SingleActivityRoutine'
 
 function DisplaySingleActivity({
@@ -12,20 +11,6 @@ function DisplaySingleActivity({
     isLoaded
 }) {
 
-    // let routine
-
-    // if (isLoaded == true) {
-    //     displayActivites = routine.activities.map(a => {
-    //  return <ActivitiesCard 
-    //           key={a.id} 
-    //           title={a.title}
-    //           category={a.category}
-    //           duration={a.duration}
-    //           description={a.description}
-    //           id={a.id}/>
-    // }) } else {
-    //     displayActivites = null
-    // }
 
     return(
         

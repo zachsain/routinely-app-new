@@ -1,6 +1,6 @@
 import React, {useState, useEffect} from "react";
 import {useParams} from 'react-router-dom'
-import ActivitiesCard from "./ActivitiesCard";
+import ShowRoutineActivities from "./ShowRoutineActivities";
 import Video from "./Video";
 import ReactPlayer from 'react-player/youtube'
 
@@ -20,7 +20,7 @@ function SingleRoutine(){
 
     if (isLoaded == true) {
         displayActivites = routine.activities.map(a => {
-     return <ActivitiesCard 
+     return <ShowRoutineActivities 
               key={a.id} 
               title={a.title}
               category={a.category}
@@ -54,7 +54,16 @@ function SingleRoutine(){
             <ReactPlayer controls={true} url={routine.video_url} />
             </div>
         )}
-        {displayActivites}
+
+        {routine.activities === "" ? (
+               null
+        ) : (
+            <div> 
+            {displayActivites}
+            </div>
+        )}
+
+        {/* {displayActivites} */}
 
         </div>
 
