@@ -27,6 +27,9 @@ function Routines({user, setUser}){
 
     let displayRoutines = routines.map(r => {
        return <DisplayRoutines
+            routines={routines}
+            user={user}
+            setUser={setUser}
             key={r.id}
             title={r.title}
             category={r.category}
@@ -63,6 +66,7 @@ function Routines({user, setUser}){
         {/* <form onSubmit={handleSubmit}> */}
         <label className='routine-form'>Select Category:
         <select value={categoryFilter} onChange={handleSubmit}>
+            <option value={null}></option>
             <option value="Weight Training">Weight Training</option>
             <option value="Cardio">Cardio</option>
             <option value="Sports Training">Sports Training</option>

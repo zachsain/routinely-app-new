@@ -1,4 +1,5 @@
 import React, {useState} from "react";
+import ActivityForm from "./ActivityForm"
 import './App.css';
 
 function UserRoutineCard({
@@ -18,6 +19,8 @@ function UserRoutineCard({
 
     }){
 
+    const [addActivityClick, setAddActivityClick] = useState(false)
+
     function handleRoutineSelection(e){
          e.preventDefault()
          setSelectRoutineClick(!selectRoutineClick)
@@ -28,7 +31,7 @@ function UserRoutineCard({
     }   
 
     function handleActivityClick(){
-        
+
     }
   
     return(
@@ -38,7 +41,7 @@ function UserRoutineCard({
             <p>Duration: {duration}</p>
             <p>Instructions: {instructions}</p>
             <button type="click" value={title} onClick={handleRoutineSelection}>Select</button>
-            <button type="click" onClick={handleActivityClick}> Add to New Activitiy </button>
+            
 
         </div>
     )

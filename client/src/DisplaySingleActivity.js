@@ -18,7 +18,7 @@ function DisplaySingleActivity({
         <div className="activity-container">
         <h3 >Activity: {title}</h3>
         <p>{date}</p>
-        <p>Category: {category}</p>
+        <p>Category: {routine.category}</p>
         <p>Duration: {duration}</p>
         <p>Notes: {description}</p>
         <SingleActivityRoutine

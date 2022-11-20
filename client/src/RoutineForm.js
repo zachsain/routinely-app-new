@@ -65,6 +65,7 @@ function RoutineForm({setRoutines, routines, addRoutineClick, setAddRoutineClick
   
             <label className='routine-form'>Select Category:
               <select value={category} onChange={(e) => setCategory(e.target.value)}>
+                <option value={null}></option>
                 <option value="Weight Training">Weight Training</option>
                 <option value="Cardio">Cardio</option>
                 <option value="Sports Training">Sports Training</option>

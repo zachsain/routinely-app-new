@@ -46,7 +46,7 @@ function App() {
           <AllActivities user={user} setUser={setUser}/>
         </Route>
         <Route exact path='/routines'>
-          <Routines />
+          <Routines user={user} setUser={setUser} />
         </Route>
         <Route exact path='/logout'>    
           <Logout user={user} setUser={setUser} />
