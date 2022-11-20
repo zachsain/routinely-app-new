@@ -27,18 +27,18 @@ function ActivityForm({
     const [allRouintes, setAllRoutines] = useState([])
     const [date, setDate] = useState("")
 
-    // const todayDate = new Date()
-    // const styledDate = `${date.getMonth()+1}/${date.getDate()}/${date.getFullYear()}`
+    const todayDate = new Date()
+    const styledDate = `${todayDate.getMonth()+1}/${todayDate.getDate()}/${todayDate.getFullYear()}`
 
-    // console.log(styledDate)
+    console.log(styledDate)
 
     function handleSubmit(e){
         e.preventDefault()
         setAddRoutineClick(!addRoutineClick)
-        const todayDate = new Date()
-        const styledDate = `${todayDate.getMonth()+1}/${todayDate.getDate()}/${todayDate.getFullYear()}`
-        setDate(styledDate)
-        console.log(styledDate)
+        // const todayDate = new Date()
+        // const styledDate = `${todayDate.getMonth()+1}/${todayDate.getDate()}/${todayDate.getFullYear()}`
+        // setDate(styledDate)
+        // console.log(styledDate)
      
         fetch("/activities", {
             method: "POST",
@@ -52,7 +52,7 @@ function ActivityForm({
               duration,
               routine_id : routineId,
               user_id : user.id,
-              // date : date
+              date : styledDate
             }),
           }).then((r) => {
             setIsLoading(false);
@@ -101,7 +101,7 @@ function ActivityForm({
               ></input>
         <br />
 
-        <label className="activity-form">Category:</label>
+        {/* <label className="activity-form">Category:</label>
         <input
           className="activity-input"
           type="text"
@@ -110,8 +110,8 @@ function ActivityForm({
           placeholder="type of activity..."
           value={category}
           onChange={(e) => setCategory(e.target.value)}
-        ></input>
-        <br />
+        ></input> */}
+      
 
         <label className="activity-form">Duration: </label>
         <input
@@ -138,6 +138,18 @@ function ActivityForm({
         <br/>
         {showInputForRoutine ? (  
         <>
+        <label className="activity-form">Category:</label>
+        <input
+          className="activity-input"
+          type="text"
+          id="category"
+          autoComplete="off"
+          placeholder="type of activity..."
+          value={category}
+          readOnly
+          // onChange={(e) => setCategory()}
+        ></input>
+        <br />
         <label className="activity-form">Routine: </label>
         <input className="activity-input"
           type="text"
@@ -145,9 +157,9 @@ function ActivityForm({
           autoComplete="off"
           placeholder="Routine"
           value={routineTitle}
-          onChange={(e) => setRoutineTitle(e.target.value)}
-        ></input> </>) : (null)}
-      
+          readOnly
+          // onChange={(e) => setRoutineTitle()}
+        ></input> </>) : (null)}   
         <br />
 
         <button onClick={handleRoutineSelectClick}>Select Routine</button>
@@ -160,6 +172,7 @@ function ActivityForm({
          showInputForRoutine={showInputForRoutine}
          setShowInputForRoutine={setShowInputForRoutine}
          setRoutineId={setRoutineId}
+         setCategory={setCategory}
          
 
          />)

@@ -16,7 +16,7 @@ function AllActivities({user, setUser}){
      
     },[])
 
-    let activities = user.activities.reverse().map(a => {
+    let activities = user.activities.map(a => {
       return <UserActivitiesCard 
         key={a.id} 
         id={a.id}
@@ -28,6 +28,7 @@ function AllActivities({user, setUser}){
         description={a.description}
         routineId={a.routine_id}
         routines={routines}
+        date={a.date}
         />
     })
 

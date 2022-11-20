@@ -7,7 +7,8 @@ import { useHistory} from 'react-router-dom'
 function Routines({user, setUser}){
     const [routines, setRoutines] = useState([])
     const [addRoutineClick, setAddRoutineClick] = useState(false)
-
+    const [categoryFilter, setCategoryFilter] = useState("")
+    const [filterButtonClick, setFilterButtonClick] = useState(false)
     useEffect(() => {
         fetch('/routines')
         .then(r => r.json())
@@ -36,16 +37,62 @@ function Routines({user, setUser}){
              />
     }) 
 
+    function handleSearch(e){
+        setCategoryFilter(e.target.value)
+    }
+
+    function handleFilterClick(e){
+        setFilterButtonClick(!filterButtonClick)
+    }
+
+    function handleSubmit(e){
+       console.log(e.target.value)
+       let filtered = routines.filter(r => {
+           return r.category === e.target.value
+        })
+
+        setRoutines(filtered)
+    }
     return(
         <div>
         {routines.length > 0 ? (
             <div>
+        
+        <button onClick={handleFilterClick}>Filter By Category</button>
+        {filterButtonClick ? ( 
+        <div> 
+        {/* <form onSubmit={handleSubmit}> */}
+        <label className='routine-form'>Select Category:
+        <select value={categoryFilter} onChange={handleSubmit}>
+            <option value="Weight Training">Weight Training</option>
+            <option value="Cardio">Cardio</option>
+            <option value="Sports Training">Sports Training</option>
+            <option value="Diet">Diet</option>
+            <option value="Education">Education</option>
+            <option value="Cleaning">Cleaning</option>
+            <option value="Organization">Organization</option>
+            <option value="Maintenance">Maintenance</option>
+            <option value="Beauty">Beauty</option>               
+            <option value="Health & Wellness">Health & Wellness</option>
+            <option value="Music">Music</option>
+            <option value="Arts & Crafts">Arts & Crafts</option>
+            <option value="Yoga">Yoga</option>
+            <option value="Meditation">Meditation</option>
+         </select>    
+         </label>  
+         {/* </form>   */}
+        </div>
+        ) : (
+            null
+        )}
+            
             <button id="add-new-routine" onClick={handleNewRoutine}>
                 {addRoutineClick ? ("Show Routines") : ("Add New Routine")}
             </button>
             <button id="my-routines-button" onClick={handleUserRoutineClick}>
                 My Routines:
             </button>
+
              {addRoutineClick ?
              (<h3>Add Routine:</h3>) : (<h3>Routines:</h3>)
              }
@@ -64,6 +111,7 @@ function Routines({user, setUser}){
                  setRoutines={setRoutines}/> 
             </div>)
         }
+        
           </div>
 
 

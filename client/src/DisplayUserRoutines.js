@@ -9,6 +9,7 @@ function DisplayUserRoutines({
     setShowInputForRoutine,
     routineId,
     setRoutineId,
+    setCategory
 
     }){
 
@@ -36,6 +37,7 @@ function DisplayUserRoutines({
                     showInputForRoutine={showInputForRoutine}
                     setShowInputForRoutine={setShowInputForRoutine}
                     setRoutineId={setRoutineId}
+                    setCategory={setCategory}
                  />
     })
 

@@ -4,4 +4,5 @@ class UserSerializer < ActiveModel::Serializer
   has_many :routines, through: :activities
   has_many :activity_comments
   has_many :routine_comments
+  has_many :goals
 end

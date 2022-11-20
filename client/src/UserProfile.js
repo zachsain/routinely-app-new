@@ -4,12 +4,14 @@ import ActivityForm from './ActivityForm'
 import RoutineForm from './RoutineForm'
 import DisplayRoutines from './DisplayRoutines'
 import { useHistory} from 'react-router-dom'
+import GoalForm from './GoalForm'
 
 function UserProfile({user, setUser}){
     const [username, setUsername] = useState("")
     const [addRoutineClick, setAddRoutineClick] = useState(false)
     const [addActivityClick, setAddActivityClick] = useState(false)
     const [showButtons, setShowButtons] = useState(false)
+    const [goalFormClick, setGoalFormClick] = useState(false)
     const history = useHistory();
 
     console.log(user.routines)
@@ -38,6 +40,10 @@ function UserProfile({user, setUser}){
     function handleAddRoutine(e){
         history.push('/routines')
     }
+
+    function handleGoalClick(){
+        setGoalFormClick(!goalFormClick)
+    }
     return(
         <div>
             <div className="profile-container" >
@@ -56,20 +62,21 @@ function UserProfile({user, setUser}){
                 alt="user image"
                 />
              )}
-            {/* <p>bio: {user.bio}</p>
-            <p>contact: {user.email}</p> */}
+             
             </div>
 
-           {/* {  user.routines === [] ? (<div className="routine-container">
-                <h3>My Routines:</h3>
-                {userRoutines}
-            </div>) : (
-                <div>
-                <h3>Welcome to your user profile!</h3>
-                <button onClick={handleAddActivity}>Create A New Activity</button>
-                <button onClick={handleAddRoutine}> Create A Routine</button>
-                </div>
-            )} */}
+            <div className="goal-form">
+                <button onClick={handleGoalClick}>Create New Goal</button>
+                {goalFormClick ? 
+                    (<GoalForm
+                        user={user}
+                        setUser={setUser}
+                    />) 
+                    : 
+                    (null)}
+               
+             </div>
+          
 
             {   user.routines.length > 0 ? (
                   <div className="routine-container">
@@ -78,7 +85,11 @@ function UserProfile({user, setUser}){
                   </div>   
             ) : (
                 <div>
-                <h3>Welcome to your user profile!</h3>
+                <h3>Welcome to your user Routinely profile!</h3>
+                <p>Here you can create and manage your activities and routines</p>
+                <p>You can also create weekly goals for each category you want to do every week</p>
+                <p>Start by creating a new activity</p>
+
                 <button onClick={handleAddActivity}>Create A New Activity</button>
                 <button onClick={handleAddRoutine}> Create A Routine</button>
                 </div>

@@ -16,6 +16,7 @@ function App() {
 
   const [user, setUser] = useState(null);
 
+
   useEffect(() => {
     // auto-login
     fetch("/me").then((r) => {

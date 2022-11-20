@@ -12,7 +12,8 @@ function ShowRoutineActivities({
     category, 
     duration, 
     description,
-    routine
+    routine,
+    date
 }){
 
     const [isClicked, setIsClicked] = useState(false)
@@ -27,6 +28,7 @@ function ShowRoutineActivities({
         <div onClick={handleClick} className="activity-container">
         <p> Associated Activities:</p>
         <h3 >Activity: {title}</h3>
+        <p>{date}</p>
         <p>Category: {category}</p>
         <p>Duration: {duration}</p>
         <p>Notes: {description}</p>

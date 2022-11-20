@@ -11,7 +11,8 @@ function UserActivitiesCard({
     user,
     setUser,
     routineId,
-    routines
+    routines,
+    date
 }){
     const [isClicked, setIsClicked] = useState(false)
     const [copyOfState, setCopyOfState] = useState(user)
@@ -49,9 +50,11 @@ function UserActivitiesCard({
         
         <div className="activity-container">
         <h3 onClick={handleActivityClick}>Activity: {title}</h3>
-        <p>Category: {category}</p>
+        <p>Category: {category}</p> 
+        <p>{date}</p>
         <p>Duration: {duration}</p>
         <p>Notes: {description}</p>
+
         {/* <p>Routine Used: {activityRoutine[0].title} </p>  */}
         <button onClick={handleDeleteActivity} className='delete-activity-button'>x</button>
         <button onClick={handleEditClick}>Edit</button>

@@ -10,5 +10,64 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 0) do
+ActiveRecord::Schema[7.0].define(version: 2022_11_19_215012) do
+  create_table "activities", force: :cascade do |t|
+    t.string "date"
+    t.string "title"
+    t.string "category"
+    t.string "duration"
+    t.text "description"
+    t.integer "user_id"
+    t.integer "routine_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "activity_comments", force: :cascade do |t|
+    t.text "comment"
+    t.integer "user_id"
+    t.integer "activity_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "goals", force: :cascade do |t|
+    t.string "date"
+    t.string "category"
+    t.integer "amount"
+    t.string "user_id"
+    t.boolean "completed", default: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "routine_comments", force: :cascade do |t|
+    t.text "comment"
+    t.integer "user_id"
+    t.integer "routine_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "routines", force: :cascade do |t|
+    t.string "date"
+    t.string "title"
+    t.string "category"
+    t.text "instructions"
+    t.string "duration"
+    t.string "video_url"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "users", force: :cascade do |t|
+    t.string "username"
+    t.string "password_digest"
+    t.string "email"
+    t.string "image_url"
+    t.string "bio"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
 end

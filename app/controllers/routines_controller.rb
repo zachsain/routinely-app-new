@@ -1,6 +1,5 @@
 class RoutinesController < ApplicationController
     
-
     def index
         routines = Routine.all
         render json: routines.all.order(created_at: :desc)

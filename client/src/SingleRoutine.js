@@ -26,7 +26,9 @@ function SingleRoutine(){
               category={a.category}
               duration={a.duration}
               description={a.description}
-              id={a.id}/>
+              id={a.id}
+              date={a.date}
+            />
     }) } else {
         displayActivites = null
     }

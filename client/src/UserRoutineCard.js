@@ -14,6 +14,7 @@ function UserRoutineCard({
     setShowInputForRoutine,
     id,
     setRoutineId,
+    setCategory
 
     }){
 
@@ -21,9 +22,14 @@ function UserRoutineCard({
          e.preventDefault()
          setSelectRoutineClick(!selectRoutineClick)
          setRoutineTitle(title)
-         setShowInputForRoutine(!showInputForRoutine)
+         setShowInputForRoutine(true)
          setRoutineId(id)
+         setCategory(category)
     }   
+
+    function handleActivityClick(){
+        
+    }
   
     return(
         <div className="user-routines-card-container">
@@ -32,6 +38,7 @@ function UserRoutineCard({
             <p>Duration: {duration}</p>
             <p>Instructions: {instructions}</p>
             <button type="click" value={title} onClick={handleRoutineSelection}>Select</button>
+            <button type="click" onClick={handleActivityClick}> Add to New Activitiy </button>
 
         </div>
     )

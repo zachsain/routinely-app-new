@@ -5,7 +5,7 @@ import SingleActivityRoutine from "./SingleActivityRoutine";
 
 
 function SingleActivity({user}){
-  
+
     const [isLoaded, setIsLoaded] = useState(false)
     const params = useParams();
     let activity = user.activities.find(a => a.id == params.id)
@@ -25,6 +25,7 @@ function SingleActivity({user}){
                   description={activity.description}
                   routine={routine}
                   isLoaded={isLoaded}
+                  date={activity.date}
                 />             
         </div>
         
