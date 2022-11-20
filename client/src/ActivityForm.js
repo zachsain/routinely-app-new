@@ -85,10 +85,48 @@ function ActivityForm({
     }
  
     return(
-        <div>
+      <div>
             <div id="new-activity-form">
-      
       <form onSubmit={handleSubmit}>
+      <button onClick={handleRoutineSelectClick}>Select Routine</button>
+      {/* <br/> */}
+      {showInputForRoutine ? (  
+        <>
+        <label className="activity-form">Category:</label>
+        <input
+          className="activity-input"
+          type="text"
+          id="category"
+          autoComplete="off"
+          placeholder="type of activity..."
+          value={category}
+          readOnly
+        ></input>
+        <br />
+        <label className="activity-form">Routine: </label>
+        <input className="activity-input"
+          type="text"
+          id="routine-title"
+          autoComplete="off"
+          placeholder="Routine"
+          value={routineTitle}
+          readOnly
+        ></input> </>) : (null)}   
+        {/* <br /> */}
+         {selectRoutineClick ? (<DisplayUserRoutines 
+         user={user} 
+         setUser={setUser}
+         selectRoutineClick={selectRoutineClick}
+         setSelectRoutineClick={setSelectRoutineClick}
+         setRoutineTitle={setRoutineTitle}
+         showInputForRoutine={showInputForRoutine}
+         setShowInputForRoutine={setShowInputForRoutine}
+         setRoutineId={setRoutineId}
+         setCategory={setCategory}
+         />)
+         :(null)}
+        <br/>
+
         <label className="activity-form">Title:</label>
         <input
           className="activity-input"
@@ -98,20 +136,8 @@ function ActivityForm({
           placeholder="title of activity..."
           value={title}
           onChange={(e) => setTitle(e.target.value)}
-              ></input>
+          ></input>
         <br />
-
-        {/* <label className="activity-form">Category:</label>
-        <input
-          className="activity-input"
-          type="text"
-          id="category"
-          autoComplete="off"
-          placeholder="type of activity..."
-          value={category}
-          onChange={(e) => setCategory(e.target.value)}
-        ></input> */}
-      
 
         <label className="activity-form">Duration: </label>
         <input
@@ -135,48 +161,7 @@ function ActivityForm({
           value={description}
           onChange={(e) => setDescription(e.target.value)}
         ></input>
-        <br/>
-        {showInputForRoutine ? (  
-        <>
-        <label className="activity-form">Category:</label>
-        <input
-          className="activity-input"
-          type="text"
-          id="category"
-          autoComplete="off"
-          placeholder="type of activity..."
-          value={category}
-          readOnly
-          // onChange={(e) => setCategory()}
-        ></input>
-        <br />
-        <label className="activity-form">Routine: </label>
-        <input className="activity-input"
-          type="text"
-          id="routine-title"
-          autoComplete="off"
-          placeholder="Routine"
-          value={routineTitle}
-          readOnly
-          // onChange={(e) => setRoutineTitle()}
-        ></input> </>) : (null)}   
-        <br />
 
-        <button onClick={handleRoutineSelectClick}>Select Routine</button>
-         {selectRoutineClick ? (<DisplayUserRoutines 
-         user={user} 
-         setUser={setUser}
-         selectRoutineClick={selectRoutineClick}
-         setSelectRoutineClick={setSelectRoutineClick}
-         setRoutineTitle={setRoutineTitle}
-         showInputForRoutine={showInputForRoutine}
-         setShowInputForRoutine={setShowInputForRoutine}
-         setRoutineId={setRoutineId}
-         setCategory={setCategory}
-         
-
-         />)
-         :(null)}
         <br/>
         <button type="submit">Add Activity</button>
       </form>

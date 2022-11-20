@@ -9,6 +9,7 @@ function Routines({user, setUser}){
     const [addRoutineClick, setAddRoutineClick] = useState(false)
     const [categoryFilter, setCategoryFilter] = useState("")
     const [filterButtonClick, setFilterButtonClick] = useState(false)
+
     useEffect(() => {
         fetch('/routines')
         .then(r => r.json())
@@ -20,7 +21,6 @@ function Routines({user, setUser}){
         setAddRoutineClick(!addRoutineClick)
     }
 
-  
     const history = useHistory();
     const handleUserRoutineClick = useCallback(() => history.push('/'));
 
@@ -57,7 +57,6 @@ function Routines({user, setUser}){
         <div>
         {routines.length > 0 ? (
             <div>
-        
         <button onClick={handleFilterClick}>Filter By Category</button>
         {filterButtonClick ? ( 
         <div> 
@@ -85,7 +84,6 @@ function Routines({user, setUser}){
         ) : (
             null
         )}
-            
             <button id="add-new-routine" onClick={handleNewRoutine}>
                 {addRoutineClick ? ("Show Routines") : ("Add New Routine")}
             </button>
