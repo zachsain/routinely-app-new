@@ -26,7 +26,6 @@ function ShowRoutineActivities({
     return(
         
         <div onClick={handleClick} className="activity-container">
-        <p> Associated Activities:</p>
         <h3 >Activity: {title}</h3>
         <p>{date}</p>
         <p>Category: {category}</p>

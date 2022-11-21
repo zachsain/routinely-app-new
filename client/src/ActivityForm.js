@@ -35,11 +35,6 @@ function ActivityForm({
     function handleSubmit(e){
         e.preventDefault()
         setAddRoutineClick(!addRoutineClick)
-        // const todayDate = new Date()
-        // const styledDate = `${todayDate.getMonth()+1}/${todayDate.getDate()}/${todayDate.getFullYear()}`
-        // setDate(styledDate)
-        // console.log(styledDate)
-     
         fetch("/activities", {
             method: "POST",
             headers: {
@@ -82,6 +77,7 @@ function ActivityForm({
     function handleRoutineSelectClick(e){
         e.preventDefault()
         setSelectRoutineClick(!selectRoutineClick)
+        setShowInputForRoutine(!showInputForRoutine)
     }
  
     return(
@@ -89,8 +85,7 @@ function ActivityForm({
             <div id="new-activity-form">
       <form onSubmit={handleSubmit}>
       <button onClick={handleRoutineSelectClick}>Select Routine</button>
-      {/* <br/> */}
-      {showInputForRoutine ? (  
+      {/* {showInputForRoutine ? (  
         <>
         <label className="activity-form">Category:</label>
         <input
@@ -111,18 +106,19 @@ function ActivityForm({
           placeholder="Routine"
           value={routineTitle}
           readOnly
-        ></input> </>) : (null)}   
+        ></input> </>) : (null)}    */}
         {/* <br /> */}
-         {selectRoutineClick ? (<DisplayUserRoutines 
-         user={user} 
-         setUser={setUser}
-         selectRoutineClick={selectRoutineClick}
-         setSelectRoutineClick={setSelectRoutineClick}
-         setRoutineTitle={setRoutineTitle}
-         showInputForRoutine={showInputForRoutine}
-         setShowInputForRoutine={setShowInputForRoutine}
-         setRoutineId={setRoutineId}
-         setCategory={setCategory}
+         {selectRoutineClick ? (
+         <DisplayUserRoutines 
+            user={user} 
+            setUser={setUser}
+            selectRoutineClick={selectRoutineClick}
+            setSelectRoutineClick={setSelectRoutineClick}
+            setRoutineTitle={setRoutineTitle}
+            showInputForRoutine={showInputForRoutine}
+            setShowInputForRoutine={setShowInputForRoutine}
+            setRoutineId={setRoutineId}
+            setCategory={setCategory}
          />)
          :(null)}
         <br/>
@@ -151,7 +147,7 @@ function ActivityForm({
         ></input>
         <br />
 
-        <label className="activity-form">Description: </label>
+        <label className="activity-form">Notes: </label>
         <input
           className="activity-input"
           type="text"
@@ -162,6 +158,30 @@ function ActivityForm({
           onChange={(e) => setDescription(e.target.value)}
         ></input>
 
+        <br/>
+
+        {showInputForRoutine ? (  
+        <>
+        <label className="activity-form">Category:</label>
+        <input
+          className="activity-input"
+          type="text"
+          id="category"
+          autoComplete="off"
+          placeholder="type of activity..."
+          value={category}
+          readOnly
+        ></input>
+        <br />
+        <label className="activity-form">Routine Selected: </label>
+        <input className="activity-input"
+          type="text"
+          id="routine-title"
+          autoComplete="off"
+          placeholder="Routine"
+          value={routineTitle}
+          readOnly
+        ></input> </>) : (null)} 
         <br/>
         <button type="submit">Add Activity</button>
       </form>

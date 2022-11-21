@@ -40,6 +40,7 @@ function App() {
 
   return (
     <div className="app-container">
+      <img/>
       <NavBar user={user} setUser={setUser} />
       <Switch>
         <Route exact path='/activities'>
