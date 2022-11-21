@@ -9,6 +9,7 @@ import Logout from './Logout';
 import UserProfile from './UserProfile';
 import SingleActivity from './SingleActivity';
 import SingleRoutine from './SingleRoutine'
+// import Logo from '../public/andriod-chrome-192x192'
 import Loading from './Loading'
 // import SingleActivityEdit from './SingleActivityEdit';
 
@@ -40,7 +41,6 @@ function App() {
 
   return (
     <div className="app-container">
-      <img/>
       <NavBar user={user} setUser={setUser} />
       <Switch>
         <Route exact path='/activities'>

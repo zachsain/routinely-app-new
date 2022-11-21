@@ -1,36 +1,42 @@
-import React from 'react'
+import React, {useState} from 'react'
 import { Link } from "react-router-dom"
 import './App.css'
 
 function NavBar ({user, setUser}) {
-
-    const linkStyles = {
-        display: "block",
-        width: "100px",
-        padding: "5px",
-        margin: "0 6px 6px",
-        // background: "blue",
-        textDecoration: "none",
-        // color: "white",
-        // position: "fixed"
-      };
-
  return (
-    <div className="navbar-container">
-    <div className="nav-btn">
-      <Link to="/" style={linkStyles}>Home</Link>
+  <div className="navbar-container">
+    <div >
+    <Link to="/"><img id="routinely-logo" src="./images/routinely-logo.png" alt="img"/></Link>
     </div>
     <div className="nav-btn">
-      <Link  to="/activities" style={linkStyles}>Activities</Link>
+    <Link  to="/activities">Activities</Link>
     </div>
     <div className="nav-btn">
-      <Link to="/routines" style={linkStyles}>Routines</Link>
+    <Link to="/routines">Routines</Link>
     </div>
     <div className="nav-btn">
-      <Link to="/logout" style={linkStyles}>Logout</Link>
+    <Link to="/logout">Logout</Link>
     </div>
-  </div>
+   
+  </div> 
+    
  )
 }
 
 export default NavBar
+
+
+{/* <div className="navbar-container">
+<div >
+<Link to="/"><img id="routinely-logo" src="./images/routinely-logo.png" alt="img"/></Link>
+</div>
+<div className="nav-btn">
+<Link  to="/activities">Activities</Link>
+</div>
+<div className="nav-btn">
+<Link to="/routines">Routines</Link>
+</div>
+<div className="nav-btn">
+<Link to="/logout">Logout</Link>
+</div>
+</div> */}
