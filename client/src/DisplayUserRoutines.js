@@ -41,7 +41,6 @@ function DisplayUserRoutines({
                  />
     })
 
-
     return(
         <div className="user-routine-container">
            <div>{user_routines}</div>
