@@ -4,6 +4,7 @@ import ActivityForm from './ActivityForm'
 
 
 
+
 function AllActivities({user, setUser}){
 
     const [addRoutineClick, setAddRoutineClick] = useState(false)
@@ -49,9 +50,13 @@ function AllActivities({user, setUser}){
     console.log(user.activities.length)
     return(
         <div>{user.activities.length > 0 ? (
-            <div className='activity-container'>
-            {addRoutineClick ? (<h3>Activity Form</h3>) : (<h3>My Activites:</h3>)}
-            <button className="btn" onClick={handleClick}>{addActivityClick ? "See Activities" : "Create New Activity"}</button>
+            <div className='activities-page-container'>
+
+            <button id="new-activitiy-btn" className="btn" onClick={handleClick}>
+                {addActivityClick ? "See Activities" : "Create New Activity"}
+            </button>
+            {addRoutineClick ? (<h3>Activity Form</h3>) : (<h3 className="actvty-page-header">My Activites</h3>)}
+            
              {addRoutineClick ? (
             <div><ActivityForm 
             addRoutineClick={addRoutineClick} 
@@ -62,6 +67,24 @@ function AllActivities({user, setUser}){
             /> </div>) 
             : (<div> {activities}</div>)}
         </div> 
+        // <div>{user.activities.length > 0 ? (
+        //     <div className='activities-page-container'>
+        //     {/* {addRoutineClick ? (<h3>Activity Form</h3>) : (<h3>My Activites:</h3>)} */}
+        //     <button className="btn" onClick={handleClick}>
+        //         {addActivityClick ? "See Activities" : "Create New Activity"}
+        //     </button>
+        //     {addRoutineClick ? (<h3>Activity Form</h3>) : (<h3>My Activites:</h3>)}
+            
+        //      {addRoutineClick ? (
+        //     <div><ActivityForm 
+        //     addRoutineClick={addRoutineClick} 
+        //     setAddRoutineClick={setAddRoutineClick}
+        //     user={user} 
+        //     setUser={setUser}
+        //     routines={routines}
+        //     /> </div>) 
+        //     : (<div> {activities}</div>)}
+        // </div> 
         ) : (
             <div className='activity-container'> 
             <h3>Activity Form</h3>

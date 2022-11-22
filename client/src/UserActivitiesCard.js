@@ -2,6 +2,7 @@ import React, {useState, useEffect} from "react";
 import { useHistory} from 'react-router-dom';
 import SingleActivityEdit from "./SingleActivityEdit";
 import { FaTimesCircle } from "react-icons/fa";
+import { FiEdit } from "react-icons/fi";
 import './App.css';
 
 function UserActivitiesCard({
@@ -56,16 +57,15 @@ function UserActivitiesCard({
         <p>{date}</p>
         <p>Duration: {duration}</p>
         <p>Notes: {description}</p>
-
-        {/* <p>Routine Used: {activityRoutine[0].title} </p>  */}
         <button 
+          id="delete-btn"
           className="btn"
           onClick={handleDeleteActivity}
         >
-          <FaTimesCircle  size="1.6em" id="delete-btn"/>
+          <FaTimesCircle  size="1.7em" id="delete-btn-icon"/>
         </button>
         <br/>
-        <button className="btn" onClick={handleEditClick}>Edit</button>
+        <button id="edit-btn" className="btn" onClick={handleEditClick}><FiEdit size="1.7em" id="edit-btn-icon"/></button>
         {editButtonClick ? (
         <SingleActivityEdit 
         id={id}
