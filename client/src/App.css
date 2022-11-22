@@ -158,9 +158,9 @@ button {
   margin-left: 500px;
 }
 
-.btn {
+/* .btn {
   align-items: center;
-  background-color: #0A66C2;
+  background-color:  #191977;
   border: 0;
 
   border-radius: 36px;
@@ -169,7 +169,6 @@ button {
   cursor: pointer;
   display: inline-block;
   font-family: -apple-system,system-ui,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
-
   font-size: 14px;
   font-weight: 600;
   justify-content: center;
@@ -190,10 +189,8 @@ button {
   vertical-align: middle;
 }
 
-.btn:hover,
-.btn:focus { 
-  background-color: #167e45;
-  color: #ffffff;
+.btn:hover { 
+  background-color: #062626;
 }
 
 .btn:active {
@@ -205,4 +202,34 @@ button {
   cursor: not-allowed;
   background: rgba(0, 0, 0, .08);
   color: rgba(0, 0, 0, .3);
+} */
+
+#delete-btn{
+  padding-top: 5px;
+  text-align: center;
+}
+
+
+
+.btn{
+  display: inline-block;
+  outline: none;
+  cursor: pointer;
+  font-size: 14px;
+  padding: 0 12px;
+  line-height: 20px;
+  height: 30px;
+  max-height: 30px;
+  background: #566AE5;
+  font-weight: 700;
+  border: 0;
+  border-radius: 0;
+  color: #FFFFFF;
+  transition-timing-function: ease-in-out;
+  transition-property: box-shadow;
+  transition-duration: 150ms;
+}
+.btn:hover {
+  /* box-shadow: 0 2px 2px rgba(216, 24, 24, 0.12); */
+  background-color: #8b3812;
 }

@@ -58,7 +58,13 @@ function UserActivitiesCard({
         <p>Notes: {description}</p>
 
         {/* <p>Routine Used: {activityRoutine[0].title} </p>  */}
-        <button className="btn" onClick={handleDeleteActivity}><FaTimesCircle/></button>
+        <button 
+          className="btn"
+          onClick={handleDeleteActivity}
+        >
+          <FaTimesCircle  size="1.6em" id="delete-btn"/>
+        </button>
+        <br/>
         <button className="btn" onClick={handleEditClick}>Edit</button>
         {editButtonClick ? (
         <SingleActivityEdit 
