@@ -1,4 +1,5 @@
-import React, {useState} from 'react'
+import React, {useState} from 'react';
+import './App.css';
 
 
 function SignUpForm({setUser}){
@@ -102,7 +103,7 @@ function SignUpForm({setUser}){
                 onChange={(e) => setBio(e.target.value)}
             ></input>
             <br />
-            <button type="submit">Sign up</button>
+            <button className="btn" type="submit">Sign up</button>
           </form>
         </div>
       </>

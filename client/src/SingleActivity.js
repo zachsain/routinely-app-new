@@ -2,6 +2,7 @@ import React, {useState, useEffect} from "react";
 import {useParams} from 'react-router-dom';
 import DisplaySingleActivity from './DisplaySingleActivity'
 import SingleActivityRoutine from "./SingleActivityRoutine";
+import './App.css';
 
 
 function SingleActivity({user}){

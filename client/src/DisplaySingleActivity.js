@@ -1,5 +1,6 @@
 import React, {useState} from 'react'
 import SingleActivityRoutine from './SingleActivityRoutine'
+import './App.css';
 
 function DisplaySingleActivity({
     id,

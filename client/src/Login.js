@@ -1,6 +1,7 @@
 import React, {useState} from 'react'
 import LoginForm from "./LoginForm";
 import SignUpForm from "./SignUpForm";
+import './App.css';
 
 
 function Login({setUser}){

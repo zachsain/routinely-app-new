@@ -1,5 +1,6 @@
 import React, {useState, useEffect} from "react";
 import DisplayUserRoutines from './DisplayUserRoutines'
+import './App.css';
 
 
 function SingleActivityEdit({
@@ -141,7 +142,7 @@ function SingleActivityEdit({
   
     <br />
 
-    <button onClick={handleRoutineSelectClick}>Select Routine</button>
+    <button className="btn" onClick={handleRoutineSelectClick}>Select Routine</button>
      {selectRoutineClick ? (<DisplayUserRoutines 
      selectRoutineClick={selectRoutineClick}
      setSelectRoutineClick={setSelectRoutineClick}
@@ -152,7 +153,7 @@ function SingleActivityEdit({
      />)
      :(null)}
     <br/>
-    <button type="submit">Update</button>
+    <button className="btn" type="submit">Update</button>
   </form>
     
     </div>

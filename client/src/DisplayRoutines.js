@@ -2,6 +2,7 @@ import React, {useState} from "react";
 import './App.css'
 import {useHistory} from "react-router-dom";
 import RoutineAvivityForm from "./RoutineActivityForm";
+import { BsPlusCircle } from "react-icons/bs";
 
 function DisplayRoutines({
     title, 
@@ -28,7 +29,16 @@ function DisplayRoutines({
         <p>Category: {category}</p>
         <p>Duration: {duration}</p>
         <p>Instructions: {instructions}</p>
-        <button type="click" onClick={handleActivityClick}> create new activity </button>
+        <button 
+            className="btn" 
+            id="plus-button" 
+            type="click" 
+            onClick={handleActivityClick}> 
+            <BsPlusCircle 
+                size="1.5em" 
+                className="plus-icon"
+            /> 
+        </button>
             {addActivityClick ? (
                 <div> 
                     <RoutineAvivityForm 

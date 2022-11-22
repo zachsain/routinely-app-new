@@ -40,7 +40,7 @@ function UserRoutineCard({
             <p>Category: {category}</p>
             <p>Duration: {duration}</p>
             <p>Instructions: {instructions}</p>
-            <button type="click" value={title} onClick={handleRoutineSelection}>Select</button>
+            <button className="btn" type="click" value={title} onClick={handleRoutineSelection}>Select</button>
             
 
         </div>

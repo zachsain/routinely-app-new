@@ -3,6 +3,7 @@ import UserActivitiesCard from './UserActivitiesCard'
 import ActivityForm from './ActivityForm'
 
 
+
 function AllActivities({user, setUser}){
 
     const [addRoutineClick, setAddRoutineClick] = useState(false)
@@ -50,7 +51,7 @@ function AllActivities({user, setUser}){
         <div>{user.activities.length > 0 ? (
             <div className='activity-container'>
             {addRoutineClick ? (<h3>Activity Form</h3>) : (<h3>My Activites:</h3>)}
-            <button onClick={handleClick}>{addActivityClick ? "See Activities" : "Create New Activity"}</button>
+            <button className="btn" onClick={handleClick}>{addActivityClick ? "See Activities" : "Create New Activity"}</button>
              {addRoutineClick ? (
             <div><ActivityForm 
             addRoutineClick={addRoutineClick} 

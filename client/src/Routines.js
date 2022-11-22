@@ -1,8 +1,8 @@
 import React, {useState, useEffect, useCallback} from 'react'
 import RoutineForm from './RoutineForm'
-import './App.css'
 import DisplayRoutines from './DisplayRoutines'
 import { useHistory} from 'react-router-dom'
+import './App.css';
 
 function Routines({user, setUser}){
     const [routines, setRoutines] = useState([])
@@ -57,8 +57,8 @@ function Routines({user, setUser}){
     return(
         <div>
            {/* <button onClick={handleFilterClick}>Filter By Category</button> */}
-           <button id="add-new-routine" onClick={handleNewRoutine}>{addRoutineClick ? ("Show Routines") : ("Add New Routine")}</button>
-           <button id="my-routines-button" onClick={handleUserRoutineClick}>My Routines</button>
+           <button className="btn" id="add-new-routine" onClick={handleNewRoutine}>{addRoutineClick ? ("Show Routines") : ("Add New Routine")}</button>
+           <button className="btn" id="my-routines-button" onClick={handleUserRoutineClick}>My Routines</button>
             {addRoutineClick ? ( 
                 null
                 ) : (
@@ -89,7 +89,14 @@ function Routines({user, setUser}){
             (<h3>Add Routine:</h3>) : (<h3>Routines:</h3>)
             }
             {addRoutineClick ? 
-            (<div className="routine-form"><RoutineForm setAddRoutineClick={setAddRoutineClick} addRoutineClick={addRoutineClick} routines={routines} setRoutines={setRoutines}/> </div> )
+            (<div className="routine-form">
+                <RoutineForm 
+                    setAddRoutineClick={setAddRoutineClick} 
+                    addRoutineClick={addRoutineClick} 
+                    routines={routines} 
+                    setRoutines={setRoutines}
+                /> 
+            </div> )
              : (<div className="user-activity-container">
                {displayRoutines} 
             </div>)}

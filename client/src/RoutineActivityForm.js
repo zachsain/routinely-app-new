@@ -1,5 +1,6 @@
 import React, {useState} from "react";
 import {useHistory} from "react-router-dom";
+import './App.css';
 
 function RoutineAvivityForm({
     user,
@@ -150,7 +151,7 @@ function RoutineAvivityForm({
         ></input>
 
         <br/>
-        <button type="submit">Add Activity</button>
+        <button className="btn" type="submit">Add Activity</button>
       </form>
         
         </div>

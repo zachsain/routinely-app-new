@@ -3,6 +3,7 @@ import {useParams} from 'react-router-dom'
 import ShowRoutineActivities from "./ShowRoutineActivities";
 import Video from "./Video";
 import ReactPlayer from 'react-player/youtube'
+import './App.css';
 
 function SingleRoutine(){
     const [routine, setRoutine] = useState([])
@@ -64,8 +65,6 @@ function SingleRoutine(){
             {displayActivites}
             </div>
         )}
-
-        {/* {displayActivites} */}
 
         </div>
 

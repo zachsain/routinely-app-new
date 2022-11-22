@@ -1,4 +1,5 @@
 import React, {useState} from 'react'
+import './App.css';
 
 
 function LoginForm({setUser}){
@@ -49,7 +50,7 @@ return (
             value={password}
             onChange={(e) => setPassword(e.target.value)}
           ></input><br />
-          <button type='submit'>Login
+          <button className="btn" type='submit'>Login
             {/* {isLoading ? "Loading..." : "Let's go!"} */}
           </button>
           {isLoading ? (<h1>Loading...</h1>) : (null)}

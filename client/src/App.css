@@ -113,8 +113,20 @@ div::-webkit-scrollbar {
   border-color: grey;
 }
 
+
+/* .btn :hover {
+  color:#a10f0f;
+  box-shadow: #a10f0f;
+}
+
+
+#plus-button :hover{
+  color:#a10f0f;
+  box-shadow: #a10f0f;
+
+}
 button {
-  background: linear-gradient(to bottom right, #EF4765, #5a8cff);
+  background: linear-gradient(to bottom right, #4e47ef, #5a8cff);
   border: 0;
   border-radius: 36px;
   color: #FFFFFF;
@@ -133,15 +145,64 @@ button {
   -webkit-user-select: none;
   touch-action: manipulation;
   white-space: nowrap;
-}
-
-/* .button-62:not([disabled]):focus {
-  box-shadow: 0 0 .25rem rgba(0, 0, 0, 0.5), -.125rem -.125rem 1rem rgba(239, 71, 101, 0.5), .125rem .125rem 1rem rgba(255, 154, 90, 0.5);
-}
-
-.button-62:not([disabled]):hover {
-  box-shadow: 0 0 .25rem rgba(0, 0, 0, 0.5), -.125rem -.125rem 1rem rgba(239, 71, 101, 0.5), .125rem .125rem 1rem rgba(255, 154, 90, 0.5);
 } */
 
 
-/* #EF4765, #5a8cff); */
+.plus-icon {
+  text-align: center;
+  padding-top: 4px;
+}
+
+
+#plus-button {
+  margin-left: 500px;
+}
+
+.btn {
+  align-items: center;
+  background-color: #0A66C2;
+  border: 0;
+
+  border-radius: 36px;
+  box-sizing: border-box;
+  color: #ffffff;
+  cursor: pointer;
+  display: inline-block;
+  font-family: -apple-system,system-ui,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+
+  font-size: 14px;
+  font-weight: 600;
+  justify-content: center;
+  line-height: 20px;
+  max-width: 480px;
+  min-height: 40px;
+  min-width: 0px;
+  overflow: hidden;
+  padding: 0px;
+  padding-left: 15px;
+  padding-right: 15px;
+  margin: 8px;
+  text-align: center;
+  touch-action: manipulation;
+  transition: background-color 0.167s cubic-bezier(0.4, 0, 0.2, 1) 0s, box-shadow 0.167s cubic-bezier(0.4, 0, 0.2, 1) 0s, color 0.167s cubic-bezier(0.4, 0, 0.2, 1) 0s;
+  user-select: none;
+  -webkit-user-select: none;
+  vertical-align: middle;
+}
+
+.btn:hover,
+.btn:focus { 
+  background-color: #167e45;
+  color: #ffffff;
+}
+
+.btn:active {
+  background: #09223b;
+  color: rgb(255, 255, 255, .7);
+}
+
+.btn:disabled { 
+  cursor: not-allowed;
+  background: rgba(0, 0, 0, .08);
+  color: rgba(0, 0, 0, .3);
+}

@@ -127,7 +127,7 @@ function RoutineForm({setRoutines, routines, addRoutineClick, setAddRoutineClick
             
             <br />
   
-            <button type="submit">Add Routine</button>
+            <button className="btn" type="submit">Add Routine</button>
           </form>
         </div>
       </>

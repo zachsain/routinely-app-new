@@ -5,6 +5,7 @@ import RoutineForm from './RoutineForm'
 import DisplayRoutines from './DisplayRoutines'
 import { useHistory} from 'react-router-dom'
 import GoalForm from './GoalForm'
+import './App.css';
 
 function UserProfile({user, setUser}){
     const [username, setUsername] = useState("")
@@ -65,7 +66,7 @@ function UserProfile({user, setUser}){
              
             </div>
 
-            <div className="goal-form">
+            {/* <div className="goal-form">
                 <button onClick={handleGoalClick}>Create New Goal</button>
                 {goalFormClick ? 
                     (<GoalForm
@@ -75,7 +76,7 @@ function UserProfile({user, setUser}){
                     : 
                     (null)}
                
-             </div>
+             </div> */}
           
 
             {   user.routines.length > 0 ? (
@@ -90,8 +91,8 @@ function UserProfile({user, setUser}){
                 <p>You can also create weekly goals for each category you want to do every week</p>
                 <p>Start by creating a new activity</p>
 
-                <button onClick={handleAddActivity}>Create A New Activity</button>
-                <button onClick={handleAddRoutine}> Create A Routine</button>
+                <button className="btn" onClick={handleAddActivity}>Create A New Activity</button>
+                <button className="btn" onClick={handleAddRoutine}> Create A Routine</button>
                 </div>
             )}
 
