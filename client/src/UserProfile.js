@@ -46,7 +46,7 @@ function UserProfile({user, setUser}){
         setGoalFormClick(!goalFormClick)
     }
     return(
-        <div>
+        <div className='profile-page'>
             <div className="profile-container" >
             <h3 className='user-profile-name'>Name: {user.username}</h3>
            { user.image_url ?
@@ -80,7 +80,7 @@ function UserProfile({user, setUser}){
           
 
             {   user.routines.length > 0 ? (
-                  <div className="routine-container">
+                  <div>
                   <h3>My Routines:</h3>
                   {userRoutines}
                   </div>   

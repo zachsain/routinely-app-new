@@ -11,8 +11,69 @@ div::-webkit-scrollbar {
   display: none;
 }
 
+/* 
+.activity-container{
+  display: block;
+  border: 10px solid #1C6EA4;
+  position: relative;
+  text-align: center;
+  padding-left: 39px;
+  padding-right: 39px;
+  padding-bottom: 12px;
+  padding-top: 12px;
+  font-family: 'Courier New', Courier, monospace;
+  background-color: white;
+  margin: 15px;
+  margin-left: 320px;
+  margin-right: 320px;
+  margin-bottom: 25px;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  justify-content: space-around;
+} */
 
 .activity-container{
+  display: grid;
+  grid-template-rows: max-content 200px 1fr;
+  display: block;
+  border: 10px solid #1C6EA4;
+  position: relative;
+  text-align: center;
+  padding-left: 39px;
+  padding-right: 39px;
+  padding-bottom: 12px;
+  padding-top: 12px;
+  font-family: 'Courier New', Courier, monospace;
+  background-color: white;
+  margin: 15px;
+  margin-left: 320px;
+  margin-right: 320px;
+  margin-bottom: 25px;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  justify-content: space-between;
+}
+
+
+
+/* .activity-container h5 {
+  padding-left: 400px;
+} */
+.actvty-page-header{
+  text-align: center;
+  /* display: inline-block; */
+  border: 10px solid #1C6EA4;
+  border-radius: 500px;
+  font-family: "Avenir Next", Calibri, Verdana, sans-serif;
+  color: #566AE5;
+  font-weight: 800;
+  font-size: 60px;
+  margin-left: 400px;
+  margin-right: 400px;
+  background-color: white;
+  text-shadow: 3px 3px yellow;
+  box-shadow: 2px 2px rgb(82, 88, 14);
+}
+
+.routine-container{
   border: 10px solid #1C6EA4;
   position: relative;
   /* text-align: center; */
@@ -27,19 +88,6 @@ div::-webkit-scrollbar {
   margin-left: 150px;
   margin-right: 150px;
   margin-bottom: 25px
-}
-
-.actvty-page-header{
-  position: relative;
-}
-
-
-.routine-container{
-  border: 2px solid #1C6EA4;
-  padding-left: 10px;
-  padding-bottom: 10px;
-  font-family: 'Courier New', Courier, monospace;
-  background-color: white;
 }
 
 
@@ -85,6 +133,16 @@ div::-webkit-scrollbar {
   /* background-repeat: no-repeat, repeat; */
   min-height: 100vh;
   /* background-size: cover; */
+}
+
+.routine-page{
+  background-image: url("https://img.freepik.com/free-vector/gradient-home-gym-illustration_23-2148819450.jpg?w=1800&t=st=1669233716~exp=1669234316~hmac=f66f9883d37f8682fbfe7dac9d21d5da995e680775d405c5485d04e7208290f5");
+  
+}
+
+.profile-page{
+  background-image: url("https://img.freepik.com/free-vector/people-practicing-yoga-exercise-meditation_1308-118205.jpg?w=2000&t=st=1669234519~exp=1669235119~hmac=99f7a7014ebb82d0ba71a824a3e7ae94beda29ce3ed29ab103e1abf85d494ba0");
+  background-repeat: repeat;
 }
 
 #routinely-logo{
@@ -148,12 +206,17 @@ div::-webkit-scrollbar {
   text-align: center;
 }
 
+/* #delete-btn :hover{
+  color: red;
+} */
+
 #delete-btn{
   position: absolute;
-  right: 24px;
+  left: 24px;
   top: 19px;
   /* margin-right: -7%; */
 }
+
 
 #edit-btn{
  position: absolute;
@@ -165,6 +228,16 @@ div::-webkit-scrollbar {
   padding-top: 2.5px;
   text-align: center;
 }
+
+.new-activity-btn{
+  display: inline-block;
+  text-align: center;
+}
+
+.create-btn-div{
+  text-align: center;
+}
+
 /* 
 #new-activitiy-btn{
   mar: 70px;
@@ -187,8 +260,12 @@ div::-webkit-scrollbar {
   transition-property: box-shadow;
   transition-duration: 150ms;
 }
-.btn:hover {
-  /* box-shadow: 0 2px 2px rgba(216, 24, 24, 0.12); */
-  background-color: #8b3812;
+
+.card-click{
+  cursor: pointer;
 }
 
+.btn:hover {
+  /* box-shadow: 0 2px 2px rgba(216, 24, 24, 0.12); */
+  background-color: #1f349d;
+}

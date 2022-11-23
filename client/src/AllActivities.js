@@ -51,21 +51,42 @@ function AllActivities({user, setUser}){
     return(
         <div className='activity-page'>{user.activities.length > 0 ? (
             <div className='activities-page-container'>
-
-            <button id="new-activitiy-btn" className="btn" onClick={handleClick}>
-                {addActivityClick ? "See Activities" : "Create New Activity"}
-            </button>
-            {addRoutineClick ? (<h3>Activity Form</h3>) : (<h3 className="actvty-page-header">My Activites</h3>)}
-            
+            {/* <button id="new-activitiy-btn" className="btn" onClick={handleClick}>
+             Create New Activity
+            </button>    */}
              {addRoutineClick ? (
-            <div><ActivityForm 
+            <div>
+                {/* <ActivityForm 
             addRoutineClick={addRoutineClick} 
             setAddRoutineClick={setAddRoutineClick}
             user={user} 
             setUser={setUser}
             routines={routines}
-            /> </div>) 
-            : (<div> {activities}</div>)}
+            />  */}
+            <h1 className="actvty-page-header">Activity Journal:</h1>
+            <div className="create-btn-div"> 
+            <button id="new-activitiy-btn" className="btn" onClick={handleClick}>
+             Create New Activity
+            </button>   
+            <ActivityForm 
+            addRoutineClick={addRoutineClick} 
+            setAddRoutineClick={setAddRoutineClick}
+            user={user} 
+            setUser={setUser}
+            routines={routines}
+            /> 
+            </div>
+             {activities}
+            </div>) 
+            : (<div> 
+                <h1 className="actvty-page-header">Activity Journal:</h1>
+             <div className="create-btn-div"> 
+            <button id="new-activitiy-btn" className="btn" onClick={handleClick}>
+             Create New Activity
+            </button>   
+            </div>
+                {activities}
+            </div>)}
         </div> 
         ) : (
             <div className='activity-container'> 

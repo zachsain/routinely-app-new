@@ -52,11 +52,14 @@ function UserActivitiesCard({
     return(
         
         <div className="activity-container">
-        <h3 onClick={handleActivityClick}>Activity: {title}</h3>
-        <p>Category: {category}</p> 
-        <p>Duration: {duration}</p>
-        <p>Notes: {description}</p>
-        <p>{date}</p>
+        <div className='card-click' onClick={handleActivityClick}>
+          <h3>Activity: {title}</h3>
+          <p>Category: {category}</p> 
+          <p>Duration: {duration}</p>
+          <p>Notes: {description}</p>
+          <h5 id="activity-date">{date}</h5>
+        </div>
+        
         <button 
           id="delete-btn"
           className="btn"

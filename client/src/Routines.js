@@ -55,7 +55,7 @@ function Routines({user, setUser}){
         setRoutines(filtered)
     }
     return(
-        <div>
+        <div className='routine-page'>
            {/* <button onClick={handleFilterClick}>Filter By Category</button> */}
            <button className="btn" id="add-new-routine" onClick={handleNewRoutine}>{addRoutineClick ? ("Show Routines") : ("Add New Routine")}</button>
            <button className="btn" id="my-routines-button" onClick={handleUserRoutineClick}>My Routines</button>
