@@ -54,9 +54,9 @@ function UserActivitiesCard({
         <div className="activity-container">
         <h3 onClick={handleActivityClick}>Activity: {title}</h3>
         <p>Category: {category}</p> 
-        <p>{date}</p>
         <p>Duration: {duration}</p>
         <p>Notes: {description}</p>
+        <p>{date}</p>
         <button 
           id="delete-btn"
           className="btn"

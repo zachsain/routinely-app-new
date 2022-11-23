@@ -80,6 +80,21 @@ function SingleActivityEdit({
         <div id="new-activity-form">
   
   <form onSubmit={handleSubmit}>
+  <br />
+
+  <button className="btn" onClick={handleRoutineSelectClick}>Select Routine</button>
+    {selectRoutineClick ? (<DisplayUserRoutines 
+    selectRoutineClick={selectRoutineClick}
+    setSelectRoutineClick={setSelectRoutineClick}
+    setRoutineTitle={setRoutineTitle}
+    showInputForRoutine={showInputForRoutine}
+    setShowInputForRoutine={setShowInputForRoutine}
+    setRoutineId={setRoutineId}
+    setCategory={setUpdatedCategory}
+    
+  />)
+ :(null)}
+ <br/>
     <label className="activity-form">Title:</label>
     <input
       className="activity-input"
@@ -92,7 +107,7 @@ function SingleActivityEdit({
           ></input>
     <br />
 
-    <label className="activity-form">Category:</label>
+    {/* <label className="activity-form">Category:</label>
     <input
       className="activity-input"
       type="text"
@@ -102,7 +117,7 @@ function SingleActivityEdit({
       value={updatedCategory}
       onChange={(e) => setUpdatedCategory(e.target.value)}
     ></input>
-    <br />
+    <br /> */}
 
     <label className="activity-form">Duration: </label>
     <input
@@ -116,7 +131,7 @@ function SingleActivityEdit({
     ></input>
     <br />
 
-    <label className="activity-form">Description: </label>
+    <label className="activity-form">Notes: </label>
     <input
       className="activity-input"
       type="text"
@@ -128,7 +143,7 @@ function SingleActivityEdit({
     ></input>
     <br/>
     
-    {showInputForRoutine ? (  
+    {/* {showInputForRoutine ? (  
     <>
     <label className="activity-form">Routine: </label>
     <input className="activity-input"
@@ -140,20 +155,34 @@ function SingleActivityEdit({
       onChange={(e) => setRoutineTitle(e.target.value)}
     ></input> </>) : (null)}
   
-    <br />
-
-    <button className="btn" onClick={handleRoutineSelectClick}>Select Routine</button>
-     {selectRoutineClick ? (<DisplayUserRoutines 
-     selectRoutineClick={selectRoutineClick}
-     setSelectRoutineClick={setSelectRoutineClick}
-     setRoutineTitle={setRoutineTitle}
-     showInputForRoutine={showInputForRoutine}
-     setShowInputForRoutine={setShowInputForRoutine}
-     setRoutineId={setRoutineId}
-     />)
-     :(null)}
+    
     <br/>
-    <button className="btn" type="submit">Update</button>
+    <button className="btn" type="submit">Update</button> */}
+
+    {showInputForRoutine ? (  
+        <>
+        <label className="activity-form">Category:</label>
+        <input
+          className="activity-input"
+          type="text"
+          id="category"
+          autoComplete="off"
+          placeholder="type of activity..."
+          value={updatedCategory}
+          readOnly
+        ></input>
+        <br />
+        <label className="activity-form">Routine Selected: </label>
+        <input className="activity-input"
+          type="text"
+          id="routine-title"
+          autoComplete="off"
+          placeholder="Routine"
+          value={routineTitle}
+          readOnly
+        ></input> </>) : (null)} 
+        <br/>
+        <button className="btn" type="submit">Update</button>
   </form>
     
     </div>

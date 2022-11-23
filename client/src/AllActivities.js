@@ -49,7 +49,7 @@ function AllActivities({user, setUser}){
 
     console.log(user.activities.length)
     return(
-        <div>{user.activities.length > 0 ? (
+        <div className='activity-page'>{user.activities.length > 0 ? (
             <div className='activities-page-container'>
 
             <button id="new-activitiy-btn" className="btn" onClick={handleClick}>
@@ -67,24 +67,6 @@ function AllActivities({user, setUser}){
             /> </div>) 
             : (<div> {activities}</div>)}
         </div> 
-        // <div>{user.activities.length > 0 ? (
-        //     <div className='activities-page-container'>
-        //     {/* {addRoutineClick ? (<h3>Activity Form</h3>) : (<h3>My Activites:</h3>)} */}
-        //     <button className="btn" onClick={handleClick}>
-        //         {addActivityClick ? "See Activities" : "Create New Activity"}
-        //     </button>
-        //     {addRoutineClick ? (<h3>Activity Form</h3>) : (<h3>My Activites:</h3>)}
-            
-        //      {addRoutineClick ? (
-        //     <div><ActivityForm 
-        //     addRoutineClick={addRoutineClick} 
-        //     setAddRoutineClick={setAddRoutineClick}
-        //     user={user} 
-        //     setUser={setUser}
-        //     routines={routines}
-        //     /> </div>) 
-        //     : (<div> {activities}</div>)}
-        // </div> 
         ) : (
             <div className='activity-container'> 
             <h3>Activity Form</h3>
@@ -99,21 +81,6 @@ function AllActivities({user, setUser}){
         )}
         </div>
 
-
-
-        // <div className='activity-container'>
-        //     {addRoutineClick ? (<h3>Activity Form</h3>) : (<h3>My Activites:</h3>)}
-        //     <button onClick={handleClick}>{addActivityClick ? "See Activities" : "Create New Activity"}</button>
-        //      {addRoutineClick ? (
-        //     <div><ActivityForm 
-        //     addRoutineClick={addRoutineClick} 
-        //     setAddRoutineClick={setAddRoutineClick}
-        //     user={user} 
-        //     setUser={setUser}
-        //     routines={routines}
-        //     /> </div>) 
-        //     : (<div> {activities}</div>)}
-        // </div> 
     )
 }
 
