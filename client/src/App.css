@@ -1,4 +1,5 @@
 .App {
+  display: flex;
   text-align: center;
 }
 
@@ -31,7 +32,7 @@ div::-webkit-scrollbar {
   justify-content: space-around;
 } */
 
-.activity-container{
+/* .activity-container{
   display: grid;
   grid-template-rows: max-content 200px 1fr;
   display: block;
@@ -50,6 +51,28 @@ div::-webkit-scrollbar {
   margin-bottom: 25px;
   box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
   justify-content: space-between;
+} */
+
+
+.activity-container{
+  display: flex;
+  border: 10px solid #1C6EA4;
+  position: relative;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  /* padding-left: 39px;
+  padding-right: 39px; */
+  /* padding-bottom: 12px;
+  padding-top: 12px; */
+  font-family: 'Courier New', Courier, monospace;
+  background-color: white;
+  margin: 15px;
+  margin-left: 320px;
+  margin-right: 320px;
+  /* margin-bottom: 25px; */
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  /* justify-content: space-between; */
 }
 
 
@@ -58,8 +81,9 @@ div::-webkit-scrollbar {
   padding-left: 400px;
 } */
 .actvty-page-header{
-  text-align: center;
-  /* display: inline-block; */
+  display: flex;
+  align-items: center;
+  justify-content: center;
   border: 10px solid #1C6EA4;
   border-radius: 500px;
   font-family: "Avenir Next", Calibri, Verdana, sans-serif;
@@ -69,7 +93,7 @@ div::-webkit-scrollbar {
   margin-left: 400px;
   margin-right: 400px;
   background-color: white;
-  text-shadow: 3px 3px yellow;
+  text-shadow: 3px 3px #e1e125;
   box-shadow: 2px 2px rgb(82, 88, 14);
 }
 
@@ -124,15 +148,19 @@ div::-webkit-scrollbar {
 }
 
 .app-container{
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
   background-color: efeeea;
 }
 
 .activity-page{
+  display: flex;
+  /* align-items: center; */
   background-color: efeeea;
   background-image: url("https://img.freepik.com/free-vector/man-sport-activities_102902-2338.jpg?w=1380&t=st=1669233240~exp=1669233840~hmac=cfdb7370806c6f4ad4d721be5fde757ae95722cdf3a27ae557b22a058bd69418");
-  /* background-repeat: no-repeat, repeat; */
-  min-height: 100vh;
-  /* background-size: cover; */
+  /* min-height: 100vh; */
+  
 }
 
 .routine-page{
@@ -175,8 +203,8 @@ div::-webkit-scrollbar {
 }
 
 .nav-btn a {
-  float: left;
-  display: block;
+  /* float: left; */
+  display: flex;
   text-align: center;
   padding: 14px 10px;
   font-family: ui-serif;
@@ -230,8 +258,9 @@ div::-webkit-scrollbar {
 }
 
 .new-activity-btn{
-  display: inline-block;
-  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .create-btn-div{
@@ -243,7 +272,7 @@ div::-webkit-scrollbar {
   mar: 70px;
 } */
 .btn{
-  display: inline-block;
+  display: flex;
   outline: none;
   cursor: pointer;
   font-size: 14px;
