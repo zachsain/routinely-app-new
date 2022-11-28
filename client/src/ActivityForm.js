@@ -82,9 +82,9 @@ function ActivityForm({
  
     return(
       <div>
-            <div id="new-activity-form">
-      <form onSubmit={handleSubmit}>
-      <button className="btn" onClick={handleRoutineSelectClick}>Select Routine</button>
+      <div id="new-activity-form-container">
+      <form className="activity-form" onSubmit={handleSubmit}>
+      <button className="btn" id="select-routine-btn" onClick={handleRoutineSelectClick}>Select Routine</button>
          {selectRoutineClick ? (
          <DisplayUserRoutines 
             user={user} 

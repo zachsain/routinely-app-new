@@ -39,35 +39,18 @@ function AllActivities({user, setUser}){
         setAddActivityClick(!addActivityClick)
     }
 
-    // if (user.activities.length === 0) {
-    //     setAddRoutineClick(false)
-    // }
-
-    // user.activities.length > 0 ? (setAddRoutineClick(true)) : (setAddRoutineClick(false))
-    
-    // console.log(user.activities)
-
-    console.log(user.activities.length)
     return(
         <div className='activity-page'>{user.activities.length > 0 ? (
             <div className='activities-page-container'>
-            {/* <button id="new-activitiy-btn" className="btn" onClick={handleClick}>
-             Create New Activity
-            </button>    */}
              {addRoutineClick ? (
             <div>
-                {/* <ActivityForm 
-            addRoutineClick={addRoutineClick} 
-            setAddRoutineClick={setAddRoutineClick}
-            user={user} 
-            setUser={setUser}
-            routines={routines}
-            />  */}
             <h1 className="actvty-page-header">Activity Journal:</h1>
             <div className="create-btn-div"> 
             <button id="new-activitiy-btn" className="btn" onClick={handleClick}>
              Create New Activity
             </button>   
+            </div>
+            <div className="activity-form-component">
             <ActivityForm 
             addRoutineClick={addRoutineClick} 
             setAddRoutineClick={setAddRoutineClick}
