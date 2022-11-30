@@ -88,14 +88,18 @@ div::-webkit-scrollbar {
 }
 
 .user-routines-card-container{
-  flex-wrap: wrap;
+  display: flex;
+  flex-direction: column;
+  /* flex-wrap: wrap; */
   border: 5px solid #1C6EA4;
-  position: relative;
+  /* position: relative; */
   text-align: center;
   align-items: center;
-  justify-content: center;
-  /* padding-left: 10px;
-  padding-bottom: 10px; */
+  justify-content: space-around;
+  margin-left: 5em;
+  margin-right: 5em;
+  margin-top: 3em;
+  margin-bottom: 2em;
   font-family: 'Courier New', Courier, monospace;
   font-size: 1em;
   background-color: white;
@@ -134,9 +138,20 @@ div::-webkit-scrollbar {
   font-weight: 700;
 }
 
-
 .activity-input{
   font-family: monospace;
+}
+
+#routine-filter{
+  display: flex;
+  justify-content: center;
+  padding-top: 3em;
+}
+
+.routine-filter-selector{
+  border-radius: 15%;
+  margin-left: 1em;
+   font-family: 'Courier New', Courier, monospace;  
 }
 
 #notes{
@@ -201,33 +216,18 @@ div::-webkit-scrollbar {
 
 }
 
-/* #select-routine-btn{
-  display: flex;
-  text-align: center;
-  justify-content: center;
-  align-items: center;
-} */
 
 #routine-select-btn{
   display: flex;
   justify-content: center;
   text-align: center;
-  border-radius: 17px;
-  /* border-width: 1em; */
+  border-radius: 20%;
 }
 
 .select-routine-btn-container{
   display: flex;
-  justify-content: right;
-  padding-right: 1em;
-  padding-bottom: 1em;
-}
-
-.routine-select-icon{
-  display: flex;
   justify-content: center;
-  text-align: center;
-  size: 30px;
+  padding-bottom: 1em;
 }
 
 
@@ -262,6 +262,7 @@ div::-webkit-scrollbar {
   font-weight: 700;
   border: 0;
   border-radius: 0;
+  /* border-radius: 15%; */
   color: #FFFFFF;
   transition-timing-function: ease-in-out;
   transition-property: box-shadow;

@@ -43,7 +43,7 @@ function UserRoutineCard({
             <p>Duration: {duration}</p>
             <p>Instructions: {instructions}</p>
             <div className="select-routine-btn-container">
-            <button className="btn" id="routine-select-btn" type="click" value={title} onClick={handleRoutineSelection}> <FiPlus size="1.6em" className="routine-select-icon" /> </button>
+            <button className="btn" id="routine-select-btn" type="click" value={title} onClick={handleRoutineSelection}> <FiPlus size="1.6em" className="routine-select-icon"/> </button>
             </div>
         </div>
     )
