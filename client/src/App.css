@@ -97,6 +97,7 @@ div::-webkit-scrollbar {
   /* padding-left: 10px;
   padding-bottom: 10px; */
   font-family: 'Courier New', Courier, monospace;
+  font-size: 1em;
   background-color: white;
   text-align: center;
   justify-content: center;
@@ -192,14 +193,6 @@ div::-webkit-scrollbar {
 }
 
 
-#select-routine-btn{
-  display: flex;
-  text-align: center;
-  justify-content: center;
-  align-items: center;
-}
-
-
 #delete-btn{
   position: absolute;
   border-radius: 13px;
@@ -207,6 +200,36 @@ div::-webkit-scrollbar {
   top: 19px;
 
 }
+
+/* #select-routine-btn{
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+} */
+
+#routine-select-btn{
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  border-radius: 17px;
+  /* border-width: 1em; */
+}
+
+.select-routine-btn-container{
+  display: flex;
+  justify-content: right;
+  padding-right: 1em;
+  padding-bottom: 1em;
+}
+
+.routine-select-icon{
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  size: 30px;
+}
+
 
 
 #edit-btn{

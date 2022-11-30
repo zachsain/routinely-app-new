@@ -1,6 +1,8 @@
 import React, {useState} from "react";
 import ActivityForm from "./ActivityForm"
 import './App.css';
+import { HiOutlinePlus } from "react-icons/hi2";
+import { FiPlus } from "react-icons/fi";
 
 function UserRoutineCard({
     title,
@@ -40,9 +42,9 @@ function UserRoutineCard({
             <p>Category: {category}</p>
             <p>Duration: {duration}</p>
             <p>Instructions: {instructions}</p>
-            <button className="btn" type="click" value={title} onClick={handleRoutineSelection}>Select</button>
-            
-
+            <div className="select-routine-btn-container">
+            <button className="btn" id="routine-select-btn" type="click" value={title} onClick={handleRoutineSelection}> <FiPlus size="1.6em" className="routine-select-icon" /> </button>
+            </div>
         </div>
     )
 }
