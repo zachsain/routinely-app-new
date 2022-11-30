@@ -100,46 +100,46 @@ function ActivityForm({
          :(null)}
         <br/>
 
-        <label className="activity-form">Title:</label>
+        <label className="activity-form-label">Title:</label>
         <input
           className="activity-input"
           type="text"
           id="title"
           autoComplete="off"
-          placeholder="title of activity..."
+          placeholder="Title of activity..."
           value={title}
           onChange={(e) => setTitle(e.target.value)}
           ></input>
         <br />
 
-        <label className="activity-form">Duration: </label>
+        <label className="activity-form-label">Duration: </label>
         <input
           className="activity-input"
           type="text"
           id="duration"
           autoComplete="off"
-          placeholder="duration..."
+          placeholder="Duration of activity..."
           value={duration}
           onChange={(e) => setDuration(e.target.value)}
         ></input>
         <br />
 
-        <label className="activity-form">Notes: </label>
-        <input
+        <label id="notes-input" className="activity-form-label">Notes: </label>
+        <textarea
           className="activity-input"
           type="text"
-          id="description"
+          id="notes"
           autoComplete="off"
           placeholder="Notes on activity..."
           value={description}
           onChange={(e) => setDescription(e.target.value)}
-        ></input>
+        ></textarea>
 
         <br/>
 
         {showInputForRoutine ? (  
         <>
-        <label className="activity-form">Category:</label>
+        <label className="activity-form-label">Category:</label>
         <input
           className="activity-input"
           type="text"
@@ -150,7 +150,7 @@ function ActivityForm({
           readOnly
         ></input>
         <br />
-        <label className="activity-form">Routine Selected: </label>
+        <label className="activity-form-label">Routine Selected: </label>
         <input className="activity-input"
           type="text"
           id="routine-title"

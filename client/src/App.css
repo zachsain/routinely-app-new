@@ -35,7 +35,6 @@ div::-webkit-scrollbar {
   align-items: center;
   justify-content: center;
   border: 10px solid #1C6EA4;
-  /* border:  solid #1C6EA4; */
   border-radius: 500px;
   font-family: "Avenir Next", Calibri, Verdana, sans-serif;
   color: #566AE5;
@@ -48,22 +47,16 @@ div::-webkit-scrollbar {
   box-shadow: 2px 2px rgb(82, 88, 14);
 }
 
-/* #activity-date{
-  padding-right: 23em;
-} */
 
 .routine-container{
   border: 10px solid #1C6EA4;
   position: relative;
-  /* text-align: center; */
   padding-left: 39px;
   padding-bottom: 12px;
   padding-top: 12px;
   font-family: 'Courier New', Courier, monospace;
   background-color: white;
   margin: 15px;
-  /* margin-left: 180px;
-  margin-right: 180px; */
   margin-left: 150px;
   margin-right: 150px;
   margin-bottom: 25px
@@ -95,47 +88,34 @@ div::-webkit-scrollbar {
 }
 
 .user-routines-card-container{
-  border: 2px solid #1C6EA4;
-  padding-left: 10px;
-  padding-bottom: 10px;
+  flex-wrap: wrap;
+  border: 5px solid #1C6EA4;
+  position: relative;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  /* padding-left: 10px;
+  padding-bottom: 10px; */
   font-family: 'Courier New', Courier, monospace;
   background-color: white;
-}
+  text-align: center;
+  justify-content: center;
+} 
 
 .app-container{
   display: flex;
   flex-flow: row wrap;
   justify-content: space-around;
   flex-direction: column;
-  /* flex-grow: 1; */
   background-color: efeeea;
 }
 
 .activity-page{
   display: flex;
-  /* flex-flow: row wrap;
-  justify-content: space-around; */
-  /* align-items: center; */
-  /* height: 300px; */
   background-color: efeeea;
   background-image: url("https://img.freepik.com/free-vector/man-sport-activities_102902-2338.jpg?w=1380&t=st=1669233240~exp=1669233840~hmac=cfdb7370806c6f4ad4d721be5fde757ae95722cdf3a27ae557b22a058bd69418");
-  /* min-height: 100vh; */
-  
 }
 
- /* #new-activity-form-container{
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-}
-
-.activity-form-component{
-  display: flex; 
-  flex-direction: column;
-  justify-content: center;
-  padding-top: 50px;
-}  */
 
 .activity-form{
   padding-top: 1em;
@@ -143,9 +123,29 @@ div::-webkit-scrollbar {
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  flex-wrap: wrap; 
+  border: .6em solid #1C6EA4;
+  background-color: white;
+  margin-left: 20.5em;
+  margin-right: 20.5em;
+  margin-top: 1em;
+  padding-bottom: 1em;
+  font-family: "Avenir Next", Calibri, Verdana, sans-serif; 
+  font-weight: 700;
 }
 
+
+.activity-input{
+  font-family: monospace;
+}
+
+#notes{
+  height: 10em;
+  width: 50em;
+  overflow-wrap: break-word;
+  word-break: break-all;
+  margin-left: 1em;
+  margin-right: 1em;
+}
 
 .routine-page{
   background-image: url("https://img.freepik.com/free-vector/gradient-home-gym-illustration_23-2148819450.jpg?w=1800&t=st=1669233716~exp=1669234316~hmac=f66f9883d37f8682fbfe7dac9d21d5da995e680775d405c5485d04e7208290f5");
@@ -162,30 +162,16 @@ div::-webkit-scrollbar {
 
 }
 
-/* .navbar-container{
-  overflow: hidden;
-  background-color: rgb(20, 20, 133);
-  position: fixed; 
-  display: flex;
-  top: 0; 
-  width: 100%; 
-  height: 80px;
-  margin: 0 6px 6px;
-  padding: 5px;
-  justify-content: space-between;
-} */
 
 .navbar-container{
     background-color: #191977;
     display: flex;
-    /* padding: 3px; */
     text-align: center;
     justify-content: space-around;
     top: 0;
 }
 
 .nav-btn a {
-  /* float: left; */
   display: flex;
   text-align: center;
   padding: 14px 10px;
@@ -200,11 +186,6 @@ div::-webkit-scrollbar {
 }
 
 
-/* .plus-icon {
-  text-align: center;
-  padding-top: 4px;
-} */
-
 
 #plus-button {
   margin-left: 500px;
@@ -218,14 +199,6 @@ div::-webkit-scrollbar {
   align-items: center;
 }
 
-/* #delete-btn-icon{
-  padding-top: 3px;
-  text-align: center;
-} */
-
-/* #delete-btn :hover{
-  color: red;
-} */
 
 #delete-btn{
   position: absolute;
@@ -243,24 +216,12 @@ div::-webkit-scrollbar {
  bottom: 19px;
 }
 
-/* #edit-btn-icon{
-  padding-top: 2.5px;
-  text-align: center;
-} */
-
-/* #new-activitiy-btn{
+.create-btn-div{
   display: flex;
   align-items: center;
   justify-content: center;
   text-align: center;
-} */
-
-  .create-btn-div{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-  }
+}
 
 .btn{
   display: flex;
@@ -289,6 +250,5 @@ div::-webkit-scrollbar {
 }
 
 .btn:hover {
-  /* box-shadow: 0 2px 2px rgba(216, 24, 24, 0.12); */
   background-color: #1f349d;
 }

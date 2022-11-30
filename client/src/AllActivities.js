@@ -50,7 +50,7 @@ function AllActivities({user, setUser}){
              Create New Activity
             </button>   
             </div>
-            <div className="activity-form-component">
+         
             <ActivityForm 
             addRoutineClick={addRoutineClick} 
             setAddRoutineClick={setAddRoutineClick}
@@ -58,7 +58,7 @@ function AllActivities({user, setUser}){
             setUser={setUser}
             routines={routines}
             /> 
-            </div>
+        
              {activities}
             </div>) 
             : (<div> 
