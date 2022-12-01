@@ -1,6 +1,7 @@
 import React, {useState, useCallback} from "react";
 import DisplayUserRoutines from './DisplayUserRoutines'
 import { useHistory } from "react-router-dom";
+import './App.css';
 
 
 function ActivityForm({

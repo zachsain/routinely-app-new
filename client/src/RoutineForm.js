@@ -14,7 +14,6 @@ function RoutineForm({setRoutines, routines, addRoutineClick, setAddRoutineClick
     const history = useHistory();
         
     function handleSubmit(e){
-      // console.log(videoUrl)
         e.preventDefault()  
         setAddRoutineClick(!addRoutineClick)
         
@@ -48,23 +47,22 @@ function RoutineForm({setRoutines, routines, addRoutineClick, setAddRoutineClick
       
     return(
         <>
-        <div id="new-routine-form">
-      
-          <form onSubmit={handleSubmit}>
+        <div>
+          <form  className="activity-form" onSubmit={handleSubmit}>
             <label className="routine-form">Title:</label>
             <input
               className="routine-input"
               type="text"
               id="title"
               autoComplete="off"
-              placeholder="title of routine..."
+              placeholder="Title..."
               value={title}
               onChange={(e) => setTitle(e.target.value)}
                   ></input>
             <br />
   
             <label className='routine-form'>Select Category:
-              <select value={category} onChange={(e) => setCategory(e.target.value)}>
+              <select id="routine-select-btn" value={category} onChange={(e) => setCategory(e.target.value)}>
                 <option value={null}></option>
                 <option value="Weight Training">Weight Training</option>
                 <option value="Cardio">Cardio</option>
@@ -93,14 +91,14 @@ function RoutineForm({setRoutines, routines, addRoutineClick, setAddRoutineClick
               type="text"
               id="duration"
               autoComplete="off"
-              placeholder="duration..."
+              placeholder="Duration..."
               value={duration}
               onChange={(e) => setDuration(e.target.value)}
             ></input>
             <br />
   
             <label className="routine-form">Instructions: </label>
-            <input
+            <textarea
               className="routine-input"
               type="text"
               id="instructions"
@@ -108,7 +106,7 @@ function RoutineForm({setRoutines, routines, addRoutineClick, setAddRoutineClick
               placeholder="Instructions..."
               value={instructions}
               onChange={(e) => setInstructions(e.target.value)}
-            ></input>
+            ></textarea>
             <br />
 
             <label className="routine-form">Helpful YouTube Video: </label>
@@ -117,14 +115,10 @@ function RoutineForm({setRoutines, routines, addRoutineClick, setAddRoutineClick
               type="text"
               id="video"
               autoComplete="off"
-              placeholder="Upload helpful video.."
+              placeholder="Upload helpful video"
               value={videoUrl}
               onChange={(e) => setVideoUrl(e.target.value)}
-            ></input>
-
-        
-            
-            
+            ></input>            
             <br />
   
             <button className="btn" type="submit">Add Routine</button>
