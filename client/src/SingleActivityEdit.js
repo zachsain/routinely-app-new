@@ -77,12 +77,16 @@ function SingleActivityEdit({
 
     return (
         <div>
-        <div id="new-activity-form">
-  
-  <form onSubmit={handleSubmit}>
-  <br />
+        <div id="new-activity-form-container">
+        <form className="edit-activity-form" onSubmit={handleSubmit}>
+        <br />
 
-  <button className="btn" onClick={handleRoutineSelectClick}>Select Routine</button>
+  <button 
+    className="btn" 
+    id="select-routine-btn" 
+    onClick={handleRoutineSelectClick}>
+    Select Routine
+  </button>
     {selectRoutineClick ? (<DisplayUserRoutines 
     selectRoutineClick={selectRoutineClick}
     setSelectRoutineClick={setSelectRoutineClick}
@@ -95,7 +99,7 @@ function SingleActivityEdit({
   />)
  :(null)}
  <br/>
-    <label className="activity-form">Title:</label>
+    <label className="activity-form-label">Title:</label>
     <input
       className="activity-input"
       type="text"
@@ -107,19 +111,7 @@ function SingleActivityEdit({
           ></input>
     <br />
 
-    {/* <label className="activity-form">Category:</label>
-    <input
-      className="activity-input"
-      type="text"
-      id="category"
-      autoComplete="off"
-      placeholder={category}
-      value={updatedCategory}
-      onChange={(e) => setUpdatedCategory(e.target.value)}
-    ></input>
-    <br /> */}
-
-    <label className="activity-form">Duration: </label>
+    <label className="activity-form-label">Duration: </label>
     <input
       className="activity-input"
       type="text"
@@ -131,37 +123,22 @@ function SingleActivityEdit({
     ></input>
     <br />
 
-    <label className="activity-form">Notes: </label>
-    <input
+    <label className="activity-form-label">Notes: </label>
+    <textarea
       className="activity-input"
       type="text"
-      id="description"
+      id="notes"
+      // id="description"
       autoComplete="off"
       placeholder={description}
       value={updatedDescription}
       onChange={(e) => setUpdatedDescription(e.target.value)}
-    ></input>
+    ></textarea>
     <br/>
     
-    {/* {showInputForRoutine ? (  
-    <>
-    <label className="activity-form">Routine: </label>
-    <input className="activity-input"
-      type="text"
-      id="routine-title"
-      autoComplete="off"
-      placeholder="Routine"
-      value={routineTitle}
-      onChange={(e) => setRoutineTitle(e.target.value)}
-    ></input> </>) : (null)}
-  
-    
-    <br/>
-    <button className="btn" type="submit">Update</button> */}
-
     {showInputForRoutine ? (  
         <>
-        <label className="activity-form">Category:</label>
+        <label className="activity-form-label">Category:</label>
         <input
           className="activity-input"
           type="text"
@@ -172,7 +149,7 @@ function SingleActivityEdit({
           readOnly
         ></input>
         <br />
-        <label className="activity-form">Routine Selected: </label>
+        <label className="activity-form-label">Routine Selected: </label>
         <input className="activity-input"
           type="text"
           id="routine-title"

@@ -58,11 +58,10 @@ function AllActivities({user, setUser}){
             setUser={setUser}
             routines={routines}
             /> 
-        
-             {activities}
+            {activities}
             </div>) 
             : (<div> 
-                <h1 className="actvty-page-header">Activity Journal:</h1>
+            <h1 className="actvty-page-header">Activity Journal:</h1>
              <div className="create-btn-div"> 
             <button id="new-activitiy-btn" className="btn" onClick={handleClick}>
              Create New Activity

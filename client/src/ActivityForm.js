@@ -84,7 +84,12 @@ function ActivityForm({
       <div>
       <div id="new-activity-form-container">
       <form className="activity-form" onSubmit={handleSubmit}>
-      <button className="btn" id="select-routine-btn" onClick={handleRoutineSelectClick}>Select Routine</button>
+      <button 
+          className="btn" 
+          id="select-routine-btn" 
+          onClick={handleRoutineSelectClick}>
+          Select Routine
+      </button>
          {selectRoutineClick ? (
          <DisplayUserRoutines 
             user={user} 
@@ -151,14 +156,17 @@ function ActivityForm({
         ></input>
         <br />
         <label className="activity-form-label">Routine Selected: </label>
-        <input className="activity-input"
+        <input 
+          className="activity-input"
           type="text"
           id="routine-title"
           autoComplete="off"
           placeholder="Routine"
           value={routineTitle}
           readOnly
-        ></input> </>) : (null)} 
+        ></input> </>) 
+        : (null)
+        } 
         <br/>
         <button className="btn" type="submit">Add Activity</button>
       </form>

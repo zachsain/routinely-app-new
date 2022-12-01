@@ -44,12 +44,7 @@ function DisplayUserRoutines({
                     setCategory={setCategory}
                  />
     })
-
-    function handleFilterClick(){
-        // setFilterButtonClick(!filterButtonClick)
-        // setRoutines(allRoutinesCopy)
-    }
-
+    
     function handleClick(){
         setRoutines(allRoutinesCopy)
     }

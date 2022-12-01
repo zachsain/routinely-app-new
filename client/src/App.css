@@ -29,6 +29,25 @@ div::-webkit-scrollbar {
   box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
 }
 
+.routine-container{
+  display: flex; 
+  flex-flow: row wrap;
+  flex-direction: column;
+  flex-wrap: wrap;
+  border: 10px solid #1C6EA4;
+  position: relative;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Courier New', Courier, monospace;
+  background-color: white;
+  padding: 1%;
+  margin: 1.5%;
+  margin-left: 320px;
+  margin-right: 320px;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+}
+
 
 .actvty-page-header{
   display: flex;
@@ -48,30 +67,6 @@ div::-webkit-scrollbar {
 }
 
 
-.routine-container{
-  border: 10px solid #1C6EA4;
-  position: relative;
-  padding-left: 39px;
-  padding-bottom: 12px;
-  padding-top: 12px;
-  font-family: 'Courier New', Courier, monospace;
-  background-color: white;
-  margin: 15px;
-  margin-left: 150px;
-  margin-right: 150px;
-  margin-bottom: 25px
-}
-
-
-.profile-container{
-  border: 2px solid black;
-  padding-left: 10px;
-  padding-right: 10px;
-  margin-right: 500px;
-  background-color: white;
-  
-}
-
 .user-profile-name{
   font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
@@ -84,15 +79,12 @@ div::-webkit-scrollbar {
 #instructions{
   width: 300px;
   height: 100px;
-  
 }
 
 .user-routines-card-container{
   display: flex;
   flex-direction: column;
-  /* flex-wrap: wrap; */
   border: 5px solid #1C6EA4;
-  /* position: relative; */
   text-align: center;
   align-items: center;
   justify-content: space-around;
@@ -121,6 +113,23 @@ div::-webkit-scrollbar {
   background-image: url("https://img.freepik.com/free-vector/man-sport-activities_102902-2338.jpg?w=1380&t=st=1669233240~exp=1669233840~hmac=cfdb7370806c6f4ad4d721be5fde757ae95722cdf3a27ae557b22a058bd69418");
 }
 
+.routine-page{
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-around;
+  flex-direction: column;
+  background-color: efeeea;
+  background-image: url("https://img.freepik.com/free-vector/man-sport-activities_102902-2338.jpg?w=1380&t=st=1669233240~exp=1669233840~hmac=cfdb7370806c6f4ad4d721be5fde757ae95722cdf3a27ae557b22a058bd69418");  
+}
+
+.profile-container{
+  border: 2px solid black;
+  padding-left: 10px;
+  padding-right: 10px;
+  margin-right: 500px;
+  background-color: white;
+  
+}
 
 .activity-form{
   padding-top: 1em;
@@ -133,6 +142,16 @@ div::-webkit-scrollbar {
   margin-left: 20.5em;
   margin-right: 20.5em;
   margin-top: 1em;
+  padding-bottom: 1em;
+  font-family: "Avenir Next", Calibri, Verdana, sans-serif; 
+  font-weight: 700;
+}
+
+.edit-activity-form{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
   padding-bottom: 1em;
   font-family: "Avenir Next", Calibri, Verdana, sans-serif; 
   font-weight: 700;
@@ -151,7 +170,7 @@ div::-webkit-scrollbar {
 .routine-filter-selector{
   border-radius: 15%;
   margin-left: 1em;
-   font-family: 'Courier New', Courier, monospace;  
+  font-family: 'Courier New', Courier, monospace;  
 }
 
 #notes{
@@ -163,11 +182,6 @@ div::-webkit-scrollbar {
   margin-right: 1em;
 }
 
-.routine-page{
-  background-image: url("https://img.freepik.com/free-vector/gradient-home-gym-illustration_23-2148819450.jpg?w=1800&t=st=1669233716~exp=1669234316~hmac=f66f9883d37f8682fbfe7dac9d21d5da995e680775d405c5485d04e7208290f5");
-  
-}
-
 .profile-page{
   background-image: url("https://img.freepik.com/free-vector/people-practicing-yoga-exercise-meditation_1308-118205.jpg?w=2000&t=st=1669234519~exp=1669235119~hmac=99f7a7014ebb82d0ba71a824a3e7ae94beda29ce3ed29ab103e1abf85d494ba0");
   background-repeat: repeat;
@@ -177,7 +191,6 @@ div::-webkit-scrollbar {
   height: 40px;
 
 }
-
 
 .navbar-container{
     background-color: #191977;
@@ -230,8 +243,6 @@ div::-webkit-scrollbar {
   padding-bottom: 1em;
 }
 
-
-
 #edit-btn{
  position: absolute;
  border-radius: 13px;
@@ -245,6 +256,15 @@ div::-webkit-scrollbar {
   justify-content: center;
   text-align: center;
 }
+
+.my-routines-btn-div{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-top: 1em;
+  border-radius: 20%;
+}
+
 
 .btn{
   display: flex;

@@ -42,53 +42,116 @@ function Routines({user, setUser}){
              />
     }) 
 
-    function handleFilterClick(e){
-        setFilterButtonClick(!filterButtonClick)
+    function handleClick(){
         setRoutines(allRoutinesCopy)
     }
 
-    function handleSubmit(e){
-       setFilterButtonClick(!filterButtonClick)
-       let filtered = routines.filter(r => {
-           return r.category === e.target.value
-        })
-        setRoutines(filtered)
-    }
+    function handleFilterSelect(e){
+        setFilterButtonClick(!filterButtonClick)
+        let filtered = routines.filter(r => {
+            return r.category === e.target.value
+         })
+         setRoutines(filtered)
+     }
+
+    // function handleFilterClick(e){
+    //     setFilterButtonClick(!filterButtonClick)
+    //     setRoutines(allRoutinesCopy)
+    // }
+
+    // function handleSubmit(e){
+    //    setFilterButtonClick(!filterButtonClick)
+    //    let filtered = routines.filter(r => {
+    //        return r.category === e.target.value
+    //     })
+    //     setRoutines(filtered)
+    // }
     return(
         <div className='routine-page'>
-           {/* <button onClick={handleFilterClick}>Filter By Category</button> */}
-           <button className="btn" id="add-new-routine" onClick={handleNewRoutine}>{addRoutineClick ? ("Show Routines") : ("Add New Routine")}</button>
-           <button className="btn" id="my-routines-button" onClick={handleUserRoutineClick}>My Routines</button>
-            {addRoutineClick ? ( 
-                null
-                ) : (
-                <div> 
-                <label className='routine-form'>Filter By Category:
-                <select onChange={handleSubmit}>
+           <h1 className="actvty-page-header">Routine Library</h1>
+           <div className="create-btn-div"> 
+            <button className="btn" id="add-new-routine" onClick={handleNewRoutine}>Create Routine</button>
+           </div>
+           {addRoutineClick ? 
+            (<div>
+                <RoutineForm 
+                    setAddRoutineClick={setAddRoutineClick} 
+                    addRoutineClick={addRoutineClick} 
+                    routines={routines} 
+                    setRoutines={setRoutines}
+                /> 
+                <div className="my-routines-btn-div"> 
+            <button className="btn" id="my-routines-btn" onClick={handleUserRoutineClick}>My Routines</button>
+            </div>
+                <label id="routine-filter" className='routine-form'>Filter By Category:
+                <select className="routine-filter-selector" onClick={handleClick} onChange={handleFilterSelect}>
                     <option value=""></option>
-                    <option value="Weight Training">Weight Training</option>
+                    <option className="routine-option" value="Weight Training">Weight Training</option>
                     <option value="Cardio">Cardio</option>
                     <option value="Sports Training">Sports Training</option>
-                        <option value="Diet">Diet</option>
-                        <option value="Education">Education</option>
-                        <option value="Cleaning">Cleaning</option>
-                        <option value="Organization">Organization</option>
-                        <option value="Maintenance">Maintenance</option>
-                        <option value="Beauty">Beauty</option>               
-                        <option value="Health & Wellness">Health & Wellness</option>
-                        <option value="Music">Music</option>
-                        <option value="Arts & Crafts">Arts & Crafts</option>
-                        <option value="Yoga">Yoga</option>
-                        <option value="Meditation">Meditation</option>
+                    <option value="Diet">Diet</option>
+                    <option value="Education">Education</option>
+                    <option value="Cleaning">Cleaning</option>
+                    <option value="Organization">Organization</option>
+                    <option value="Maintenance">Maintenance</option>
+                    <option value="Beauty">Beauty</option>               
+                    <option value="Health & Wellness">Health & Wellness</option>
+                    <option value="Music">Music</option>
+                    <option value="Arts & Crafts">Arts & Crafts</option>
+                    <option value="Yoga">Yoga</option>
+                    <option value="Meditation">Meditation</option>
                 </select>    
                 </label> 
-                </div>
-             )}
-           
-            {addRoutineClick ?
-            (<h3>Add Routine:</h3>) : (<h3>Routines:</h3>)
-            }
-            {addRoutineClick ? 
+                {displayRoutines}
+            </div> )
+             : (<div>
+                <div className="my-routines-btn-div"> 
+            <button className="btn" id="my-routines-btn" onClick={handleUserRoutineClick}>My Routines</button>
+            </div>
+                <label id="routine-filter" className='routine-form'>Filter By Category:
+                <select className="routine-filter-selector" onClick={handleClick} onChange={handleFilterSelect}>
+                    <option value=""></option>
+                    <option className="routine-option" value="Weight Training">Weight Training</option>
+                    <option value="Cardio">Cardio</option>
+                    <option value="Sports Training">Sports Training</option>
+                    <option value="Diet">Diet</option>
+                    <option value="Education">Education</option>
+                    <option value="Cleaning">Cleaning</option>
+                    <option value="Organization">Organization</option>
+                    <option value="Maintenance">Maintenance</option>
+                    <option value="Beauty">Beauty</option>               
+                    <option value="Health & Wellness">Health & Wellness</option>
+                    <option value="Music">Music</option>
+                    <option value="Arts & Crafts">Arts & Crafts</option>
+                    <option value="Yoga">Yoga</option>
+                    <option value="Meditation">Meditation</option>
+                </select>    
+                </label> 
+               {displayRoutines} 
+            </div>)}    
+            {/* <div className="my-routines-btn-div"> 
+            <button className="btn" id="my-routines-btn" onClick={handleUserRoutineClick}>My Routines</button>
+            </div>
+                <label id="routine-filter" className='routine-form'>Filter By Category:
+                <select className="routine-filter-selector" onClick={handleClick} onChange={handleFilterSelect}>
+                    <option value=""></option>
+                    <option className="routine-option" value="Weight Training">Weight Training</option>
+                    <option value="Cardio">Cardio</option>
+                    <option value="Sports Training">Sports Training</option>
+                    <option value="Diet">Diet</option>
+                    <option value="Education">Education</option>
+                    <option value="Cleaning">Cleaning</option>
+                    <option value="Organization">Organization</option>
+                    <option value="Maintenance">Maintenance</option>
+                    <option value="Beauty">Beauty</option>               
+                    <option value="Health & Wellness">Health & Wellness</option>
+                    <option value="Music">Music</option>
+                    <option value="Arts & Crafts">Arts & Crafts</option>
+                    <option value="Yoga">Yoga</option>
+                    <option value="Meditation">Meditation</option>
+                </select>    
+                </label>  */}
+            {/* {addRoutineClick ? 
             (<div className="routine-form">
                 <RoutineForm 
                     setAddRoutineClick={setAddRoutineClick} 
@@ -96,10 +159,11 @@ function Routines({user, setUser}){
                     routines={routines} 
                     setRoutines={setRoutines}
                 /> 
+                {displayRoutines} 
             </div> )
-             : (<div className="user-activity-container">
+             : (<div>
                {displayRoutines} 
-            </div>)}
+            </div>)} */}
         </div>
     )
    
