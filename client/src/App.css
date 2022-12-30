@@ -147,6 +147,22 @@ div::-webkit-scrollbar {
   font-weight: 700;
 }
 
+.routine-activity-form{
+  padding-top: 1em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  /* border: .6em solid #1C6EA4; */
+  background-color: white;
+  margin-left: 20.5em;
+  margin-right: 20.5em;
+  margin-top: 1em;
+  padding-bottom: 1em;
+  font-family: "Avenir Next", Calibri, Verdana, sans-serif; 
+  font-weight: 700;
+}
+
 .edit-activity-form{
   display: flex;
   align-items: center;
@@ -172,18 +188,21 @@ div::-webkit-scrollbar {
   align-items: center;
   display: flex;
   justify-content: center;
-  /* padding-top: 1em; */
+  font-family: "Avenir Next", Calibri, Verdana, sans-serif;
+  /* font-family: monospace; */
   margin-top: 1%;
-  margin-left: 35%;
-  font-family: "Avenir Next", Calibri, Verdana, sans-serif; 
-  font-size: 1.3em;
+  /* margin-left: 20%; */
+  margin-left: 33%;
+  font-size: 1.1em;
   font-weight: bold;
-  /* border: .2em solid #1C6EA4;  */
+  border: .1em solid  #403d3d;
+  /* border: .6em solid #1C6EA4; */
+  border-radius: 15%;
   height: 100%;
   width: 30%;
-  position: relative;
-  background-color: white;  
-  color: red
+  /* position: relative; */
+  background: #FFFFFF;
+  color: #566AE5;;
 
 }
 
@@ -268,6 +287,12 @@ div::-webkit-scrollbar {
  border-radius: 13px;
  right: 24px;
  bottom: 19px;
+}
+
+#plus-btn{
+  display: flex;
+  margin-top: .5em;
+  margin-bottom: .5em;
 }
 
 .create-btn-div{

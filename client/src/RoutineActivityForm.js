@@ -75,11 +75,11 @@ function RoutineAvivityForm({
 
     return(
       <div>
-            <div id="new-activity-form">
-      <form onSubmit={handleSubmit}>
+      <div>
+      <form  className="routine-activity-form"  onSubmit={handleSubmit}>
          {/* <br/> */}
         <>
-        <label className="activity-form">Category:</label>
+        <label className="activity-form-label">Category:</label>
         <input
           className="activity-input"
           type="text"
@@ -90,65 +90,52 @@ function RoutineAvivityForm({
           readOnly
         ></input>
         <br />
-        <label className="activity-form">Routine: </label>
+        <label className="activity-form-label">Routine: </label>
         <input className="activity-input"
           type="text"
           id="routine-title"
           autoComplete="off"
-          placeholder="Routine"
+          placeholder="Routine..."
           value={routineTitle}
           readOnly
-        ></input> </> 
-        
-        {/* <br /> */}
-         {/* {selectRoutineClick ? (<DisplayUserRoutines 
-         user={user} 
-         setUser={setUser}
-         selectRoutineClick={selectRoutineClick}
-         setSelectRoutineClick={setSelectRoutineClick}
-         setRoutineTitle={setRoutineTitle}
-         showInputForRoutine={showInputForRoutine}
-         setShowInputForRoutine={setShowInputForRoutine}
-         setRoutineId={setRoutineId}
-         setCategory={setCategory}
-         />) */}
-
+        ></input> 
+        </> 
         <br/>
 
-        <label className="activity-form">Title:</label>
+        <label className="activity-form-label">Title:</label>
         <input
           className="activity-input"
           type="text"
           id="title"
           autoComplete="off"
-          placeholder="title of activity..."
+          placeholder="Title of activity..."
           value={title}
           onChange={(e) => setTitle(e.target.value)}
           ></input>
         <br />
 
-        <label className="activity-form">Duration: </label>
+        <label className="activity-form-label">Duration: </label>
         <input
-          className="activity-input"
+          // className="activity-input"
           type="text"
           id="duration"
           autoComplete="off"
-          placeholder="duration..."
+          placeholder="Duration..."
           value={duration}
           onChange={(e) => setDuration(e.target.value)}
         ></input>
         <br />
 
-        <label className="activity-form">Description: </label>
-        <input
+        <label id="notes-input" className="activity-form-label">Notes: </label>
+        <textarea
           className="activity-input"
           type="text"
-          id="description"
+          // id="notes"
           autoComplete="off"
           placeholder="Notes on activity..."
           value={description}
           onChange={(e) => setDescription(e.target.value)}
-        ></input>
+        ></textarea>
 
         <br/>
         <button className="btn" type="submit">Add Activity</button>

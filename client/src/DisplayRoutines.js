@@ -32,13 +32,10 @@ function DisplayRoutines({
         <p>Instructions: {instructions}</p>
         <button 
             className="btn" 
-            id="plus-button" 
+            id="plus-btn" 
             type="click" 
             onClick={handleActivityClick}> 
-            <BsPlusCircle 
-                size="1.5em" 
-                className="plus-icon"
-            /> 
+            Add New Activity
         </button>
             {addActivityClick ? (
                 <div> 

@@ -83,8 +83,6 @@ function RoutineForm({setRoutines, routines, addRoutineClick, setAddRoutineClick
             </label>
             <br />
 
-            
-
             <label className="routine-form">Duration: </label>
             <input
               className="routine-input"

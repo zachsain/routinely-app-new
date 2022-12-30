@@ -109,7 +109,7 @@ function Routines({user, setUser}){
             <button className="btn" id="my-routines-btn" onClick={handleUserRoutineClick}>My Routines</button>
             </div>
                  {/* className='routine-form' */}
-                <label id="routine-filter">Filter By Category:
+                <label id="routine-filter">Filter:
                 <select className="routine-filter-selector" onClick={handleClick} onChange={handleFilterSelect}>
                     <option value=""></option>
                     <option className="routine-option" value="Weight Training">Weight Training</option>
