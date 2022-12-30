@@ -29,11 +29,6 @@ function UserProfile({user, setUser}){
          />
     })
 
-    // if (user.routines === []){
-    //   return setShowButtons(false)
-    // }
-
-
     function handleAddActivity(e){
         history.push('/activities')
     }
@@ -47,41 +42,9 @@ function UserProfile({user, setUser}){
     }
     return(
         <div className='profile-page'>
-            <div className="profile-container" >
-            <h3 className='user-profile-name'>Name: {user.username}</h3>
-           { user.image_url ?
-           ( <img 
-                id="user-image" 
-                style={{ width: "12%", height: "10%" }} 
-                src={user.image_url} 
-                alt="user image"
-            />) : (
-                <img 
-                id="user-image" 
-                style={{ width: "12%", height: "10%" }} 
-                src="https://static.vecteezy.com/system/resources/thumbnails/002/266/169/small/strength-training-icon-workout-gym-fitness-line-vector.jpg" 
-                alt="user image"
-                />
-             )}
-             
-            </div>
-
-            {/* <div className="goal-form">
-                <button onClick={handleGoalClick}>Create New Goal</button>
-                {goalFormClick ? 
-                    (<GoalForm
-                        user={user}
-                        setUser={setUser}
-                    />) 
-                    : 
-                    (null)}
-               
-             </div> */}
-          
-
             {   user.routines.length > 0 ? (
                   <div>
-                  <h3>My Routines:</h3>
+                  <h3 className="user-page-header">My Routines:</h3>
                   {userRoutines}
                   </div>   
             ) : (

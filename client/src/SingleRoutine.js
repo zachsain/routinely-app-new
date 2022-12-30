@@ -34,16 +34,8 @@ function SingleRoutine(){
         displayActivites = null
     }
 
-    // if  (routine.video_url === ""){
-    //    return setDisplayVideo(true)
-    // }
-
-    console.log(routine)
-
-    console.log(routine)
-    
-
     return (
+        <div>
         <div className="routine-container">
         <h3>Title: {routine.title} </h3>
         <p>Category: {routine.category}</p>
@@ -57,7 +49,7 @@ function SingleRoutine(){
             <ReactPlayer controls={true} url={routine.video_url} />
             </div>
         )}
-
+        </div>
         {routine.activities === "" ? (
                null
         ) : (
@@ -65,7 +57,6 @@ function SingleRoutine(){
             {displayActivites}
             </div>
         )}
-
         </div>
 
     )

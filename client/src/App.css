@@ -66,6 +66,23 @@ div::-webkit-scrollbar {
   box-shadow: 2px 2px rgb(82, 88, 14);
 }
 
+.user-page-header{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 10px solid #1C6EA4;
+  border-radius: 500px;
+  font-family: "Avenir Next", Calibri, Verdana, sans-serif;
+  color: #566AE5;
+  font-weight: 800;
+  font-size: 60px;
+  margin-left: 400px;
+  margin-right: 400px;
+  background-color: white;
+  text-shadow: 3px 3px #e1e125;
+  box-shadow: 2px 2px rgb(82, 88, 14);
+}
+
 
 .user-profile-name{
   font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
@@ -107,6 +124,15 @@ div::-webkit-scrollbar {
   background-color: efeeea;
 }
 
+.profile-page{
+ display: flex;
+  flex-flow: row wrap;
+  justify-content: space-around;
+  flex-direction: column;
+  background-color: efeeea;
+  background-image: url("https://img.freepik.com/free-vector/man-sport-activities_102902-2338.jpg?w=1380&t=st=1669233240~exp=1669233840~hmac=cfdb7370806c6f4ad4d721be5fde757ae95722cdf3a27ae557b22a058bd69418");  
+}
+
 .activity-page{
   display: flex;
   background-color: efeeea;
@@ -120,15 +146,6 @@ div::-webkit-scrollbar {
   flex-direction: column;
   background-color: efeeea;
   background-image: url("https://img.freepik.com/free-vector/man-sport-activities_102902-2338.jpg?w=1380&t=st=1669233240~exp=1669233840~hmac=cfdb7370806c6f4ad4d721be5fde757ae95722cdf3a27ae557b22a058bd69418");  
-}
-
-.profile-container{
-  border: 2px solid black;
-  padding-left: 10px;
-  padding-right: 10px;
-  margin-right: 500px;
-  background-color: white;
-  
 }
 
 .activity-form{
@@ -219,11 +236,6 @@ div::-webkit-scrollbar {
   word-break: break-all;
   margin-left: 1em;
   margin-right: 1em;
-}
-
-.profile-page{
-  background-image: url("https://img.freepik.com/free-vector/people-practicing-yoga-exercise-meditation_1308-118205.jpg?w=2000&t=st=1669234519~exp=1669235119~hmac=99f7a7014ebb82d0ba71a824a3e7ae94beda29ce3ed29ab103e1abf85d494ba0");
-  background-repeat: repeat;
 }
 
 #routinely-logo{

@@ -25,11 +25,12 @@ function DisplayRoutines({
     }
     return (
         <div className="routine-container">
-            {/* <h5>{user.username}</h5> */}
-        <h3 onClick={handleUserRoutineClick}>Routine: {title}</h3>
+        <div className='card-click' onClick={handleUserRoutineClick}>
+        <h3>Routine: {title}</h3>
         <p>Category: {category}</p>
         <p>Duration: {duration}</p>
         <p>Instructions: {instructions}</p>
+        </div>
         <button 
             className="btn" 
             id="plus-btn" 
