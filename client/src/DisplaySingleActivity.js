@@ -16,12 +16,14 @@ function DisplaySingleActivity({
 
     return(
         
-        <div className="activity-container">
-        <h3 >Activity: {title}</h3>
-        <p>{date}</p>
-        <p>Category: {routine.category}</p>
+        <div>
+        <div className="routine-container">
+        <h3>Activity: {title}</h3>
+        <p>Category: {category}</p> 
         <p>Duration: {duration}</p>
         <p>Notes: {description}</p>
+        <h5 id="activity-date">{date}</h5>
+        </div>
         <SingleActivityRoutine
         title={routine.title}
         category={routine.category} 

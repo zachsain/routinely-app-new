@@ -16,7 +16,6 @@ function SingleActivity({user}){
   
     return (
         <div className='single-activity-container'>
-            <h4>{user.username}</h4>
                 <DisplaySingleActivity
                   id={activity.id}  
                   key={activity.id} 

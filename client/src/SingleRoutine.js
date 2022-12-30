@@ -37,7 +37,7 @@ function SingleRoutine(){
     return (
         <div>
         <div className="routine-container">
-        <h3>Title: {routine.title} </h3>
+        <h3>Routine Title: {routine.title} </h3>
         <p>Category: {routine.category}</p>
         <p>Duration: {routine.duration}</p>
         <p>Instructions: {routine.instructions}</p>
