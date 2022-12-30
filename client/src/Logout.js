@@ -4,7 +4,7 @@ import './App.css';
 
 function Logout ({ user, setUser }) {
 
-    function handleSubmit(e){    
+    function handleClick(e){    
         e.preventDefault()
         
         fetch("/logout", { method: "DELETE" }).then((r) => {
@@ -18,15 +18,16 @@ function Logout ({ user, setUser }) {
       return(
         <div id="logout-component">
         <br />
-        <h1 id='logout'>Logout</h1>
-            <form onSubmit={handleSubmit}>
+        {/* <h1 id='logout'>Logout</h1> */}
+        <button  id="logout-btn"  onClick={handleClick}>Logout</button>
+            {/* <form onSubmit={handleSubmit}>
                 <input 
                     className='input' 
                     type='submit'
                     id="logout"
                     value={"Confrim logout"}
                 ></input><br />
-            </form>
+            </form> */}
       </div>
        )
 }

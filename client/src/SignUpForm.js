@@ -42,23 +42,22 @@ function SignUpForm({setUser}){
     return (
         <>
         <div id="signup">
-      
-          <form onSubmit={handleSubmit}>
-            <label className="signupLabel">username: </label>
+          <form className="signup-form" onSubmit={handleSubmit}>
+            <label className="signupLabel">Username: </label>
             <input
-              className="input"
+              className="signup-input"
               type="text"
               id="name"
               autoComplete="off"
               placeholder="name"
               value={username}
               onChange={(e) => setUsername(e.target.value)}
-                  ></input>
+            ></input>
             <br />
   
-            <label className="signupLabel">email: </label>
+            <label className="signupLabel">Email:</label>
             <input
-              className="input"
+              className="signup-input"
               type="email"
               id="email"
               autoComplete="off"
@@ -68,9 +67,9 @@ function SignUpForm({setUser}){
             ></input>
             <br />
   
-            <label className="signupLabel">password: </label>
+            <label className="signupLabel">Password:</label>
             <input
-              className="input"
+              className="signup-input"
               type="password"
               id="password"
               autoComplete="current-password"
@@ -80,9 +79,9 @@ function SignUpForm({setUser}){
             ></input>
             <br />
   
-            <label className="signupLabel">Profile photo: </label>
+            <label className="signupLabel">Profile photo:</label>
             <input
-              className="input"
+              className="signup-input"
               type="text"
               id="profile-picture"
               autoComplete="off"
@@ -94,7 +93,7 @@ function SignUpForm({setUser}){
 
             <label className="signupLabel">Bio</label>
             <input
-                className="input"
+                className="signup-input"
                 type="text"
                 id="user-bio"
                 autoComplete="off"
@@ -103,7 +102,9 @@ function SignUpForm({setUser}){
                 onChange={(e) => setBio(e.target.value)}
             ></input>
             <br />
-            <button className="btn" type="submit">Sign up</button>
+            <div className="signup-btn">
+            <button id="signup-btn" className="btn" type="submit">Sign up</button>
+            </div>
           </form>
         </div>
       </>

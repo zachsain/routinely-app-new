@@ -29,32 +29,36 @@ function LoginForm({setUser}){
     }
 
 return (
+  <div>
     <form onSubmit={handleLogin}>
-          <label className='signupLabel'>username</label>
+          <label className='signupLabel'>Username:</label>
           <input
-            className='input'
+            className='login-input'
             type='text'
             id="username"
             autoComplete="off"
-            placeholder="username"
+            placeholder="Username"
             value={username}
             onChange={(e) => setUsername(e.target.value)}
           ></input><br />
-        <label className='signupLabel'>password</label>
+        <label className='signupLabel'>Password:</label>
           <input
-            className='input'
+            className='login-input'
             type='password'
             id="password"
-            placeholder="password"
+            placeholder="Password"
             autoComplete="current-password"
             value={password}
             onChange={(e) => setPassword(e.target.value)}
           ></input><br />
-          <button className="btn" type='submit'>Login
+          <div className="login-btn">
+          <button id="login-btn" className="btn" type='submit'>Login
             {/* {isLoading ? "Loading..." : "Let's go!"} */}
           </button>
+          </div>
           {isLoading ? (<h1>Loading...</h1>) : (null)}
         </form>
+        </div>
  
 )
   

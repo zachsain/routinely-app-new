@@ -28,26 +28,22 @@ function App() {
     });
   } , []);
 
-  console.log(user)
   
   if (!user) return (
     <div style={{
+        display:'flex',
+        flexFlow: 'row wrap',
+        textAlign: 'center',
+        justifyContent:'space-around',
         minHeight: '100vh',
         backgroundSize: 'cover', 
-        backgroundImage: 'url("https://images.unsplash.com/photo-1534438327276-14e5300c3a48?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80")', 
+        backgroundImage: 'url("https://img.freepik.com/free-vector/man-sport-activities_102902-2338.jpg?w=1380&t=st=1669233240~exp=1669233840~hmac=cfdb7370806c6f4ad4d721be5fde757ae95722cdf3a27ae557b22a058bd69418")', 
         padding: "100px"}}>
       <Login setUser={setUser} />
     </div>)
 
-
   return (
-    <div className="app-container" 
-        // style={{
-        // minHeight: '100vh',
-        // backgroundSize: 'cover', 
-        // backgroundImage: 'url("https://images.unsplash.com/photo-1534438327276-14e5300c3a48?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80")', 
-        // padding: "100px"}}
-      >
+    <div className="app-container">
 
       <NavBar user={user} setUser={setUser} />
       <Switch>

@@ -9,23 +9,29 @@ function Login({setUser}){
 
     return (
 
-        <div id="login-component">
-        <div id="login">
-        <h1 id='welcome'>Time to get take control of your routines </h1>
+        <div>
+        <h1 id='welcome'>Welcome To Your New Activity Journal </h1>
+        <div className="login-form">
         {showLogin ? (
-          <>
-            <h2>Log in:</h2>
+          <div>
+            <h2>Login:</h2>
             <LoginForm setUser={setUser} />
             <br />
-            <input type='submit' value='Sign Up' onClick={() => setShowLogin(false)} />
-          </>
+            {/* <input type='submit' value='Sign Up' onClick={() => setShowLogin(false)} /> */}
+            <div className="signup-btn">
+            <button id="signup-btn" className='btn' onClick={() => setShowLogin(false)}>Signup</button>
+            </div>
+          </div>
         ) : (
-          <>
+          <div>
             <h1>Create a new account:</h1>
             <SignUpForm setUser={setUser} />
             <h2>If you're already signed up log in here!</h2>
-            <input type='submit' value='Log In' onClick={() => setShowLogin(true)} />
-          </>
+            {/* <input type='submit' value='Log In' onClick={() => setShowLogin(true)} /> */}
+            <div className="signup-btn">
+            <button id="signup-btn" className='btn' onClick={() => setShowLogin(true)}>Login</button>
+            </div>
+          </div>
         )}
         </div>
       </div>

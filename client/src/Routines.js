@@ -68,7 +68,7 @@ function Routines({user, setUser}){
     // }
     return(
         <div className='routine-page'>
-           <h1 className="actvty-page-header">Routine Library</h1>
+           <h1 className="actvty-page-header">Routine Library:</h1>
            <div className="create-btn-div"> 
             <button className="btn" id="add-new-routine" onClick={handleNewRoutine}>Create Routine</button>
            </div>
