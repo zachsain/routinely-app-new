@@ -15,7 +15,7 @@ div::-webkit-scrollbar {
 .activity-container{
   display: flex;
   flex-wrap: wrap;
-  border: 10px solid #1C6EA4;
+  border: 10px solid #566AE5;
   position: relative;
   text-align: center;
   align-items: center;
@@ -34,7 +34,7 @@ div::-webkit-scrollbar {
   flex-flow: row wrap;
   flex-direction: column;
   flex-wrap: wrap;
-  border: 10px solid #1C6EA4;
+  border: 10px solid #566AE5;
   position: relative;
   text-align: center;
   align-items: center;
@@ -46,6 +46,7 @@ div::-webkit-scrollbar {
   margin-left: 320px;
   margin-right: 320px;
   box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  
 }
 
 
@@ -53,7 +54,7 @@ div::-webkit-scrollbar {
   display: flex;
   align-items: center;
   justify-content: center;
-  border: 10px solid #1C6EA4;
+  border: 10px solid #566AE5;
   border-radius: 500px;
   font-family: "Avenir Next", Calibri, Verdana, sans-serif;
   color: #566AE5;
@@ -70,7 +71,7 @@ div::-webkit-scrollbar {
   display: flex;
   align-items: center;
   justify-content: center;
-  border: 10px solid #1C6EA4;
+  border: 10px solid #566AE5;
   border-radius: 500px;
   font-family: "Avenir Next", Calibri, Verdana, sans-serif;
   color: #566AE5;
@@ -101,7 +102,7 @@ div::-webkit-scrollbar {
 .user-routines-card-container{
   display: flex;
   flex-direction: column;
-  border: 5px solid #1C6EA4;
+  border: 5px solid  #566AE5;
   text-align: center;
   align-items: center;
   justify-content: space-around;
@@ -134,13 +135,13 @@ div::-webkit-scrollbar {
 .profile-page{
   display: flex;
   flex-flow: row wrap;
-  /* justify-content: space-around; */
   flex-direction: column;
   background-color: efeeea;
   min-height: 100vh;
   background-size: cover; 
   background-image: url("https://img.freepik.com/free-vector/man-sport-activities_102902-2338.jpg?w=1380&t=st=1669233240~exp=1669233840~hmac=cfdb7370806c6f4ad4d721be5fde757ae95722cdf3a27ae557b22a058bd69418");  
 }
+
 
 .activity-page{
   display: flex;
@@ -165,7 +166,7 @@ div::-webkit-scrollbar {
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  border: .6em solid #1C6EA4;
+  border: .6em solid #566AE5;
   background-color: white;
   margin-left: 20.5em;
   margin-right: 20.5em;
@@ -287,7 +288,8 @@ div::-webkit-scrollbar {
 }
 
 .navbar-container{
-    background-color: #191977;
+    /* background-color: #191977; */
+    background-color: #566AE5;
     display: flex;
     text-align: center;
     justify-content: space-around;
@@ -399,10 +401,8 @@ div::-webkit-scrollbar {
 }
 
 #activity-btn{
-
   margin-top: 300px;
   justify-content: center; 
-
   display: flex;
   text-align: center;
   justify-content: center;

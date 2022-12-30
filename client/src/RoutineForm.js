@@ -36,7 +36,7 @@ function RoutineForm({setRoutines, routines, addRoutineClick, setAddRoutineClick
               r.json().then((newRoutine) => {
                 console.log(newRoutine)
                 setRoutines([newRoutine, ...routines])
-                history.push(`routines/${newRoutine.id}`);
+                // history.push(`routines/${newRoutine.id}`);
               } );
             } else {
               r.json().then((err) => setErrors(err.errors));
