@@ -134,15 +134,19 @@ div::-webkit-scrollbar {
 .profile-page{
   display: flex;
   flex-flow: row wrap;
-  justify-content: space-around;
+  /* justify-content: space-around; */
   flex-direction: column;
   background-color: efeeea;
+  min-height: 100vh;
+  background-size: cover; 
   background-image: url("https://img.freepik.com/free-vector/man-sport-activities_102902-2338.jpg?w=1380&t=st=1669233240~exp=1669233840~hmac=cfdb7370806c6f4ad4d721be5fde757ae95722cdf3a27ae557b22a058bd69418");  
 }
 
 .activity-page{
   display: flex;
   background-color: efeeea;
+  min-height: 100vh;
+  /* background-size: cover; */
   background-image: url("https://img.freepik.com/free-vector/man-sport-activities_102902-2338.jpg?w=1380&t=st=1669233240~exp=1669233840~hmac=cfdb7370806c6f4ad4d721be5fde757ae95722cdf3a27ae557b22a058bd69418");
 }
 
@@ -358,7 +362,6 @@ div::-webkit-scrollbar {
   font-weight: 700;
   border: 0;
   border-radius: 20%;
-  /* border-radius: 15%; */
   color: #FFFFFF;
   transition-timing-function: ease-in-out;
   transition-property: box-shadow;
@@ -383,6 +386,41 @@ div::-webkit-scrollbar {
   align-items: center;
   justify-content: center;
   text-align: center;
+}
+
+.user-blank-container{
+  display: flex;
+  justify-content: center;
+}
+
+.add-new-activity-btn{
+  display: flex;
+  margin-top: 50%;
+}
+
+#activity-btn{
+
+  margin-top: 300px;
+  justify-content: center; 
+
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  outline: none;
+  cursor: pointer;
+  font-size: 34px;
+  padding: 0 32px;
+  line-height: 30px;
+  height: 50px;
+  max-height: 40px;
+  background: #566AE5;
+  font-weight: 700;
+  border: 0;
+  color: #FFFFFF;
+  transition-timing-function: ease-in-out;
+  transition-property: box-shadow;
+  transition-duration: 150ms;
 }
 
 .my-routines-btn-div{

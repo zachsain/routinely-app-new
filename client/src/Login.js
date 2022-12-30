@@ -24,9 +24,9 @@ function Login({setUser}){
           </div>
         ) : (
           <div>
-            <h1>Create a new account:</h1>
+            <h2>Create a new account:</h2>
             <SignUpForm setUser={setUser} />
-            <h2>If you're already signed up log in here!</h2>
+            <h3>If you're already signed up log in here:</h3>
             {/* <input type='submit' value='Log In' onClick={() => setShowLogin(true)} /> */}
             <div className="signup-btn">
             <button id="signup-btn" className='btn' onClick={() => setShowLogin(true)}>Login</button>

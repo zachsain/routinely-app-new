@@ -71,8 +71,8 @@ function AllActivities({user, setUser}){
             </div>)}
         </div> 
         ) : (
-            <div className='activity-container'> 
-            <h3>Activity Form</h3>
+            <div> 
+            <h1 className="actvty-page-header">Activity Journal:</h1>
             <ActivityForm 
             addRoutineClick={addRoutineClick} 
             setAddRoutineClick={setAddRoutineClick}

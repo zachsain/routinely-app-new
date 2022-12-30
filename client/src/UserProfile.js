@@ -48,14 +48,10 @@ function UserProfile({user, setUser}){
                   {userRoutines}
                   </div>   
             ) : (
-                <div>
-                <h3>Welcome to your user Routinely profile!</h3>
-                <p>Here you can create and manage your activities and routines</p>
-                <p>You can also create weekly goals for each category you want to do every week</p>
-                <p>Start by creating a new activity</p>
-
-                <button className="btn" onClick={handleAddActivity}>Create A New Activity</button>
-                <button className="btn" onClick={handleAddRoutine}> Create A Routine</button>
+                <div className="user-blank-container">
+                <div className="add-new-activty-btn">
+                <button id="activity-btn" className="btn" onClick={handleAddActivity}>Create Activity</button>
+                </div>
                 </div>
             )}
 
