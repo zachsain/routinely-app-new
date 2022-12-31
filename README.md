@@ -126,11 +126,11 @@ It should be possible to shutdown the server using [CTRL-C]. If that fails, foll
 3. On Activity page – Select [`Create Activity`] to create a new activity from the routine you selected. Add the title, duration, and notes on the activity. 
 4. To edit the [`Activity`] click on the edit button on the bottom right of the Activity card. 
 5. To delete [`Activity`] click the delete button on top left of Activity Card.
-6. To enlarge the [`Activity`] card and get more details on the Routine used click anywhere on the Activity card.
-7. Once on the single [`Activity`] page you can click on the [`Routine`] card to get more information on the Routine and see helpful video. 
-8. To cretate new routine click the [`Routine`] tab in the navbar and select [`Create New Routine`]. 
-9. To filter routines select the category you wish to filter on the [`Routines`] page. 
-10. To enlarge and see helpful video on the [`Routine`], click anywhere on the Routines card to go to single Routine page. 
+6. To enlarge the [`Activity Card`] and get more details on the Routine used click anywhere on the Activity card.
+7. Once on the single [`Activity`] you can click on the [`Routine Card`] to get more information on the Routine and see helpful video. 
+8. To cretate new routine click [`Routines`] in the navbar and select [`Create New Routine`]. 
+9. To [`Filter Routines`] select the category you wish to filter on the [`Routines`] page. 
+10. To enlarge and see helpful video on a [`Routine`], click anywhere on the [`Routine Card `] to go to single Routine page. 
 11. To create new [`Activity`] from a [`Routine`] click [`Add New Activity`] button on Routine card. 
 12. To see all of the [`Routines`] you've previously used click the [`My Routines`] button in the navbar or the My Routines button located below the filter bar. 
 13. To create a new [`Activity`] from the My Routines page click the [`Add New Activity`] button at the bottom of the Routine card.
