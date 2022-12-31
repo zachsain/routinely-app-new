@@ -264,6 +264,15 @@ div::-webkit-scrollbar {
 
 }
 
+
+#routine-filter-activity{
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  margin-top: 20px;
+  margin-bottom: -30px;
+}
+
 .routine-filter-selector{
   border-radius: 15%;
   margin-left: 1em;

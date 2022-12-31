@@ -1,4 +1,5 @@
 import React, {useState} from 'react';
+import {useHistory} from "react-router-dom";
 import './App.css';
 
 
@@ -7,10 +8,9 @@ function SignUpForm({setUser}){
     const [username, setUsername] = useState("");
     const [password, setPassword] = useState("");
     const [email, setEmail] = useState("")
-    // const [imageUrl, setImageUrl] = useState("");
-    // const [bio, setBio] = useState("");
     const [errors, setErrors] = useState([]);
     const [isLoading, setIsLoading] = useState(false);
+    const history = useHistory();
   
     function handleSubmit(e) {
       e.preventDefault();
@@ -25,12 +25,11 @@ function SignUpForm({setUser}){
           username,
           password,
           email,
-          // image_url: imageUrl,
-          // bio
         }),
       }).then((r) => {
         setIsLoading(false);
         if (r.ok) {
+          history.push('/activities')
           r.json().then((user) => setUser(user));
         } else {
           r.json().then((err) => (setErrors(err.errors), console.log(err.errors)));
@@ -77,30 +76,7 @@ function SignUpForm({setUser}){
               onChange={(e) => setPassword(e.target.value)}
             ></input>
             <br />
-  
-            {/* <label className="signupLabel">Profile photo:</label>
-            <input
-              className="signup-input"
-              type="text"
-              id="profile-picture"
-              autoComplete="off"
-              placeholder="image_url"
-              value={imageUrl}
-              onChange={(e) => setImageUrl(e.target.value)}
-            ></input>
-            <br />
-
-            <label className="signupLabel">Bio</label>
-            <input
-                className="signup-input"
-                type="text"
-                id="user-bio"
-                autoComplete="off"
-                placeholder="tell us about yourself..."
-                value={bio}
-                onChange={(e) => setBio(e.target.value)}
-            ></input>
-            <br /> */}
+            
             <div className="signup-btn">
             <button id="signup-btn" className="btn" type="submit">Sign up</button>
             </div>
