@@ -147,7 +147,6 @@ div::-webkit-scrollbar {
   display: flex;
   background-color: efeeea;
   min-height: 100vh;
-  /* background-size: cover; */
   background-image: url("https://img.freepik.com/free-vector/man-sport-activities_102902-2338.jpg?w=1380&t=st=1669233240~exp=1669233840~hmac=cfdb7370806c6f4ad4d721be5fde757ae95722cdf3a27ae557b22a058bd69418");
 }
 
@@ -182,7 +181,6 @@ div::-webkit-scrollbar {
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  /* border: .6em solid #1C6EA4; */
   background-color: white;
   margin-left: 20.5em;
   margin-right: 20.5em;
@@ -198,7 +196,7 @@ div::-webkit-scrollbar {
   align-items: center;
   justify-content: space-around;
   flex-direction: column;
-  border: .3em solid #1C6EA4;
+  border: .3em solid #566AE5;
   background-color: white;
   margin-top: 1em;
   padding-bottom: 1em;
@@ -220,10 +218,6 @@ div::-webkit-scrollbar {
   text-align: center;
   justify-content: center;
 }
-
-/* .signup-form{
-  justify-content: center;
-} */
 
 .edit-activity-form{
   display: flex;
@@ -251,18 +245,14 @@ div::-webkit-scrollbar {
   display: flex;
   justify-content: center;
   font-family: "Avenir Next", Calibri, Verdana, sans-serif;
-  /* font-family: monospace; */
   margin-top: 1%;
-  /* margin-left: 20%; */
   margin-left: 33%;
   font-size: 1.1em;
   font-weight: bold;
   border: .1em solid  #403d3d;
-  /* border: .6em solid #1C6EA4; */
   border-radius: 15%;
   height: 100%;
   width: 30%;
-  /* position: relative; */
   background: #FFFFFF;
   color: #566AE5;;
 
@@ -288,7 +278,6 @@ div::-webkit-scrollbar {
 }
 
 .navbar-container{
-    /* background-color: #191977; */
     background-color: #566AE5;
     display: flex;
     text-align: center;
@@ -363,7 +352,6 @@ div::-webkit-scrollbar {
   background: #566AE5;
   font-weight: 700;
   border: 0;
-  border-radius: 20%;
   color: #FFFFFF;
   transition-timing-function: ease-in-out;
   transition-property: box-shadow;

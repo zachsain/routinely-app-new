@@ -75,73 +75,73 @@ function RoutineAvivityForm({
 
     return(
       <div>
-      <div>
-      <form  className="routine-activity-form"  onSubmit={handleSubmit}>
-         {/* <br/> */}
-        <>
-        <label className="activity-form-label">Category:</label>
-        <input
-          className="activity-input"
-          type="text"
-          id="category"
-          autoComplete="off"
-          placeholder="type of activity..."
-          value={routineCategory}
-          readOnly
-        ></input>
-        <br />
-        <label className="activity-form-label">Routine: </label>
-        <input className="activity-input"
-          type="text"
-          id="routine-title"
-          autoComplete="off"
-          placeholder="Routine..."
-          value={routineTitle}
-          readOnly
-        ></input> 
-        </> 
-        <br/>
-
-        <label className="activity-form-label">Title:</label>
-        <input
-          className="activity-input"
-          type="text"
-          id="title"
-          autoComplete="off"
-          placeholder="Title of activity..."
-          value={title}
-          onChange={(e) => setTitle(e.target.value)}
+        <div>
+        <form  className="routine-activity-form"  onSubmit={handleSubmit}>
+          {/* <br/> */}
+          <>
+          <label className="activity-form-label">Category:</label>
+          <input
+            className="activity-input"
+            type="text"
+            id="category"
+            autoComplete="off"
+            placeholder="type of activity..."
+            value={routineCategory}
+            readOnly
           ></input>
-        <br />
+          <br />
+          <label className="activity-form-label">Routine: </label>
+          <input className="activity-input"
+            type="text"
+            id="routine-title"
+            autoComplete="off"
+            placeholder="Routine..."
+            value={routineTitle}
+            readOnly
+          ></input> 
+          </> 
+          <br/>
 
-        <label className="activity-form-label">Duration: </label>
-        <input
-          // className="activity-input"
-          type="text"
-          id="duration"
-          autoComplete="off"
-          placeholder="Duration..."
-          value={duration}
-          onChange={(e) => setDuration(e.target.value)}
-        ></input>
-        <br />
+          <label className="activity-form-label">Title:</label>
+          <input
+            className="activity-input"
+            type="text"
+            id="title"
+            autoComplete="off"
+            placeholder="Title of activity..."
+            value={title}
+            onChange={(e) => setTitle(e.target.value)}
+            ></input>
+          <br />
 
-        <label id="notes-input" className="activity-form-label">Notes: </label>
-        <textarea
-          className="activity-input"
-          type="text"
-          // id="notes"
-          autoComplete="off"
-          placeholder="Notes on activity..."
-          value={description}
-          onChange={(e) => setDescription(e.target.value)}
-        ></textarea>
+          <label className="activity-form-label">Duration: </label>
+          <input
+            // className="activity-input"
+            type="text"
+            id="duration"
+            autoComplete="off"
+            placeholder="Duration..."
+            value={duration}
+            onChange={(e) => setDuration(e.target.value)}
+          ></input>
+          <br />
 
-        <br/>
-        <button className="btn" type="submit">Add Activity</button>
-      </form>
-        
-        </div>
+          <label id="notes-input" className="activity-form-label">Notes: </label>
+          <textarea
+            className="activity-input"
+            type="text"
+            // id="notes"
+            autoComplete="off"
+            placeholder="Notes on activity..."
+            value={description}
+            onChange={(e) => setDescription(e.target.value)}
+          ></textarea>
+
+          <br/>
+          <button className="btn" type="submit">Add Activity</button>
+        </form>
+          
+         </div>
     </div>
     )
 }

@@ -17,19 +17,9 @@ function Logout ({ user, setUser }) {
 
       return(
         <div id="logout-component">
-        <br />
-        {/* <h1 id='logout'>Logout</h1> */}
-        <button  id="logout-btn"  onClick={handleClick}>Logout</button>
-            {/* <form onSubmit={handleSubmit}>
-                <input 
-                    className='input' 
-                    type='submit'
-                    id="logout"
-                    value={"Confrim logout"}
-                ></input><br />
-            </form> */}
-      </div>
-       )
+          <button  id="logout-btn"  onClick={handleClick}>Logout</button>
+        </div>
+      )
 }
 
 export default Logout;

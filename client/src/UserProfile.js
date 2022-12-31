@@ -33,13 +33,6 @@ function UserProfile({user, setUser}){
         history.push('/activities')
     }
 
-    function handleAddRoutine(e){
-        history.push('/routines')
-    }
-
-    function handleGoalClick(){
-        setGoalFormClick(!goalFormClick)
-    }
     return(
         <div className='profile-page'>
             {   user.routines.length > 0 ? (

@@ -36,27 +36,27 @@ function SingleRoutine(){
 
     return (
         <div>
-        <div className="routine-container">
-        <h3>Routine Title: {routine.title} </h3>
-        <p>Category: {routine.category}</p>
-        <p>Duration: {routine.duration}</p>
-        <p>Instructions: {routine.instructions}</p>
-        {routine.video_url == "" ? (
-            null
-        ) : (
-            <div>
-            <h4>Helpful Video:</h4>
-            <ReactPlayer controls={true} url={routine.video_url} />
+            <div className="routine-container">
+            <h3>Routine Title: {routine.title} </h3>
+            <p>Category: {routine.category}</p>
+            <p>Duration: {routine.duration}</p>
+            <p>Instructions: {routine.instructions}</p>
+            {routine.video_url == "" ? (
+                null
+            ) : (
+                <div>
+                <h4>Helpful Video:</h4>
+                <ReactPlayer controls={true} url={routine.video_url} />
+                </div>
+            )}
             </div>
-        )}
-        </div>
-        {routine.activities === "" ? (
-               null
-        ) : (
-            <div> 
-            {displayActivites}
-            </div>
-        )}
+            {routine.activities === "" ? (
+                null
+            ) : (
+                <div> 
+                {displayActivites}
+                </div>
+            )}
         </div>
 
     )

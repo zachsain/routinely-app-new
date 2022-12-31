@@ -52,36 +52,36 @@ function UserActivitiesCard({
     return(
         
         <div className="activity-container">
-        <div className='card-click' onClick={handleActivityClick}>
-          <h3>Activity: {title}</h3>
-          <p>Category: {category}</p> 
-          <p>Duration: {duration}</p>
-          <p>Notes: {description}</p>
-          <h5 id="activity-date">{date}</h5>
-        </div>
-        
-        <button 
-          id="delete-btn"
-          className="btn"
-          onClick={handleDeleteActivity}
-        >
+          <div className='card-click' onClick={handleActivityClick}>
+            <h3>Activity: {title}</h3>
+            <p>Category: {category}</p> 
+            <p>Duration: {duration}</p>
+            <p>Notes: {description}</p>
+            <h5 id="activity-date">{date}</h5>
+          </div>
+          
+          <button 
+            id="delete-btn"
+            className="btn"
+            onClick={handleDeleteActivity}
+          >
           <FaTimesCircle  size="1.7em" id="delete-btn-icon"/>
-        </button>
-        <br/>
-        <button id="edit-btn" className="btn" onClick={handleEditClick}><FiEdit size="1.7em" id="edit-btn-icon"/></button>
-        {editButtonClick ? (
-        <SingleActivityEdit 
-        id={id}
-        title={title}
-        category={category} 
-        duration={duration}
-        description={description}
-        user={user}
-        setUser={setUser}
-        routineId={routineId}
-        editButtonClick={editButtonClick}
-        setEditButtonClick={setEditButtonClick}
-        />) : (null)}
+          </button>
+          <br/>
+          <button id="edit-btn" className="btn" onClick={handleEditClick}><FiEdit size="1.7em" id="edit-btn-icon"/></button>
+          {editButtonClick ? (
+          <SingleActivityEdit 
+          id={id}
+          title={title}
+          category={category} 
+          duration={duration}
+          description={description}
+          user={user}
+          setUser={setUser}
+          routineId={routineId}
+          editButtonClick={editButtonClick}
+          setEditButtonClick={setEditButtonClick}
+          />) : (null)}
         </div>
         
     )

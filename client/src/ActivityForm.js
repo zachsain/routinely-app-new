@@ -73,8 +73,6 @@ function ActivityForm({
           });
     }
 
-  
-
     function handleRoutineSelectClick(e){
         e.preventDefault()
         setSelectRoutineClick(!selectRoutineClick)

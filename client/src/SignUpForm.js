@@ -40,7 +40,7 @@ function SignUpForm({setUser}){
     }
   
     return (
-        <>
+        <div>
         <div id="signup">
           <form className="signup-form" onSubmit={handleSubmit}>
             <label className="signupLabel">Username: </label>
@@ -107,7 +107,7 @@ function SignUpForm({setUser}){
             </div>
           </form>
         </div>
-      </>
+      </div>
     )
     
 }

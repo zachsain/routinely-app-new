@@ -23,16 +23,15 @@ function ShowRoutineActivities({
     function handleClick(){
         history.push(`/activities/${id}`)
     }
-    return(
-        
+    return( 
         <div className="activity-container">
-        <div onClick={handleClick} className="card-click">
-          <h3>Activity: {title}</h3>
-          <p>Category: {category}</p> 
-          <p>Duration: {duration}</p>
-          <p>Notes: {description}</p>
-          <h5 id="activity-date">{date}</h5>
-        </div>
+            <div>
+            <h3>Activity: {title}</h3>
+            <p>Category: {category}</p> 
+            <p>Duration: {duration}</p>
+            <p>Notes: {description}</p>
+            <h5 id="activity-date">{date}</h5>
+            </div>
         </div>
 
         

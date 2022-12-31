@@ -17,12 +17,12 @@ function SingleActivityRoutine({
 
     return (
         <div onClick={handleRoutineClick} className="routine-container">
-        <div className="card-click">
-        <h3>Routine Used: {title}</h3>
-        <p>Category: {category}</p>
-        <p>Duration: {duration}</p>
-        <p>Instructions: {instructions}</p>
-        </div>
+            <div className="card-click">
+            <h3>Routine Used: {title}</h3>
+            <p>Category: {category}</p>
+            <p>Duration: {duration}</p>
+            <p>Instructions: {instructions}</p>
+            </div>
         </div>
     )
 

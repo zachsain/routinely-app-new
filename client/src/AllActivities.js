@@ -89,17 +89,3 @@ function AllActivities({user, setUser}){
 
 export default AllActivities
 
-
-{/* <div className='activity-container'>
-            {addRoutineClick ? (<h3>Activity Form</h3>) : (<h3>My Activites:</h3>)}
-            <button onClick={handleClick}>{addActivityClick ? "See Activities" : "Create New Activity"}</button>
-             {addRoutineClick ? (
-            <div><ActivityForm 
-            addRoutineClick={addRoutineClick} 
-            setAddRoutineClick={setAddRoutineClick}
-            user={user} 
-            setUser={setUser}
-            routines={routines}
-            /> </div>) 
-            : (<div> {activities}</div>)}
-        </div> */}

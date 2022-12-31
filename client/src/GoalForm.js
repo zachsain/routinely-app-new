@@ -16,7 +16,7 @@ function GoalForm({user, setUser}){
 
   return(
         <div>
-         <form onSubmit={handleSubmit}>
+        <form onSubmit={handleSubmit}>
         <label className='routine-form'>Select Category:
         <select value={category} onChange={(e) => setCategory(e.target.value)}>
             <option value={null}></option>

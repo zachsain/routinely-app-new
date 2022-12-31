@@ -60,7 +60,6 @@ function DisplayUserRoutines({
     return(
         <div>
         <div> 
-                {/* <button onClick={handleFilterClick}>Filter By Category</button> */}
                 <label id="routine-filter" className='routine-form'>Filter By Category:
                 <select className="routine-filter-selector" onClick={handleClick} onChange={handleFilterSelect}>
                     <option value=""></option>

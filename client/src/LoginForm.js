@@ -53,7 +53,6 @@ return (
           ></input><br />
           <div className="login-btn">
           <button id="login-btn" className="btn" type='submit'>Login
-            {/* {isLoading ? "Loading..." : "Let's go!"} */}
           </button>
           </div>
           {isLoading ? (<h1>Loading...</h1>) : (null)}

@@ -9,10 +9,6 @@ import Logout from './Logout';
 import UserProfile from './UserProfile';
 import SingleActivity from './SingleActivity';
 import SingleRoutine from './SingleRoutine'
-// import Logo from '../public/andriod-chrome-192x192'
-import Loading from './Loading'
-// import SingleActivityEdit from './SingleActivityEdit';
-
 
 function App() {
 
@@ -39,7 +35,7 @@ function App() {
         backgroundSize: 'cover', 
         backgroundImage: 'url("https://img.freepik.com/free-vector/man-sport-activities_102902-2338.jpg?w=1380&t=st=1669233240~exp=1669233840~hmac=cfdb7370806c6f4ad4d721be5fde757ae95722cdf3a27ae557b22a058bd69418")', 
         padding: "100px"}}>
-      <Login setUser={setUser} />
+        <Login setUser={setUser} />
     </div>)
 
   return (

@@ -128,7 +128,6 @@ function SingleActivityEdit({
       className="activity-input"
       type="text"
       id="notes"
-      // id="description"
       autoComplete="off"
       placeholder={description}
       value={updatedDescription}
