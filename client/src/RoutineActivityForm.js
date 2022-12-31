@@ -30,12 +30,11 @@ function RoutineAvivityForm({
 
     const todayDate = new Date()
     const styledDate = `${todayDate.getMonth()+1}/${todayDate.getDate()}/${todayDate.getFullYear()}`
-
-    console.log(styledDate)
-
+    // console.log(user.id)
     function handleSubmit(e){
         e.preventDefault()
-        
+        console.log(e)
+        console.log(user)
         fetch("/activities", {
             method: "POST",
             headers: {
@@ -54,7 +53,6 @@ function RoutineAvivityForm({
             setIsLoading(false);
             if (r.ok) {
               r.json().then((a) =>{
-                console.log(a)
                 let userCopy = {...user}
                 let updatedActivities = [...user.activities]
                 updatedActivities.push(a)
@@ -76,8 +74,7 @@ function RoutineAvivityForm({
     return(
       <div>
         <div>
-        <form  className="routine-activity-form"  onSubmit={handleSubmit}>
-          {/* <br/> */}
+        <form className="routine-activity-form"  onSubmit={handleSubmit}>
           <>
           <label className="activity-form-label">Category:</label>
           <input
@@ -116,7 +113,7 @@ function RoutineAvivityForm({
 
           <label className="activity-form-label">Duration: </label>
           <input
-            // className="activity-input"
+            className="activity-input"
             type="text"
             id="duration"
             autoComplete="off"
@@ -130,7 +127,7 @@ function RoutineAvivityForm({
           <textarea
             className="activity-input"
             type="text"
-            // id="notes"
+            // id="nts"
             autoComplete="off"
             placeholder="Notes on activity..."
             value={description}
@@ -141,7 +138,7 @@ function RoutineAvivityForm({
           <button className="btn" type="submit">Add Activity</button>
         </form>
           
-         </div>
+      </div>
     </div>
     )
 }

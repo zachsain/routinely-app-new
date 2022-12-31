@@ -15,10 +15,11 @@ function UserProfile({user, setUser}){
     const [goalFormClick, setGoalFormClick] = useState(false)
     const history = useHistory();
 
-    console.log(user.routines)
+    console.log(user)
 
     let userRoutines = user.routines.map(r => {
         return <DisplayRoutines
+        user={user}
         key={r.id}
         title={r.title}
         category={r.category}
@@ -43,7 +44,7 @@ function UserProfile({user, setUser}){
             ) : (
                 <div className="user-blank-container">
                 <div className="add-new-activty-btn">
-                <button id="activity-btn" className="btn" onClick={handleAddActivity}>Create Activity</button>
+                <button id="activity-btn" className="btn" onClick={handleAddActivity}> Create New Entry</button>
                 </div>
                 </div>
             )}

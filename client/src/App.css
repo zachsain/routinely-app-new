@@ -84,6 +84,12 @@ div::-webkit-scrollbar {
   box-shadow: 2px 2px rgb(82, 88, 14);
 }
 
+  /* .user-page-header-2{
+  display: flex;
+  justify-content: center;
+
+  } */
+
 
 .user-profile-name{
   font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;

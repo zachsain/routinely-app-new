@@ -41,13 +41,12 @@ function DisplayRoutines({
             {addActivityClick ? (
                 <div> 
                     <RoutineAvivityForm 
-                    routineCategory={category}
-                    routineId={id}
-                    user={user}
-                    setUser={setUser}
-                    routineTitle={title}
-                    routines={routines}
-                    
+                        routineCategory={category}
+                        routineId={id}
+                        user={user}
+                        setUser={setUser}
+                        routineTitle={title}
+                        routines={routines}
                     />
                 </div>
             ) : (

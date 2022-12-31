@@ -7,14 +7,13 @@ function SignUpForm({setUser}){
     const [username, setUsername] = useState("");
     const [password, setPassword] = useState("");
     const [email, setEmail] = useState("")
-    const [imageUrl, setImageUrl] = useState("");
-    const [bio, setBio] = useState("");
+    // const [imageUrl, setImageUrl] = useState("");
+    // const [bio, setBio] = useState("");
     const [errors, setErrors] = useState([]);
     const [isLoading, setIsLoading] = useState(false);
   
     function handleSubmit(e) {
       e.preventDefault();
-      console.log(imageUrl);
       setErrors([]);
       setIsLoading(true);
       fetch("/signup", {
@@ -26,8 +25,8 @@ function SignUpForm({setUser}){
           username,
           password,
           email,
-          image_url: imageUrl,
-          bio
+          // image_url: imageUrl,
+          // bio
         }),
       }).then((r) => {
         setIsLoading(false);
@@ -79,7 +78,7 @@ function SignUpForm({setUser}){
             ></input>
             <br />
   
-            <label className="signupLabel">Profile photo:</label>
+            {/* <label className="signupLabel">Profile photo:</label>
             <input
               className="signup-input"
               type="text"
@@ -101,7 +100,7 @@ function SignUpForm({setUser}){
                 value={bio}
                 onChange={(e) => setBio(e.target.value)}
             ></input>
-            <br />
+            <br /> */}
             <div className="signup-btn">
             <button id="signup-btn" className="btn" type="submit">Sign up</button>
             </div>

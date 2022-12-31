@@ -73,19 +73,14 @@ function Routines({user, setUser}){
             </div>
                 <label id="routine-filter" className='routine-form'>Filter By Category:
                 <select className="routine-filter-selector" onClick={handleClick} onChange={handleFilterSelect}>
-                    <option value=""></option>
-                    <option className="routine-option" value="Weight Training">Weight Training</option>
+                    <option value={null}></option>
+                    <option value="Weight Training">Weight Training</option>
                     <option value="Cardio">Cardio</option>
                     <option value="Sports Training">Sports Training</option>
-                    <option value="Diet">Diet</option>
-                    <option value="Education">Education</option>
+                    <option value="Diet">Cooking</option>
                     <option value="Cleaning">Cleaning</option>
-                    <option value="Organization">Organization</option>
                     <option value="Maintenance">Maintenance</option>
-                    <option value="Beauty">Beauty</option>               
-                    <option value="Health & Wellness">Health & Wellness</option>
                     <option value="Music">Music</option>
-                    <option value="Arts & Crafts">Arts & Crafts</option>
                     <option value="Yoga">Yoga</option>
                     <option value="Meditation">Meditation</option>
                 </select>    
@@ -98,19 +93,14 @@ function Routines({user, setUser}){
             </div>
                 <label id="routine-filter">Filter:
                 <select className="routine-filter-selector" onClick={handleClick} onChange={handleFilterSelect}>
-                    <option value=""></option>
-                    <option className="routine-option" value="Weight Training">Weight Training</option>
+                    <option value={null}></option>
+                    <option value="Weight Training">Weight Training</option>
                     <option value="Cardio">Cardio</option>
                     <option value="Sports Training">Sports Training</option>
-                    <option value="Diet">Diet</option>
-                    <option value="Education">Education</option>
+                    <option value="Diet">Cooking</option>
                     <option value="Cleaning">Cleaning</option>
-                    <option value="Organization">Organization</option>
                     <option value="Maintenance">Maintenance</option>
-                    <option value="Beauty">Beauty</option>               
-                    <option value="Health & Wellness">Health & Wellness</option>
                     <option value="Music">Music</option>
-                    <option value="Arts & Crafts">Arts & Crafts</option>
                     <option value="Yoga">Yoga</option>
                     <option value="Meditation">Meditation</option>
                 </select>    

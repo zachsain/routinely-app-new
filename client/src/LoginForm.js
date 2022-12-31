@@ -1,4 +1,5 @@
 import React, {useState} from 'react'
+import {useHistory} from "react-router-dom";
 import './App.css';
 
 
@@ -7,6 +8,7 @@ function LoginForm({setUser}){
     const [password, setPassword] = useState("")
     const [errors, setErrors] = useState([]);
     const [isLoading, setIsLoading] = useState(false);
+    const history = useHistory();
 
     function handleLogin(e) {
         e.preventDefault();
@@ -20,6 +22,7 @@ function LoginForm({setUser}){
         }).then((r) => {
           setIsLoading(false);
           if (r.ok) {
+            history.push('/activities')
             r.json().then((user) => setUser(user));
           } else {
             r.json().then((err) => setErrors(err.errors));
