@@ -54,7 +54,6 @@ function ActivityForm({
             setIsLoading(false);
             if (r.ok) {
               r.json().then((a) =>{
-                console.log(a)
                 let userCopy = {...user}
                 let updatedActivities = [...user.activities]
                 updatedActivities.push(a)

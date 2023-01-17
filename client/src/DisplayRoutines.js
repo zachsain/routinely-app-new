@@ -16,6 +16,7 @@ function DisplayRoutines({
 }){ 
     const [addActivityClick, setAddActivityClick] = useState(false)
     const history = useHistory();
+    
     function handleUserRoutineClick(){
         history.push(`routines/${id}`)
     }

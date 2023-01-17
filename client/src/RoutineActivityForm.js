@@ -12,7 +12,6 @@ function RoutineAvivityForm({
     routineTitle,
     routineId
 }){
-    console.log(user)
     const [title, setTitle] = useState("")
     const [category, setCategory] = useState("")
     const [description, setDescription] = useState("")
@@ -30,11 +29,8 @@ function RoutineAvivityForm({
 
     const todayDate = new Date()
     const styledDate = `${todayDate.getMonth()+1}/${todayDate.getDate()}/${todayDate.getFullYear()}`
-    // console.log(user.id)
     function handleSubmit(e){
         e.preventDefault()
-        console.log(e)
-        console.log(user)
         fetch("/activities", {
             method: "POST",
             headers: {

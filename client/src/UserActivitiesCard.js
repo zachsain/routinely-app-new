@@ -26,7 +26,10 @@ function UserActivitiesCard({
     function handleDeleteActivity(e){
         e.preventDefault()
         let filteredActivities = copyOfState.activities.filter((activity) => activity.id !== id)
-        copyOfState.activities = filteredActivities       
+        let filterUserRoutine = copyOfState.routines.filter((r) => r.id !== routineId)
+        console.log(copyOfState.routines)
+        copyOfState.activities = filteredActivities     
+        copyOfState.routines = filterUserRoutine     
         fetch(`/activities/${id}`, {
             method: "DELETE",
           })
@@ -47,7 +50,6 @@ function UserActivitiesCard({
         setEditButtonClick(!editButtonClick)
     }
     const activityRoutine = routines.filter(r => r.id === routineId)
-    // console.log(activityRoutine[0].title)
 
     return(
         

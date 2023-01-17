@@ -5,8 +5,5 @@ class User < ApplicationRecord
      has_many :routine_comments
      has_many :activity_comments 
      has_many :goals
-     
- 
      has_secure_password
- 
 end
