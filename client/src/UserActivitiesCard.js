@@ -27,7 +27,6 @@ function UserActivitiesCard({
         e.preventDefault()
         let filteredActivities = copyOfState.activities.filter((activity) => activity.id !== id)
         let filterUserRoutine = copyOfState.routines.filter((r) => r.id !== routineId)
-        console.log(copyOfState.routines)
         copyOfState.activities = filteredActivities     
         copyOfState.routines = filterUserRoutine     
         fetch(`/activities/${id}`, {
