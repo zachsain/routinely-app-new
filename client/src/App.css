@@ -323,6 +323,10 @@ div::-webkit-scrollbar {
   margin-left: 500px;
 }
 
+.error-msg{
+  color: red;
+}
+
 
 #delete-btn{
   position: absolute;

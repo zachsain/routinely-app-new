@@ -1,4 +1,5 @@
 class RoutinesController < ApplicationController
+    before_action :authorize, only: [:show, :create, :destroy]
     
     def index
         routines = Routine.all
@@ -10,7 +11,7 @@ class RoutinesController < ApplicationController
         render json: routine
     end 
 
-    def destory
+    def destroy 
         routine = Routine.find(params[:id])
         routine.destroy
         head :no_content
@@ -21,10 +22,25 @@ class RoutinesController < ApplicationController
         render json: new_routine, status: :created
     end 
 
+    def find 
+       #lower makes param case insensitive
+       #find all routines that have params as category
+       #return all the activities that use those routines
+       routine = Routine.where('lower(category) = lower(?)', params[:category])
+       ids = routine.pluck(:id)
+       activities = Activity.where(routine_id: ids).reverse_order
+       
+       if activities.blank?
+        render json: {error: "category not found"}, status: :not_found  
+       else
+            render json: activities
+       end 
+    end 
+
     private 
 
     def routine_params
         params.permit(:title, :category, :instructions, :duration, :video_url, :id)
     end 
-
+    
 end

@@ -29,6 +29,7 @@ function RoutineAvivityForm({
 
     const todayDate = new Date()
     const styledDate = `${todayDate.getMonth()+1}/${todayDate.getDate()}/${todayDate.getFullYear()}`
+    
     function handleSubmit(e){
         e.preventDefault()
         fetch("/activities", {

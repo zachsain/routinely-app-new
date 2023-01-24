@@ -37,7 +37,7 @@ function RoutineForm({setRoutines, routines, addRoutineClick, setAddRoutineClick
                 setRoutines([newRoutine, ...routines])
               } );
             } else {
-              r.json().then((err) => setErrors(err.errors));
+              r.json().then((err) => console.log(err.errors));
             }
           });
 

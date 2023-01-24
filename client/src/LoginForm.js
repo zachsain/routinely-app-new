@@ -25,7 +25,7 @@ function LoginForm({setUser}){
             history.push('/activities')
             r.json().then((user) => setUser(user));
           } else {
-            r.json().then((err) => setErrors(err.errors));
+            r.json().then((err) => console.log(err.errors));
           }
         });
 

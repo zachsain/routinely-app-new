@@ -42,7 +42,7 @@ function SingleActivityEdit({
               "duration" : updatedDuration,
               "description" : updatedDescription,
               "routine_id" : routineId,
-              "user_id" : user.id
+              // "user_id" : user.id
             }),
           }).then((r) => {
             setIsLoading(false);

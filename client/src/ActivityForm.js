@@ -1,6 +1,7 @@
 import React, {useState, useCallback} from "react";
 import DisplayUserRoutines from './DisplayUserRoutines'
 import { useHistory } from "react-router-dom";
+import DisplayErrors from "./DisplayErrors";
 import './App.css';
 
 
@@ -16,6 +17,7 @@ function ActivityForm({
     const [description, setDescription] = useState("")
     const [duration, setDuration] = useState("")
     const [errors, setErrors] = useState([]);
+    const [showErrors, setShowErrors] = useState(false)
     const [isLoading, setIsLoading] = useState(false);
     const [selectRoutineClick, setSelectRoutineClick] = useState(false)
     const [selectUserRoutine, setSelectUserRoutine] = useState({})
@@ -31,11 +33,8 @@ function ActivityForm({
     const todayDate = new Date()
     const styledDate = `${todayDate.getMonth()+1}/${todayDate.getDate()}/${todayDate.getFullYear()}`
 
-    console.log(styledDate)
-
     function handleSubmit(e){
         e.preventDefault()
-        setAddRoutineClick(!addRoutineClick)
         fetch("/activities", {
             method: "POST",
             headers: {
@@ -47,13 +46,13 @@ function ActivityForm({
               description,
               duration,
               routine_id : routineId,
-              user_id : user.id,
               date : styledDate
             }),
           }).then((r) => {
             setIsLoading(false);
             if (r.ok) {
               r.json().then((a) =>{
+                setAddRoutineClick(!addRoutineClick)
                 let userCopy = {...user}
                 let updatedActivities = [...user.activities]
                 updatedActivities.push(a)
@@ -63,11 +62,10 @@ function ActivityForm({
                 upDatedRoutines.push(newRoutine)
                 userCopy.routines = upDatedRoutines
                 setUser(userCopy)
-                history.push(`/activities/${a.id}`)
               })
              
             } else {
-              r.json().then((err) => setErrors(err.errors));
+              r.json().then((err) => setErrors(err.errors),  setAddRoutineClick(true), setShowErrors(true));
             }
           });
     }
@@ -78,6 +76,10 @@ function ActivityForm({
         setShowInputForRoutine(!showInputForRoutine)
     }
  
+    let errorMsg = errors.map((e) => {
+         return <DisplayErrors key={e[0]} error={e} />
+    })
+
     return(
       <div>
       <div id="new-activity-form-container">
@@ -165,6 +167,7 @@ function ActivityForm({
         ></input> </>) 
         : (null)
         } 
+        {showErrors ? (errorMsg) : (null)}
         <br/>
         <button className="btn" type="submit">Add Activity</button>
       </form>

@@ -30,6 +30,7 @@ Activity Journal was created for Flatiron Software Enineering program for phase-
 - bcrypt 3.1.7
 - React 18.2.0
 - React-Router-Dom 5.3.4
+- React icons 
 
 See Environment Setup below for instructions on installing these tools if you
 don't already have them.
@@ -98,6 +99,7 @@ When you're ready to start building your project, run:
 bundle install
 rails db:create
 npm install --prefix client
+npm install react-icons --prefix client
 ```
 
 ## Server Start
