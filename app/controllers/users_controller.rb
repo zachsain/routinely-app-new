@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  before_action :authorize, only: [:show, :index]
+  before_action :authorize, only: [:show]
 
     def create
         user = User.create(user_params)
@@ -16,15 +16,10 @@ class UsersController < ApplicationController
       render json: current_user
     end 
 
-    # def index
-    #   users = User.all
-    #   render json: users
-    # end 
-
   private
 
   def user_params 
-    params.permit(:username, :password, :email, :image_url, :bio)
+    params.permit(:username, :password, :email)
   end 
   
 end

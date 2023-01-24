@@ -32,7 +32,7 @@ function DisplayRoutines({
         <p>Duration: {duration}</p>
         <p>Instructions: {instructions}</p>
         </div>
-        <button 
+        {/* <button 
             className="btn" 
             id="plus-btn" 
             type="click" 
@@ -52,7 +52,7 @@ function DisplayRoutines({
                 </div>
             ) : (
                 null
-            )}
+            )} */}
         </div>
     )
 }

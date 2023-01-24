@@ -1,6 +1,7 @@
 import React, {useState} from 'react'
 import './App.css'
 import {useHistory} from "react-router-dom";
+import DisplayErrors from "./DisplayErrors";
 
 function RoutineForm({setRoutines, routines, addRoutineClick, setAddRoutineClick}){
 
@@ -9,13 +10,13 @@ function RoutineForm({setRoutines, routines, addRoutineClick, setAddRoutineClick
     const [instructions, setInstructions] = useState("")
     const [duration, setDuration] = useState("")
     const [videoUrl, setVideoUrl] = useState("")
-    const [errors, setErrors] = useState([]);
-    const [isLoading, setIsLoading] = useState(false);
-    const history = useHistory();
+    const [errors, setErrors] = useState([])
+    const [showErrors, setShowErrors] = useState(false)
+    const [isLoading, setIsLoading] = useState(false)
+    const history = useHistory()
         
     function handleSubmit(e){
         e.preventDefault()  
-        setAddRoutineClick(!addRoutineClick)
         
         fetch("/routines", {
             method: "POST",
@@ -34,15 +35,21 @@ function RoutineForm({setRoutines, routines, addRoutineClick, setAddRoutineClick
             setIsLoading(false);
             if (r.ok) {
               r.json().then((newRoutine) => {
+                setAddRoutineClick(!addRoutineClick)
                 setRoutines([newRoutine, ...routines])
               } );
             } else {
-              r.json().then((err) => console.log(err.errors));
+              r.json().then((err) => setErrors(err.errors), setShowErrors(true), setAddRoutineClick(true));
             }
           });
 
     }
       
+
+    let errorMsg = errors.map((e) => {
+      return <DisplayErrors key={e[0]} error={e} />
+    })
+
     return(
         <>
         <div>
@@ -109,9 +116,9 @@ function RoutineForm({setRoutines, routines, addRoutineClick, setAddRoutineClick
               placeholder="Upload helpful video"
               value={videoUrl}
               onChange={(e) => setVideoUrl(e.target.value)}
-            ></input>            
+            ></input>    
+                
             <br />
-  
             <button className="btn" type="submit">Add Routine</button>
           </form>
         </div>

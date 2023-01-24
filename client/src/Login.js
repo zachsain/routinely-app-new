@@ -1,12 +1,13 @@
 import React, {useState} from 'react'
 import LoginForm from "./LoginForm";
 import SignUpForm from "./SignUpForm";
+import DisplayErrors from './DisplayErrors';
 import './App.css';
 
 
 function Login({setUser}){
     const [showLogin, setShowLogin] = useState(true)
-
+    
     return (
 
         <div>
@@ -31,7 +32,7 @@ function Login({setUser}){
             </div>
           </div>
         )}
-        </div>
+        </div> 
       </div>
 
     )

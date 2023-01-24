@@ -1,5 +1,6 @@
 import React, {useState} from 'react';
 import {useHistory} from "react-router-dom";
+import DisplayErrors from './DisplayErrors';
 import './App.css';
 
 
@@ -9,6 +10,8 @@ function SignUpForm({setUser}){
     const [password, setPassword] = useState("");
     const [email, setEmail] = useState("")
     const [errors, setErrors] = useState([]);
+    const [showErrors, setShowErrors] = useState(false);
+
     const [isLoading, setIsLoading] = useState(false);
     const history = useHistory();
   
@@ -32,11 +35,12 @@ function SignUpForm({setUser}){
           history.push('/activities')
           r.json().then((user) => setUser(user));
         } else {
-          r.json().then((err) => (setErrors(err.errors), console.log(err.errors)));
+          r.json().then((err) => setErrors(err.errors), setShowErrors(true));
         }
       });
     }
-  
+
+    
     return (
         <div>
         <div id="signup">
@@ -76,7 +80,7 @@ function SignUpForm({setUser}){
               onChange={(e) => setPassword(e.target.value)}
             ></input>
             <br />
-            
+            {showErrors ? (<div><DisplayErrors error={errors} /></div>) : (null)} 
             <div className="signup-btn">
             <button id="signup-btn" className="btn" type="submit">Sign up</button>
             </div>

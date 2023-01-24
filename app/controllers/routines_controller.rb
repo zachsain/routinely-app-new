@@ -1,5 +1,6 @@
 class RoutinesController < ApplicationController
     before_action :authorize, only: [:show, :create, :destroy]
+    rescue_from ActiveRecord::RecordInvalid, with: :handle_invalid_data
     
     def index
         routines = Routine.all

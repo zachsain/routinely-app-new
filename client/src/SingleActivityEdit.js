@@ -42,7 +42,6 @@ function SingleActivityEdit({
               "duration" : updatedDuration,
               "description" : updatedDescription,
               "routine_id" : routineId,
-              // "user_id" : user.id
             }),
           }).then((r) => {
             setIsLoading(false);
@@ -94,8 +93,7 @@ function SingleActivityEdit({
     showInputForRoutine={showInputForRoutine}
     setShowInputForRoutine={setShowInputForRoutine}
     setRoutineId={setRoutineId}
-    setCategory={setUpdatedCategory}
-    
+    setCategory={setUpdatedCategory}  
   />)
  :(null)}
  <br/>

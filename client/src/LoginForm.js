@@ -1,13 +1,15 @@
 import React, {useState} from 'react'
-import {useHistory} from "react-router-dom";
-import './App.css';
+import {useHistory} from "react-router-dom"
+import DisplayErrors from './DisplayErrors'
+import './App.css'
 
 
 function LoginForm({setUser}){
     const [username, setUsername] = useState("")
     const [password, setPassword] = useState("")
-    const [errors, setErrors] = useState([]);
     const [isLoading, setIsLoading] = useState(false);
+    const [errors, setErrors] = useState([])
+    const [showErrors, setShowErrors] = useState(false)
     const history = useHistory();
 
     function handleLogin(e) {
@@ -20,12 +22,11 @@ function LoginForm({setUser}){
           },
           body: JSON.stringify({ username, password }),
         }).then((r) => {
-          setIsLoading(false);
           if (r.ok) {
             history.push('/activities')
             r.json().then((user) => setUser(user));
           } else {
-            r.json().then((err) => console.log(err.errors));
+            r.json().then((err) => setErrors(err.errors), setShowErrors(true));
           }
         });
 
@@ -54,11 +55,12 @@ return (
             value={password}
             onChange={(e) => setPassword(e.target.value)}
           ></input><br />
+          {showErrors ? (<div><DisplayErrors error={errors} /></div>) : (null)}  
           <div className="login-btn">
           <button id="login-btn" className="btn" type='submit'>Login
           </button>
           </div>
-          {isLoading ? (<h1>Loading...</h1>) : (null)}
+          {/* {isLoading ? (<h1>Loading...</h1>) : (null)} */}
         </form>
         </div>
  

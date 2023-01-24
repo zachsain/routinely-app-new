@@ -5,7 +5,7 @@ import Video from "./Video";
 import ReactPlayer from 'react-player/youtube'
 import './App.css';
 
-function SingleRoutine(){
+function SingleRoutine({user}){
     const [routine, setRoutine] = useState([])
     const [isLoaded, setIsLoaded] = useState(false)
     let { id } = useParams();
@@ -19,8 +19,12 @@ function SingleRoutine(){
      
     }, [])
 
+    let rId = parseInt(id)
+
+    let userActivitesRoutine = user.activities.filter((a) => a.routine_id === rId)
+   
     if (isLoaded == true) {
-        displayActivites = routine.activities.map(a => {
+        displayActivites = userActivitesRoutine.map(a => {
      return <ShowRoutineActivities 
               key={a.id} 
               title={a.title}
