@@ -3,11 +3,6 @@ class ActivitiesController < ApplicationController
     rescue_from ActiveRecord::RecordInvalid, with: :handle_invalid_data
     # rescue_from ActiveRecord::RecordInvalid, with: :handle_not_found
 
-    def index
-        activities = Activity.all
-        render json: activities.all
-    end 
-
     def create 
         user = User.find(session[:user_id])
         activity = user.activities.create!(activity_params)
@@ -20,15 +15,12 @@ class ActivitiesController < ApplicationController
         render json: activity
     end
 
-
     def destroy 
         user = User.find(session[:user_id])
         activity = user.activities.find(params[:id])
         activity.destroy  
         head :no_content
     end
-
-
 
     def update
         activity = Activity.find(params[:id])

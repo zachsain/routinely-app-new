@@ -18,18 +18,11 @@ function ActivityForm({
     const [duration, setDuration] = useState("")
     const [errors, setErrors] = useState([]);
     const [showErrors, setShowErrors] = useState(false)
-    const [isLoading, setIsLoading] = useState(false);
     const [selectRoutineClick, setSelectRoutineClick] = useState(false)
-    const [selectUserRoutine, setSelectUserRoutine] = useState({})
-    const [showUserRoutineSelection, setShowUserRoutineSelection] = useState(false)
     const [routineTitle, setRoutineTitle] = useState("")
     const [showInputForRoutine, setShowInputForRoutine] = useState(false)
     const [routineId, setRoutineId] = useState()
-    const [userWithNewActivity, setUserWithNewActivity] = useState({})
     const history = useHistory() 
-    const [allRouintes, setAllRoutines] = useState([])
-    const [date, setDate] = useState("")
-
     const todayDate = new Date()
     const styledDate = `${todayDate.getMonth()+1}/${todayDate.getDate()}/${todayDate.getFullYear()}`
 
@@ -49,8 +42,8 @@ function ActivityForm({
               date : styledDate
             }),
           }).then((r) => {
-            setIsLoading(false);
             if (r.ok) {
+              history.push('/activities')
               r.json().then((a) =>{
                 setAddRoutineClick(!addRoutineClick)
                 let userCopy = {...user}

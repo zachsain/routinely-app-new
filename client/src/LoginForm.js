@@ -7,14 +7,12 @@ import './App.css'
 function LoginForm({setUser}){
     const [username, setUsername] = useState("")
     const [password, setPassword] = useState("")
-    const [isLoading, setIsLoading] = useState(false);
     const [errors, setErrors] = useState([])
     const [showErrors, setShowErrors] = useState(false)
     const history = useHistory();
 
     function handleLogin(e) {
         e.preventDefault();
-        setIsLoading(true);
         fetch("/login", {
           method: "POST",
           headers: {

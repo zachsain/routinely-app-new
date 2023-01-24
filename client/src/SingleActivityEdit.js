@@ -1,5 +1,6 @@
 import React, {useState, useEffect} from "react";
 import DisplayUserRoutines from './DisplayUserRoutines'
+import DisplayErrors from "./DisplayErrors";
 import './App.css';
 
 
@@ -11,8 +12,10 @@ function SingleActivityEdit({
   description,
   user,
   setUser,
+  routineId,
   editButtonClick,
-  setEditButtonClick
+  setEditButtonClick,
+  routines
 }){
     const [updatedTitle, setUpdatedTitle] = useState("")
     const [updatedCategory, setUpdatedCategory] = useState("")
@@ -21,15 +24,16 @@ function SingleActivityEdit({
     const [routineTitle, setRoutineTitle] = useState("")
     const [selectRoutineClick, setSelectRoutineClick] = useState(false)
     const [showInputForRoutine, setShowInputForRoutine] = useState(false)
-    const [routineId, setRoutineId] = useState()
+    // const [routineId, setRoutineId] = useState()
     const [userStateCopy, setUserStateCopy] = useState(user)
-    const [isLoading, setIsLoading] = useState(false)
-    const [errors, setErrors] = useState([])
+    const [errors, setErrors] = useState([]);
+    const [showErrors, setShowErrors] = useState(false)
+
+    let routineList = routines.find(r => r.id === routineId) 
+    console.log(routineList.title)
 
     function handleSubmit(e){
         e.preventDefault()
-        setEditButtonClick(!editButtonClick)
-        console.log(user)
         
         fetch(`/activities/${id}`, {
             method: "PATCH",
@@ -44,9 +48,9 @@ function SingleActivityEdit({
               "routine_id" : routineId,
             }),
           }).then((r) => {
-            setIsLoading(false);
             if (r.ok) {
               r.json().then((newActivity) => {
+                setEditButtonClick(!editButtonClick)
                 let updatedActivities = userStateCopy.activities.map((a) => {
                   if (a.id === newActivity.id){
                   return {...a, 
@@ -58,15 +62,23 @@ function SingleActivityEdit({
                   return a
                  })
                 userStateCopy.activities = updatedActivities
+                // let newRoutine = routines.find(r => r.id === newActivity.routine_id) 
+                // let upDatedRoutines = [...user.routines]
+                // upDatedRoutines.push(newRoutine)
+                // userStateCopy.routines = upDatedRoutines
+                // console.log(userStateCopy)
                 setUser({...userStateCopy})
               })
              
             } else {
-              r.json().then((err) => setErrors(err.errors));
+              r.json().then((err) => setErrors(err.errors), setShowErrors(true), setEditButtonClick(true));
             }
           });
     }
     
+    let errorMsg = errors.map((e) => {
+      return <DisplayErrors key={e[0]} error={e} />
+    })
 
 
     function handleRoutineSelectClick(e){
@@ -80,11 +92,11 @@ function SingleActivityEdit({
         <form className="edit-activity-form" onSubmit={handleSubmit}>
         <br />
 
-  <button 
+  {/* <button 
     className="btn" 
     id="select-routine-btn" 
     onClick={handleRoutineSelectClick}>
-    Select Routine
+    Change Routine
   </button>
     {selectRoutineClick ? (<DisplayUserRoutines 
     selectRoutineClick={selectRoutineClick}
@@ -95,7 +107,7 @@ function SingleActivityEdit({
     setRoutineId={setRoutineId}
     setCategory={setUpdatedCategory}  
   />)
- :(null)}
+ :(null)}  */}
  <br/>
     <label className="activity-form-label">Title:</label>
     <input
@@ -132,8 +144,29 @@ function SingleActivityEdit({
       onChange={(e) => setUpdatedDescription(e.target.value)}
     ></textarea>
     <br/>
+
+    <label className="activity-form-label">Category:</label>
+        <input
+          className="activity-input"
+          type="text"
+          id="category"
+          autoComplete="off"
+          placeholder="type of activity..."
+          value={routineList.category}
+          readOnly
+        ></input>
+        <br />
+        <label className="activity-form-label">Routine Selected: </label>
+        <input className="activity-input"
+          type="text"
+          id="routine-title"
+          autoComplete="off"
+          placeholder="Routine"
+          value={routineList.title}
+          readOnly
+        ></input>
     
-    {showInputForRoutine ? (  
+    {/* {showInputForRoutine ? (  
         <>
         <label className="activity-form-label">Category:</label>
         <input
@@ -155,6 +188,7 @@ function SingleActivityEdit({
           value={routineTitle}
           readOnly
         ></input> </>) : (null)} 
+        {showErrors ? (errorMsg) : (null)} */}
         <br/>
         <button className="btn" type="submit">Update</button>
   </form>
