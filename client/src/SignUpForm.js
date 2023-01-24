@@ -11,14 +11,11 @@ function SignUpForm({setUser}){
     const [email, setEmail] = useState("")
     const [errors, setErrors] = useState([]);
     const [showErrors, setShowErrors] = useState(false);
-
-    const [isLoading, setIsLoading] = useState(false);
     const history = useHistory();
   
     function handleSubmit(e) {
       e.preventDefault();
       setErrors([]);
-      setIsLoading(true);
       fetch("/signup", {
         method: "POST",
         headers: {
@@ -30,9 +27,8 @@ function SignUpForm({setUser}){
           email,
         }),
       }).then((r) => {
-        setIsLoading(false);
         if (r.ok) {
-          history.push('/activities')
+          history.push('/activities');
           r.json().then((user) => setUser(user));
         } else {
           r.json().then((err) => setErrors(err.errors), setShowErrors(true));
@@ -40,7 +36,7 @@ function SignUpForm({setUser}){
       });
     }
 
-    
+
     return (
         <div>
         <div id="signup">

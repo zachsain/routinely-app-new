@@ -6,7 +6,6 @@ class ActivitiesController < ApplicationController
     def create 
         user = User.find(session[:user_id])
         activity = user.activities.create!(activity_params)
-        # activity = Activity.create!(activity_params)
         render json: activity, status: :created
     end 
 

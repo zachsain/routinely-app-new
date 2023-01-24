@@ -12,11 +12,11 @@ class RoutinesController < ApplicationController
         render json: routine
     end 
 
-    def destroy 
-        routine = Routine.find(params[:id])
-        routine.destroy
-        head :no_content
-    end 
+    # def destroy 
+    #     routine = Routine.find(params[:id])
+    #     routine.destroy
+    #     head :no_content
+    # end 
 
     def create 
         new_routine = Routine.create!(routine_params)

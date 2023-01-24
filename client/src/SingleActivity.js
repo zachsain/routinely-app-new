@@ -13,7 +13,6 @@ function SingleActivity({user}){
     let routine = user.routines.find(r => r.id === activity.routine_id)
    
     let activityRoutine = activity.routine
-    console.log(user)
   
     return (
         <div className='single-activity-container'>

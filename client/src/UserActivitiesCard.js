@@ -23,8 +23,6 @@ function UserActivitiesCard({
     const [editButtonClick, setEditButtonClick] = useState(false)
     const history = useHistory();
 
-    console.log(routineId)
-
     function handleDeleteActivity(e){
         e.preventDefault()
         let filteredActivities = copyOfState.activities.filter((activity) => activity.id !== id)

@@ -15,8 +15,6 @@ function UserProfile({user, setUser}){
     const [goalFormClick, setGoalFormClick] = useState(false)
     const history = useHistory();
 
-    console.log(user)
-
     let userRoutines = user.routines.map(r => {
         return <DisplayRoutines
         user={user}

@@ -26,10 +26,9 @@ function RoutineAvivityForm({
     const history = useHistory()
     const [allRouintes, setAllRoutines] = useState([])
     const [date, setDate] = useState("")
-
     const todayDate = new Date()
     const styledDate = `${todayDate.getMonth()+1}/${todayDate.getDate()}/${todayDate.getFullYear()}`
-    
+
     function handleSubmit(e){
         e.preventDefault()
         fetch("/activities", {

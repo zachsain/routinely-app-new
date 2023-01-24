@@ -24,13 +24,11 @@ function SingleActivityEdit({
     const [routineTitle, setRoutineTitle] = useState("")
     const [selectRoutineClick, setSelectRoutineClick] = useState(false)
     const [showInputForRoutine, setShowInputForRoutine] = useState(false)
-    // const [routineId, setRoutineId] = useState()
     const [userStateCopy, setUserStateCopy] = useState(user)
     const [errors, setErrors] = useState([]);
     const [showErrors, setShowErrors] = useState(false)
 
     let routineList = routines.find(r => r.id === routineId) 
-    console.log(routineList.title)
 
     function handleSubmit(e){
         e.preventDefault()
@@ -165,7 +163,6 @@ function SingleActivityEdit({
           value={routineList.title}
           readOnly
         ></input>
-    
     {/* {showInputForRoutine ? (  
         <>
         <label className="activity-form-label">Category:</label>

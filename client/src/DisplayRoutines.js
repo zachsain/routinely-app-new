@@ -10,9 +10,6 @@ function DisplayRoutines({
     instructions,
     duration,
     id,
-    user,
-    setUser,
-    routines
 }){ 
     const [addActivityClick, setAddActivityClick] = useState(false)
     const history = useHistory();
